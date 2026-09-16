@@ -20,7 +20,7 @@ If the sibling repo is not at `../appropriations-committee-reports`, set `BUDGET
 - [docs/acceptance-review.md](docs/acceptance-review.md): the bounded human review needed before sign-off, with a packet generated into `review/`.
 - [docs/substantive-definition.md](docs/substantive-definition.md): five boundary questions for the client, with the measured effect of each answer.
 
-The checked-in `demo/` folder is the generated demonstration site; open `demo/index.html` in a browser.
+The checked-in `demo/` folder is the generated demonstration site, published at https://tandemgov.github.io/budget-differ/ on every push to `main` that changes it; locally, open `demo/index.html` in a browser.
 
 ## Setup
 
