@@ -52,6 +52,7 @@ uv run budget-differ house energy-water 2027  # one target fiscal year
 ```
 
 Open `out/index.html`. Each pair page has a significance-ranked summary of changed sections, inline word-level diffs (insertions green, deletions red), and filters to hide unchanged or number-only sections or show directives only.
+Next to each ranked page, `document.html` shows the newer report as written, in document order, redlined against the prior year with notes in a right-hand column. Both pages carry a floating outline and breadcrumbs.
 
 Each report is paired with the same chamber + subcommittee report from the latest earlier fiscal year on disk, so Senate gap years (FY2021, FY2023) fall back further and the page header says which years were compared.
 
@@ -69,7 +70,7 @@ uv run budget-differ --dump-sections CRPT-119hrpt667
 2. **Align** (`align.py`, `compare.py`): match sections across years by exact normalized heading path, then unique headings, then fuzzy matching constrained to a shared parent, then content-similarity rescue for renames and general-provision renumbering. Dropped+new pairs that are each other's best content match (≥65% overlap, consistent parents) are promoted to real diffs labeled "renamed"; weaker kinships (mutual ≥50%, one-directional ≥60%) render as "possible successor/predecessor" hints so splits and merges stay visible without asserting a match.
 3. **Diff + classify** (`diffing.py`, `policy.py`): word-level difflib diffs per paired paragraph; a masking step (dollars → `#`, years → `#Y`) separates number-only changes from language changes by size, and policy-signal rules flag small edits that change negation, discretion, prohibitions, eligibility, conditions, reporting, deadlines, floors and ceilings, shares, counts, or what a provision does — promoting them to substantive with the before/after language and a reason.
 4. **Rank** (`significance.py`): changed words × change-class weight, boosted for directives, plus a fixed weight per policy-flag category independent of edit size; new/dropped sections at the top.
-5. **Render** (`render/`): self-contained HTML, no server, stdlib templates.
+5. **Render** (`render/`): self-contained HTML, no server, stdlib templates. `render/outline.py` recovers document order (placing dropped sections where they stood) for the outline and `render/document.py`'s full-document view.
 
 ## Development
 

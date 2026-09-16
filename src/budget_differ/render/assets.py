@@ -7,6 +7,8 @@ CSS = """
   --chip-unchanged: #e5e7eb; --chip-numbers: #dbeafe; --chip-minor: #fef9c3;
   --chip-substantive: #fed7aa; --chip-new: #bbf7d0; --chip-dropped: #fecaca;
   --flag-bg: #ede9fe; --flag-fg: #4c1d95;
+  --dot-numbers: #3b82f6; --dot-minor: #ca8a04; --dot-substantive: #ea580c;
+  --dot-new: #16a34a; --dot-dropped: #dc2626;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,13 +25,16 @@ body {
   font: 16px/1.55 Georgia, 'Times New Roman', serif;
 }
 .layout { display: flex; gap: 2.5rem; max-width: 78rem; margin: 0 auto; align-items: flex-start; }
+.layout.wide { max-width: 100rem; }
 main { flex: 1; min-width: 0; max-width: 60rem; }
-.sidenav {
+.layout.wide main { max-width: 82rem; }
+.leftcol {
   width: 13rem; flex-shrink: 0; position: sticky; top: 1rem;
-  max-height: calc(100vh - 2rem); overflow-y: auto;
+  max-height: calc(100vh - 2rem); overflow-y: auto; overscroll-behavior: contain;
   font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: .85rem;
   border-right: 1px solid var(--border); padding-right: 1rem;
 }
+.leftcol.has-outline { width: 16rem; }
 .sidenav a { display: block; color: inherit; text-decoration: none; padding: .18rem .4rem; border-radius: 4px; }
 .sidenav a:hover { background: var(--chip-unchanged); }
 .sidenav a.current { background: var(--chip-numbers); font-weight: 600; }
@@ -39,8 +44,112 @@ main { flex: 1; min-width: 0; max-width: 60rem; }
 }
 .sidenav .navhome { font-weight: 600; }
 .navtoggle-box, .navburger { display: none; }
-/* Anchor targets land below the sticky filter bar, not under it. */
-.section, .hist-fy, tr[id] { scroll-margin-top: 5.5rem; }
+/* With an outline in the column, committee links fold behind their toggle on every screen size. */
+.leftcol.has-outline .navburger { display: block; cursor: pointer; font-weight: 600; padding: .18rem .4rem; user-select: none; }
+.leftcol.has-outline .navlinks { display: none; }
+.leftcol.has-outline .navtoggle-box:checked ~ .navlinks { display: block; }
+/* Anchor targets land below the sticky filter bar and its breadcrumb row, not under it. */
+.section, .hist-fy, tr[id], .docsec, .drow { scroll-margin-top: 7.5rem; }
+.outline { margin-top: .6rem; border-top: 1px solid var(--border); padding-top: .4rem; }
+.oltoggle-box { display: none; }
+.olhead {
+  display: block; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; font-size: .7rem;
+  color: var(--muted); margin: .5rem 0 .2rem;
+}
+.olactions { display: flex; gap: .75rem; margin: 0 0 .35rem; }
+.olactions button {
+  font: inherit; font-size: .72rem; color: var(--muted); background: none; border: none; padding: 0;
+  cursor: pointer; text-decoration: underline dotted;
+}
+ul.ol { list-style: none; margin: 0; padding: 0 0 0 .95rem; }
+ul.ol ul.ol { display: none; padding-left: .85rem; }
+li.oli.open > ul.ol { display: block; }
+li.oli { position: relative; }
+.olcaret {
+  position: absolute; left: -.95rem; top: .2rem; width: .9rem; height: 1rem; padding: 0;
+  border: none; background: none; color: var(--muted); cursor: pointer; font-size: .7rem; line-height: 1rem;
+}
+.olcaret::before { content: '▸'; }
+li.oli.open > .olcaret::before { content: '▾'; }
+a.oll {
+  display: block; position: relative; padding: .12rem .35rem .12rem .95rem; border-radius: 4px;
+  color: inherit; text-decoration: none; font-size: .8rem; line-height: 1.35;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+a.oll:hover { background: var(--chip-unchanged); }
+a.oll::before {
+  content: ''; position: absolute; left: .35rem; top: .62em; width: .38rem; height: .38rem; border-radius: 50%;
+}
+li[data-oc="numbers-only"] > a.oll::before { background: var(--dot-numbers); }
+li[data-oc="minor"] > a.oll::before { background: var(--dot-minor); }
+li[data-oc="substantive"] > a.oll::before { background: var(--dot-substantive); }
+li[data-oc="new"] > a.oll::before { background: var(--dot-new); }
+li[data-oc="dropped"] > a.oll::before { background: var(--dot-dropped); }
+li[data-oc="unchanged"] > a.oll { color: var(--muted); }
+li[data-oc="dropped"] > a.oll { color: var(--muted); text-decoration: line-through; }
+li.oli.on-path > a.oll { font-weight: 600; }
+a.oll.active { background: var(--chip-numbers); color: var(--fg); }
+a.oll.filtered { opacity: .45; }
+.viewtabs {
+  display: flex; flex-wrap: wrap; gap: .25rem; border-bottom: 1px solid var(--border); margin: 0 0 .25rem;
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: .85rem;
+}
+.viewtab {
+  padding: .4rem .85rem; color: var(--muted); text-decoration: none; margin-bottom: -1px;
+  border: 1px solid transparent; border-bottom: none; border-radius: 6px 6px 0 0;
+}
+.viewtab:hover { color: var(--fg); }
+.viewtab.current { color: var(--fg); background: var(--bg); border-color: var(--border); font-weight: 600; }
+.controls .crumbs {
+  flex-basis: 100%; min-height: 1.2em; margin-top: -.5rem; font-size: .78rem; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.crumbs a { color: inherit; text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.crumbs a:last-child { color: var(--fg); font-weight: 600; }
+.crumbs .sep { margin: 0 .35rem; }
+.controls button {
+  font: inherit; font-size: .8rem; padding: .1rem .55rem; border: 1px solid var(--border); border-radius: 4px;
+  background: var(--bg); color: var(--fg); cursor: pointer;
+}
+.controls button:hover { background: var(--chip-unchanged); }
+.controls .stepper { display: inline-flex; gap: .35rem; }
+.doc .drow { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; column-gap: 1.5rem; }
+.doc .dtext { min-width: 0; }
+.doc .dtext .para { margin: 0; padding: .3rem 0; }
+.doc .dtext .para.added-para, .doc .dtext .para.removed-para, .doc .dtext .para.moved-para { margin: .3rem 0; padding: .5rem .75rem; }
+.dnote {
+  font-family: -apple-system, 'Segoe UI', sans-serif; font-size: .78rem; color: var(--muted);
+  border-left: 1px solid var(--border); padding: .35rem 0 .35rem .75rem;
+}
+.dnote a { color: inherit; }
+.dnote .chip { margin-right: .25rem; }
+.dnote .flag { margin: .1rem .25rem .1rem 0; }
+.dnote .related { font-size: .78rem; margin: .3rem 0; }
+.dnote .movenote { margin: 0; }
+.dnote ul.flags { font-size: .78rem; }
+.dnote .tags { margin: .25rem 0 0; }
+.dlinks { margin-top: .2rem; }
+.dh { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; margin: 1.6rem 0 .2rem; }
+.dh.d0 { font-size: 1.3rem; }
+.dh.d1 { font-size: 1.12rem; }
+.dh.d2 { font-size: 1rem; }
+.dh.d3 { font-size: .95rem; font-weight: 600; }
+.dh.d4 { font-size: .9rem; font-weight: 600; font-style: italic; }
+.docsec.dropped .dh { color: var(--del-fg); text-decoration: line-through; }
+.docsec.added .dh { color: var(--ins-fg); }
+.doc .moved-away { text-decoration: line-through; }
+.doc.no-del del, .doc.no-del .del-row, .doc.no-del .docsec.dropped { display: none; }
+.doc.no-ins ins { background: none; color: inherit; padding: 0; }
+.doc.no-ins .dtext .para.added-para, .doc.no-ins .dtext .para.moved-para {
+  background: none; border-left: none; color: inherit; margin: 0; padding: .3rem 0;
+}
+.doc.no-ins .docsec.added .dh { color: inherit; }
+.doc.no-notes .drow { grid-template-columns: minmax(0, 1fr); }
+.doc.no-notes .dnote { display: none; }
+@keyframes flash { from { background: color-mix(in srgb, var(--chip-minor) 70%, transparent); } to { background: transparent; } }
+.drow.flash { animation: flash 1.2s ease-out; }
+.doc .drow.dhead .dnote { padding-top: 1.75rem; }
 /* Wide tables: keep the row label pinned while columns scroll. */
 .overflow th:first-child, .overflow td:first-child {
   position: sticky; left: 0; background: var(--bg); z-index: 1;
@@ -48,8 +157,15 @@ main { flex: 1; min-width: 0; max-width: 60rem; }
 @media (max-width: 900px) {
   body { padding: 1rem .75rem; }
   .layout { flex-direction: column; gap: 1rem; }
-  .sidenav { position: static; width: auto; max-height: none; border-right: none;
+  .leftcol, .leftcol.has-outline { position: static; width: 100%; max-height: none; border-right: none;
              border-bottom: 1px solid var(--border); padding: 0 0 .75rem; }
+  .olhead { cursor: pointer; font-size: .85rem; text-transform: none; letter-spacing: 0; color: var(--fg); padding: .5rem .4rem; margin: 0; }
+  .olhead::before { content: '☰  '; }
+  .oltoggle-box:not(:checked) ~ .olbody { display: none; }
+  a.oll { padding-top: .35rem; padding-bottom: .35rem; white-space: normal; }
+  .doc .drow { grid-template-columns: minmax(0, 1fr); }
+  .dnote { border-left: none; padding: 0 0 .5rem; }
+  .dnote:empty { display: none; }
   .navburger { display: block; cursor: pointer; font-weight: 600; padding: .5rem .4rem;
                user-select: none; }
   .sidenav .navlinks { display: none; }
@@ -165,7 +281,162 @@ function applyFilters() {
   if (counter) counter.textContent = shown === total
     ? `showing all ${total} sections`
     : `showing ${shown} of ${total} sections`;
+  if (window.budgetOutlineSync) window.budgetOutlineSync();
 }
 document.querySelectorAll('.controls input').forEach(el => el.addEventListener('change', applyFilters));
 applyFilters();
+"""
+
+# Full-document page: display toggles, and a stepper that walks changed paragraphs (buttons, or j/k).
+DOC_JS = """
+(function () {
+  const doc = document.getElementById('doc');
+  if (!doc) return;
+  const toggles = [['d-del', 'no-del'], ['d-ins', 'no-ins'], ['d-notes', 'no-notes']];
+  function applyToggles() {
+    for (const [id, cls] of toggles) {
+      const el = document.getElementById(id);
+      if (el) doc.classList.toggle(cls, !el.checked);
+    }
+    const n = [...doc.querySelectorAll('.drow.changed')].filter(el => el.offsetParent !== null).length;
+    const counter = document.getElementById('fcount');
+    if (counter) counter.textContent = `${n} changed paragraph${n === 1 ? '' : 's'}`;
+    if (window.budgetOutlineSync) window.budgetOutlineSync();
+  }
+  toggles.forEach(([id]) => document.getElementById(id)?.addEventListener('change', applyToggles));
+  function step(dir) {
+    const bar = document.querySelector('.controls');
+    const line = (bar ? bar.offsetHeight : 0) + 6;
+    const stops = [...doc.querySelectorAll('.drow.changed')].filter(el => el.offsetParent !== null);
+    let target = null;
+    if (dir > 0) {
+      target = stops.find(el => el.getBoundingClientRect().top > line + 2);
+    } else {
+      for (const el of stops) {
+        if (el.getBoundingClientRect().top < line - 2) target = el; else break;
+      }
+    }
+    if (!target) return;
+    window.scrollBy(0, target.getBoundingClientRect().top - line);
+    target.classList.remove('flash');
+    void target.offsetWidth;
+    target.classList.add('flash');
+  }
+  document.getElementById('nextchg')?.addEventListener('click', () => step(1));
+  document.getElementById('prevchg')?.addEventListener('click', () => step(-1));
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey || e.target.closest('input, textarea, select')) return;
+    if (e.key === 'j') step(1);
+    if (e.key === 'k') step(-1);
+  });
+  applyToggles();
+})();
+"""
+
+# Outline: scroll-spy highlight, breadcrumbs for the section in view, expand/collapse, and unhiding a filtered-out section when it is jumped to.
+OUTLINE_JS = """
+(function () {
+  const ol = document.querySelector('.outline');
+  if (!ol) return;
+  const column = ol.closest('.leftcol');
+  const crumbs = document.getElementById('crumbs');
+  const spies = [...document.querySelectorAll('[data-spy]')];
+  const links = new Map();
+  ol.querySelectorAll('a.oll').forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    if (!links.has(id) || a.classList.contains('own')) links.set(id, a);
+  });
+  function reveal(id) {
+    const el = id && document.getElementById(id);
+    if (el && el.classList.contains('hidden')) {
+      el.classList.remove('hidden');
+      return true;
+    }
+    return false;
+  }
+  ol.addEventListener('click', e => {
+    const caret = e.target.closest('.olcaret');
+    if (caret) { caret.parentElement.classList.toggle('open'); return; }
+    const bulk = e.target.closest('[data-ol]');
+    if (bulk) {
+      ol.querySelectorAll('li.has-kids').forEach(li => li.classList.toggle('open', bulk.dataset.ol === 'expand'));
+      return;
+    }
+    const a = e.target.closest('a.oll');
+    if (a) {
+      reveal(a.getAttribute('href').slice(1));
+      const box = document.getElementById('oltoggle');
+      if (box) box.checked = false;
+    }
+  });
+  function onHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (reveal(id)) document.getElementById(id).scrollIntoView();
+  }
+  window.addEventListener('hashchange', onHash);
+  let current;
+  function activate(id) {
+    if (id === current) return;
+    current = id;
+    ol.querySelectorAll('a.oll.active').forEach(a => a.classList.remove('active'));
+    ol.querySelectorAll('li.on-path').forEach(li => li.classList.remove('on-path'));
+    const link = id ? links.get(id) : null;
+    const trail = [];
+    if (link) {
+      link.classList.add('active');
+      for (let li = link.parentElement; li; li = li.parentElement.closest('li.oli')) {
+        li.classList.add('on-path');
+        if (li !== link.parentElement) li.classList.add('open');
+        trail.unshift(li.querySelector(':scope > a.oll'));
+      }
+      if (column && column.scrollHeight > column.clientHeight) {
+        const r = link.getBoundingClientRect(), box = column.getBoundingClientRect();
+        if (r.top < box.top + 40 || r.bottom > box.bottom - 20) column.scrollTop += r.top - box.top - box.height / 3;
+      }
+    }
+    if (!crumbs) return;
+    crumbs.replaceChildren();
+    trail.forEach((l, i) => {
+      if (i) {
+        const sep = document.createElement('span');
+        sep.className = 'sep';
+        sep.textContent = '\u203A';
+        crumbs.append(sep);
+      }
+      const a = document.createElement('a');
+      a.href = l.getAttribute('href');
+      a.textContent = l.textContent;
+      crumbs.append(a);
+    });
+  }
+  function spy() {
+    const bar = document.querySelector('.controls');
+    // Generous enough that a section landed on by an anchor jump (scroll-margin-top) already counts as in view.
+    const line = (bar ? bar.offsetHeight : 0) + 48;
+    let id = null;
+    for (const s of spies) {
+      if (s.offsetParent === null) continue;
+      if (s.getBoundingClientRect().top <= line) id = s.id; else break;
+    }
+    activate(id);
+  }
+  let queued = false;
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; spy(); });
+  }
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  window.budgetOutlineSync = function () {
+    links.forEach((a, id) => {
+      const el = document.getElementById(id);
+      a.classList.toggle('filtered', !el || el.offsetParent === null);
+    });
+    current = undefined;
+    schedule();
+  };
+  onHash();
+  window.budgetOutlineSync();
+})();
 """

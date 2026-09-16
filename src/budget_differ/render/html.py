@@ -11,7 +11,8 @@ from budget_differ.anchors import section_anchor
 from budget_differ.corpus import CatalogEntry, Pair
 from budget_differ.models import ChangeClass, PairDiff, SectionDiff
 from budget_differ.policy import REVIEW, PolicyFlag
-from budget_differ.render.assets import CSS, JS
+from budget_differ.render.assets import CSS, JS, OUTLINE_JS
+from budget_differ.render.outline import render_outline
 
 _PAGE = Template(
     """<!DOCTYPE html>
@@ -23,8 +24,11 @@ _PAGE = Template(
 <link rel="stylesheet" href="$cssref">
 </head>
 <body>
-<div class="layout">
+<div class="layout$layoutclass">
+<div class="leftcol$leftclass">
 $nav
+$outline
+</div>
 <main>
 $body
 </main>
@@ -34,6 +38,22 @@ $body
 </html>
 """
 )
+
+
+def page(
+    title: str, cssref: str, js: str, body: str, nav: str, outline: str = "", wide: bool = False
+) -> str:
+    """The page shell. An outline joins the committee links in the sticky left column; wide pages make room for an annotation column."""
+    return _PAGE.substitute(
+        title=title,
+        cssref=cssref,
+        js=js,
+        body=body,
+        nav=nav,
+        outline=outline,
+        layoutclass=" wide" if wide else "",
+        leftclass=" has-outline" if outline else "",
+    )
 
 
 @dataclass
@@ -194,7 +214,9 @@ def _render_section(
     moves_in: dict[int, object] | None = None,
     section_hrefs: dict[int, str] | None = None,
     anchor_base: str = "",
+    document_href: str = "document.html",
 ) -> str:
+    """document_href: the pair's full-document page, relative to where this section is rendered."""
     moves_out = moves_out or {}
     moves_in = moves_in or {}
     sec = sd.new or sd.old
@@ -206,9 +228,10 @@ def _render_section(
         href = section_hrefs.get(id(sd.new)) or section_hrefs.get(id(sd.old))
         if href:
             thread_link = f' <a class="ctx" href="{_esc(href)}">thread history &rarr;</a>'
+    thread_link += f' <a class="ctx" href="{_esc(document_href)}#{_anchor(sd)}">in full document &rarr;</a>'
     flagged = bool(_review_flags(sd))
     out: list[str] = [
-        f'<section class="section" id="{_anchor(sd)}" data-change="{sd.change.label.replace(" ", "-")}" '
+        f'<section class="section" id="{_anchor(sd)}" data-spy data-change="{sd.change.label.replace(" ", "-")}" '
         f'data-directive="{1 if has_directive else 0}" data-flagged="{1 if flagged else 0}">',
         f"<h3>{_esc(sec.heading)} {_chip(sd.change)}{_flag_badges(sd.flags)}{thread_link}</h3>",
         f'<div class="pathline">{_esc(" › ".join(sd.display_path[:-1]))}</div>',
@@ -355,12 +378,14 @@ def render_pair(
             '<div class="meta">'
             f"{_source_links(pair.old)} → {_source_links(pair.new)}"
             f"<br>{_esc(count_line)}</div>",
+            view_tabs(pair, "ranked"),
             '<div class="controls">'
             '<label><input type="checkbox" id="f-unchanged" checked> hide unchanged</label>'
             '<label><input type="checkbox" id="f-numbers"> hide number-only changes</label>'
             '<label><input type="checkbox" id="f-directives"> directives only</label>'
             '<label><input type="checkbox" id="f-flagged"> policy flags only</label>'
             '<span class="fcount" id="fcount"></span>'
+            '<div class="crumbs" id="crumbs"></div>'
             "</div>",
             _render_policy_summary(diff),
             "<h2>Changed sections, most significant first</h2>",
@@ -381,10 +406,30 @@ def render_pair(
             ),
         ]
     )
-    page = _PAGE.substitute(title=_esc(title), cssref="../style.css", js=JS, body=body, nav=nav_html)
+    html_page = page(
+        _esc(title), "../style.css", JS + OUTLINE_JS, body, nav_html, outline=render_outline(diff)
+    )
     out_path = out_dir / "index.html"
-    out_path.write_text(page)
+    out_path.write_text(html_page)
+    from budget_differ.render.document import render_document
+
+    render_document(pair, diff, out_dir, nav_html, section_hrefs)
     return out_path
+
+
+def view_tabs(pair: Pair, current: str) -> str:
+    """Switch between the significance-ranked page and the full document; both share section anchors, so a fragment carries across."""
+    tabs = [
+        ("ranked", "index.html", "Ranked changes"),
+        ("document", "document.html", f"Full FY{pair.new.fiscal_year} document, annotated"),
+    ]
+    links = "".join(
+        f'<a class="viewtab current" aria-current="page" href="{href}">{label}</a>'
+        if key == current
+        else f'<a class="viewtab" href="{href}">{label}</a>'
+        for key, href, label in tabs
+    )
+    return f'<div class="viewtabs">{links}</div>'
 
 
 def _render_policy_summary(diff: PairDiff) -> str:
@@ -525,9 +570,8 @@ def render_chain(
             + "</table></div>",
         ]
     )
-    page = _PAGE.substitute(title=_esc(title), cssref="../style.css", js=_CHAIN_JS, body=body, nav=nav_html)
     out_path = out_dir / "index.html"
-    out_path.write_text(page)
+    out_path.write_text(page(_esc(title), "../style.css", _CHAIN_JS, body, nav_html))
     return out_path
 
 
@@ -543,7 +587,9 @@ def render_top_index(
         table_rows.append(
             "<tr>"
             f'<td><a class="secline" href="{_esc(href)}">{_esc(pair.new.subcommittee or "")}'
-            f" ({_esc(pair.new.chamber)}) FY{pair.old.fiscal_year} → FY{pair.new.fiscal_year}</a></td>"
+            f" ({_esc(pair.new.chamber)}) FY{pair.old.fiscal_year} → FY{pair.new.fiscal_year}</a>"
+            f'<br><a class="crumb" href="{_esc(href.replace("index.html", "document.html"))}">'
+            f"full FY{pair.new.fiscal_year} document, annotated</a></td>"
             f'<td class="num">{changed}</td>'
             f'<td class="num">{counts.get("new", 0)}</td>'
             f'<td class="num">{counts.get("dropped", 0)}</td>'
@@ -559,8 +605,7 @@ def render_top_index(
             + "</table></div>",
         ]
     )
-    page = _PAGE.substitute(title="budget-differ index", cssref="style.css", js="", body=body, nav=nav_html)
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "index.html"
-    out_path.write_text(page)
+    out_path.write_text(page("budget-differ index", "style.css", "", body, nav_html))
     return out_path
