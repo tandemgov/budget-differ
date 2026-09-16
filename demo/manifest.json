@@ -4,11 +4,11 @@
       "page": "house-energy-water-fy2025-fy2026/index.html",
       "old": "CRPT-118hrpt580",
       "new": "CRPT-119hrpt213",
-      "policy_flags": 177,
+      "policy_flags": 207,
       "section_counts": {
-        "substantive": 101,
-        "dropped": 49,
-        "new": 15,
+        "substantive": 100,
+        "dropped": 34,
+        "new": 10,
         "numbers only": 16,
         "minor": 8,
         "unchanged": 36
@@ -18,14 +18,14 @@
       "page": "house-energy-water-fy2026-fy2027/index.html",
       "old": "CRPT-119hrpt213",
       "new": "CRPT-119hrpt667",
-      "policy_flags": 184,
+      "policy_flags": 202,
       "section_counts": {
-        "substantive": 80,
-        "new": 21,
-        "dropped": 19,
+        "substantive": 77,
+        "new": 10,
+        "dropped": 20,
         "minor": 9,
         "numbers only": 22,
-        "unchanged": 46
+        "unchanged": 42
       }
     },
     {
@@ -38,7 +38,7 @@
         "dropped": 3,
         "new": 5,
         "minor": 7,
-        "numbers only": 9,
+        "numbers only": 8,
         "unchanged": 11
       }
     },
@@ -46,14 +46,14 @@
       "page": "house-legislative-branch-fy2026-fy2027/index.html",
       "old": "CRPT-119hrpt178",
       "new": "CRPT-119hrpt666",
-      "policy_flags": 57,
+      "policy_flags": 63,
       "section_counts": {
         "substantive": 31,
-        "new": 10,
+        "new": 6,
         "dropped": 15,
         "minor": 2,
         "numbers only": 12,
-        "unchanged": 6
+        "unchanged": 5
       }
     }
   ],

@@ -77,7 +77,7 @@ uv run budget-differ --dump-sections CRPT-119hrpt667
 ```bash
 uv run pytest                      # unit + golden-pair tests (corpus tests skip if repo absent)
 uv run python scripts/sweep.py     # parse the full corpus, report leakage/anomalies
-uv run python scripts/hierarchy_audit.py   # misparenting rate vs USASpending account→agency truth
+uv run python scripts/hierarchy_audit.py   # section-tree audit: USASpending truth plus label-free structure checks (--demo, --report, --json)
 ```
 
 Cross-year alignment quality is measured, not eyeballed: `scripts/linkage_eval.py` traces every linkage decision (all passes, accepted and near-miss), auto-labels the unambiguous ends, and scores precision/recall per pass against the adjudicated labels in `tests/linkage_labels.json`, with threshold sweeps for the tunable passes.
@@ -93,9 +93,9 @@ uv run python scripts/linkage_eval.py score    # precision/recall + threshold sw
 - Money tables are dropped, not diffed — line-item dollars are the sibling repo's job.
 - Measured recall on the highest-value units (directive and general-provision lead-ins): **99.84% corpus-wide**; the 116 swallowed lead-ins concentrate in FY2016-era reports. `scripts/sweep.py` tracks this per report alongside the leakage counter.
 - A thin tail of table rows (1–8 paragraphs in ~40 of 231 reports) still leaks into diffs.
-- Section parentage measured against USASpending account→agency truth: 0.6% misparented corpus-wide (`scripts/hierarchy_audit.py`); the PDF font-tier override (see How it works) and the agency lexicon carry most of that.
-- Cross-year alignment (`scripts/linkage_eval.py score`, 2026-09-16): about 100% precision over all labeled candidates, but 86.5% (32 of 37) over the 119 adjudicated borderline candidates; rename promotion is the weakest pass (5 of 8). Blocking misses (true pairs never generated as candidates) are not measured. Details in `docs/methodology.md`.
-- Policy-significance classification is measured against a reference set whose labels are still drafts pending human adjudication (`docs/evaluation.md`): on held-out FY2023→FY2024 comparisons it misses 11.5% of substantive changes (22% of small ones) versus 30.5% for size alone, and about 82% of promoted paragraphs were labeled substantive. Scope changes carried by ordinary words ("construction" → "study") are the main miss.
+- Section hierarchy (`scripts/hierarchy_audit.py`, 2026-09-16): 0.8% of checkable accounts misparented against USASpending truth, no agency nested under another, and 2 parenthetical subtitles parsed as sections (from 131 and 1,895 before the hierarchy fixes); duplicate paths (3,843, mostly leaked table rows) and year-over-year parent drift (1,726) remain. Details in `docs/methodology.md`.
+- Cross-year alignment (`scripts/linkage_eval.py score`): about 100% precision over all labeled candidates; over adjudicated borderline candidates it was 86.5% (32 of 37) before the hierarchy fixes, which orphaned half the adjudicated labels, and a segmentation-independent check agrees with 66 of 95 labels (69 before). Blocking misses are not measured. Details in `docs/methodology.md`.
+- Policy-significance classification is measured against a reference set whose labels are still drafts pending human adjudication (`docs/evaluation.md`): on held-out FY2023→FY2024 comparisons it misses 10.7% of substantive changes (21% of small ones) versus 29.8% for size alone, and about 82% of promoted paragraphs were labeled substantive. Scope changes carried by ordinary words ("construction" → "study") are the main miss.
 - Section-linkage labels are now matched by content; 104 of the original 151 were restored (80 match a current decision) and 47 without saved text are kept unscored in `tests/linkage_labels_unrecoverable.json`.
 - Reports GPO published as text-free stubs (e.g. Senate Labor-HHS FY2026) are skipped with a warning; continuing-resolution conference reports miscataloged as subcommittee reports (e.g. CRPT-116hrpt9) are excluded by title.
 - Same-day ingestion of a report not yet in the sibling repo's catalog is v2; for now, run that repo's `approps discover && approps download` first.

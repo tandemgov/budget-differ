@@ -80,3 +80,5 @@ def test_duplicate_paths_get_separate_outline_entries():
 def test_display_heading():
     assert display_heading("TITLE III DEPARTMENT OF ENERGY") == "Title III Department of Energy"
     assert display_heading("Salaries and Expenses") == "Salaries and Expenses"
+    assert display_heading("TITLE II--GENERAL PROVISIONS") == "Title II--General Provisions"
+    assert display_heading("ISOTOPE R&D AND PRODUCTION") == "Isotope R&D and Production"

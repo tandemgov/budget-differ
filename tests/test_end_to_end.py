@@ -137,3 +137,31 @@ def test_house_energy_water_chain_invariants(tmp_path):
         ids = set(re.findall(r'id="(s-[^"]+)"', html))
         links = re.findall(r'class="(?:movenote|related)">[^<]*<a href="#(s-[^"]+)"', html)
         assert links and all(t in ids for t in links), [t for t in links if t not in ids]
+
+
+@requires_corpus
+def test_legislative_branch_hierarchy():
+    repo = approps_repo_or_none()
+    cat = {e.package_id: e for e in load_catalog(repo)}
+    doc = load_document(repo, cat["CRPT-119hrpt178"])  # House Legislative Branch FY2026
+    paths = [s.path for s in doc.sections]
+    agencies = {"CONGRESSIONAL BUDGET OFFICE", "ARCHITECT OF THE CAPITOL", "LIBRARY OF CONGRESS", "GOVERNMENT PUBLISHING OFFICE", "JOINT ITEMS", "HOUSE OF REPRESENTATIVES"}
+    # Each agency sits directly under the title, never under the agency printed before it.
+    assert not [p for p in paths if sum(c in agencies for c in p) > 1]
+    botanic = next(p for p in paths if p[-1] == "BOTANIC GARDEN")
+    assert botanic[-2] == "ARCHITECT OF THE CAPITOL"
+    assert any(p[-2:] == ("COPYRIGHT OFFICE", "SALARIES AND EXPENSES") for p in paths)
+    assert not any(p[-1].startswith(("INCLUDING", "EXCLUDING")) for p in paths)
+
+
+@requires_corpus
+def test_energy_water_hierarchy():
+    repo = approps_repo_or_none()
+    cat = {e.package_id: e for e in load_catalog(repo)}
+    doc = load_document(repo, cat["CRPT-119hrpt213"])  # House Energy-Water FY2026
+    paths = [s.path for s in doc.sections]
+    # Listed with the other independent agencies in the report's index, so it must not nest under the commission printed before it.
+    gla = next(p for p in paths if p[-1] == "GREAT LAKES AUTHORITY")
+    assert gla[-2] == "TITLE IV INDEPENDENT AGENCIES"
+    # A sentence listing DOE programs wraps into capitalized lines; none may become a section.
+    assert not any(";" in s.heading for s in doc.sections)

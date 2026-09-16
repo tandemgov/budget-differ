@@ -51,21 +51,22 @@ Reproduce with `uv run python scripts/policy_eval.py score` and `uv run python s
 
 | Set | Substantive units | Missed, current | Missed, size-only baseline | Small edits (≤12 words): missed current / baseline | Lost in segmentation |
 |---|---|---|---|---|---|
-| Demonstration | 396 | 18 (4.5%) | 58 (14.6%) | 16 / 56 of 92 | 3 |
-| Held out | 131 | 15 (11.5%) | 40 (30.5%) | 15 / 40 of 68 | 1 |
+| Demonstration | 396 | 14 (3.5%) | 54 (13.6%) | 13 / 53 of 92 | 0 |
+| Held out | 131 | 14 (10.7%) | 39 (29.8%) | 14 / 39 of 68 | 0 |
 
-Per demonstration comparison (current / baseline): Energy-Water FY25→26 9/34 of 104; FY26→27 4/16 of 105; Legislative Branch FY25→26 1/2 of 84; FY26→27 4/6 of 103.
-Per held-out comparison: Energy-Water FY23→24 13/36 of 95; Legislative Branch FY23→24 2/4 of 36.
+Per demonstration comparison (current / baseline): Energy-Water FY25→26 7/32 of 104; FY26→27 3/15 of 105; Legislative Branch FY25→26 1/2 of 84; FY26→27 3/5 of 103.
+Per held-out comparison: Energy-Water FY23→24 12/35 of 95; Legislative Branch FY23→24 2/4 of 36.
+The hierarchy fixes of 2026-09-16 (see [methodology.md](methodology.md#1-segmentation-segment)) moved these from 18 and 15 missed, recovering every unit previously lost in segmentation.
 
 The gain is concentrated where the review said it would be: small edits.
-On the held-out set, policy signals cut small-edit misses from 59% to 22%.
+On the held-out set, policy signals cut small-edit misses from 57% to 21%.
 
 ### False alarms
 
 | Set | Paragraphs promoted by a flag | Of those, labeled substantive | Non-substantive edits promoted | Non-substantive edits called substantive by size alone |
 |---|---|---|---|---|
-| Demonstration | 108 | 85.2% | 13 of 184 | 30 |
-| Held out | 61 | 82.0% | 8 of 75 | 13 |
+| Demonstration | 108 | 85.2% | 13 of 182 | 29 |
+| Held out | 61 | 82.0% | 8 of 78 | 15 |
 
 Three narrative dollar-only changes were promoted in each set (of 153 and 32).
 
@@ -73,9 +74,10 @@ Three narrative dollar-only changes were promoted in each set (of 153 and 32).
 
 | Set | Mispaired | Split into drop + add | Absorbed | Moves not shown |
 |---|---|---|---|---|
-| Demonstration | 3 | 10 | 56 | 1 |
+| Demonstration | 3 | 10 | 62 | 1 |
 | Held out | 1 | 12 | 9 | 0 |
 
+Absorbed rose from 56 to 62 with the hierarchy fixes: text that sat under a parenthetical subtitle now shares a section with its account, so the tool pairs paragraphs the reference splitter left as separate adds and drops, and some former cross-section moves became in-section edits.
 Before near-verbatim move detection was added, splits were 28 (demonstration) and 27 (held out); missed-substantive and false-alarm counts were unchanged by that fix.
 Before the renumbering-collision guard, the demonstration set had 10 mispairings, 7 of them renumbered general provisions whose templated wording ("Section N extends the authorization for …") matched a different provision under the same number.
 
@@ -98,7 +100,7 @@ A date-shift flag also fires on citation years ("WRDA 2020 and WRDA 2022" → "W
 
 The labelers split repeatedly on five boundary cases: narrative dollar figures, "The Committee supports" statements, "looks forward to receiving the report", amounts that "shall remain available until" a date, and changes of addressee.
 [substantive-definition.md](substantive-definition.md) records each with the tool's current behavior, how the drafts treated it, the measured effect of each answer, and a place for the client's decision.
-The largest is the first: counting narrative dollar changes as substantive raises held-out misses from 11.5% to 24.5% unless dollar-amount flags are also promoted (then 8.6%, with 96 rather than 61 promoted paragraphs).
+The largest is the first: counting narrative dollar changes as substantive raises held-out misses from 10.7% to 23.9% unless dollar-amount flags are also promoted (then 8.0%, with 97 rather than 61 promoted paragraphs).
 
 ## Adjudicating and extending the labels
 
