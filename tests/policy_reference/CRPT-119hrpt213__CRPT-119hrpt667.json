@@ -1,0 +1,1882 @@
+{
+ "comparison": "CRPT-119hrpt213__CRPT-119hrpt667",
+ "labels": {
+  "u0000": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Bill total changes $57.3B to $58.5B alongside fiscal year 2026 to 2027 rollover; no floor or other language change.",
+   "reviewer": "draft"
+  },
+  "u0001": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Background prose: 'economic competitiveness' becomes 'economic prosperity'; no directive affected.",
+   "reviewer": "draft"
+  },
+  "u0002": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only dollar figures change: Title I provides $9,883M to $9,775M; HMTF-related estimate $3,535M to $3,628M.",
+   "reviewer": "draft"
+  },
+  "u0003": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only dollar figures change for Title II and Reclamation recommendation ($1,710,630,000 to $1,837,951,000); wording identical.",
+   "reviewer": "draft"
+  },
+  "u0004": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Title III and component dollar figures change; sentence wording is identical.",
+   "reviewer": "draft"
+  },
+  "u0005": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Title IV and NRC net funding dollar figures change; wording identical.",
+   "reviewer": "draft"
+  },
+  "u0007": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only the word 'also' is dropped from 'The Committee also strongly supports'.",
+   "reviewer": "draft"
+  },
+  "u0008": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Overview prose swaps 'availability of domestic uranium enrichment capabilities' for 'strengthens the U.S. nuclear fuel supply chain'; descriptive summary, no directive.",
+   "reviewer": "draft"
+  },
+  "u0009": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Overview prose adds 'artificial intelligence and other' before advanced computing research; summary of recommendation, no directive.",
+   "reviewer": "draft"
+  },
+  "u0010": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical background prose; heading renamed \"Economic Competitiveness\" to \"Economic Prosperity\" without changing the passage.",
+   "reviewer": "draft"
+  },
+  "u0011": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'economic competitiveness' becomes 'economic prosperity' in background description of Corps funding.",
+   "reviewer": "draft"
+  },
+  "u0012": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Advertising directive text unchanged except fiscal years each advance by one year.",
+   "reviewer": "draft"
+  },
+  "u0015": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "PPA definition only changes Appropriations Act year 2026 to 2027.",
+   "reviewer": "draft"
+  },
+  "u0017": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only adds the acronym '(OMB)' after Office of Management and Budget.",
+   "reviewer": "draft"
+  },
+  "u0019": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Fiscal year 2026 to 2027 plus acronyms; adds District S&E to list of requested structures that the Committee still rejects.",
+   "reviewer": "draft"
+  },
+  "u0020": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph that \"rejects the change in apportionment policy and directs OMB to follow the previous policy.\"",
+   "reviewer": "draft"
+  },
+  "u0021": {
+   "kind": "out_of_scope",
+   "same_passage": false,
+   "categories": [],
+   "rationale": "Wrapped bullet-line fragment ('in the Investigations account, are funded in the'), not a complete narrative passage.",
+   "reviewer": "draft"
+  },
+  "u0022": {
+   "kind": "out_of_scope",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Wrapped bullet-line fragment listing account names, not a complete narrative passage.",
+   "reviewer": "draft"
+  },
+  "u0024": {
+   "kind": "out_of_scope",
+   "same_passage": false,
+   "categories": [],
+   "rationale": "Wrapped bullet-line fragment ('Operation and Maintenance account; and'), not a complete narrative passage.",
+   "reviewer": "draft"
+  },
+  "u0031": {
+   "kind": "out_of_scope",
+   "same_passage": false,
+   "categories": [],
+   "rationale": "Wrapped bullet-line fragment from different bullets (Disposition studies vs Inspection of Completed Works).",
+   "reviewer": "draft"
+  },
+  "u0033": {
+   "kind": "out_of_scope",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Wrapped bullet-line fragment ('consolidated into national programs as requested'), not a complete passage.",
+   "reviewer": "draft"
+  },
+  "u0035": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Fragment \"the Operation and Maintenance and Mississippi River and\" is a bullet-line splitter fragment.",
+   "reviewer": "draft"
+  },
+  "u0036": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Fragment \"and Surveillance of Northern Boundary Waters will\" is a bullet-line splitter fragment.",
+   "reviewer": "draft"
+  },
+  "u0045": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Background HMTF balance estimate restated: fiscal year 2026 to 2027 and $7,841M to $9,869M; no directive language.",
+   "reviewer": "draft"
+  },
+  "u0046": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "funding"
+   ],
+   "rationale": "Dropped \"$50,000,000 to support dredge recapitalization\" with Corps encouraged to replace the Dredge Currituck.",
+   "reviewer": "draft"
+  },
+  "u0047": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only provided amounts change ($3,473M to $3,564M; $62M to $64M) with no floor wording or other language change.",
+   "reviewer": "draft"
+  },
+  "u0054": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Background prose: drops 'also' and 'however,' and capitalizes 'Nation's'.",
+   "reviewer": "draft"
+  },
+  "u0055": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Dropped paragraph only describes WRDA 2024 cost-share rules and IWTF barge fuel tax; background.",
+   "reviewer": "draft"
+  },
+  "u0059": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "Directed collaboration partner 'the State of Illinois' widened to 'states in the Great Lakes region'.",
+   "reviewer": "draft"
+  },
+  "u0064": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New paragraph: \"the Corps should focus on improving communication with and providing clear paths forward to project sponsors.\"",
+   "reviewer": "draft"
+  },
+  "u0067": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Spelled-out 'The Office of Management and Budget (OMB)' shortened to 'OMB'.",
+   "reviewer": "draft"
+  },
+  "u0068": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph where \"MCX shall continue to prioritize cost certifications\" for ongoing major construction.",
+   "reviewer": "draft"
+  },
+  "u0071": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped Project Partnerships briefing \"not later than 90 days\" on collaboration with project sponsors.",
+   "reviewer": "draft"
+  },
+  "u0072": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Work plan directive unchanged except 'fiscal year 2026' becomes 'fiscal year 2027'.",
+   "reviewer": "draft"
+  },
+  "u0078": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only 'fiscal year 2026' becomes 'fiscal year 2027'.",
+   "reviewer": "draft"
+  },
+  "u0080": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'The Committee recommends' amount for the Corps changes $9,883M to $9,775M; no other change.",
+   "reviewer": "draft"
+  },
+  "u0081": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Recommended Investigations amount changes $200M to $175M; dropped graphic placeholder is page furniture.",
+   "reviewer": "draft"
+  },
+  "u0085": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Drops background count 'approximately 120' ABUs and hyphenates non-federal; directives and 180-day report unchanged.",
+   "reviewer": "draft"
+  },
+  "u0086": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New Bayonne paragraph: Corps \"shall coordinate\" with the Navy and brief \"not later than 180 days.\"",
+   "reviewer": "draft"
+  },
+  "u0090": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Adds background 'reports that the shoaling has become a navigational hazard'; the 'encouraged to coordinate' request is unchanged.",
+   "reviewer": "draft"
+  },
+  "u0092": {
+   "kind": "substantive",
+   "same_passage": false,
+   "categories": [
+    "new_directive",
+    "dropped_directive"
+   ],
+   "rationale": "Different projects: San Joaquin River Basin reminder dropped; New York-New Jersey Harbor study now 'reminded ... eligible to compete'.",
+   "reviewer": "draft"
+  },
+  "u0093": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only adds acronym '(GIS)' and spacing; $2,100,000 'shall be' directive unchanged.",
+   "reviewer": "draft"
+  },
+  "u0095": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'unmanned aircraft system' abbreviated to 'UAS' and 'onto' becomes 'to'; same force.",
+   "reviewer": "draft"
+  },
+  "u0107": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Recommended Construction amount changes $2,555M to $2,382M; dropped graphic placeholder is page furniture.",
+   "reviewer": "draft"
+  },
+  "u0113": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped Upper St. Anthony Falls briefing \"not later than 60 days after the date of enactment.\"",
+   "reviewer": "draft"
+  },
+  "u0114": {
+   "kind": "out_of_scope",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Bullet-line fragment ('include the beneficial use of dredged material; and'), not narrative passage.",
+   "reviewer": "draft"
+  },
+  "u0118": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "quantity",
+    "funding"
+   ],
+   "rationale": "CAP amount $61.5M to $59.4M and number of CAP sections 'seven' to 'nine' changes program coverage.",
+   "reviewer": "draft"
+  },
+  "u0122": {
+   "kind": "substantive",
+   "same_passage": false,
+   "categories": [
+    "new_directive",
+    "dropped_directive"
+   ],
+   "rationale": "Different projects: Lower San Joaquin River reminder dropped, GIWW-Brazos River Floodgates reminder added.",
+   "reviewer": "draft"
+  },
+  "u0125": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "Required 30-day deliverable drops 'a report on implementation of section 1145 of WRDA 2024', leaving only an inventory.",
+   "reviewer": "draft"
+  },
+  "u0131": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "SFER directive unchanged except fiscal year and September 30 date advance by one year.",
+   "reviewer": "draft"
+  },
+  "u0135": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped San Joaquin paragraph where Corps \"is encouraged to allow for reimbursements\" to nonfederal sponsors.",
+   "reviewer": "draft"
+  },
+  "u0143": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Recommended MR&T amount changes $490M to $470M; HMTF acronym and dropped graphic placeholder are editorial.",
+   "reviewer": "draft"
+  },
+  "u0144": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Drops 'new' from 'this new line item'; funding direction unchanged.",
+   "reviewer": "draft"
+  },
+  "u0145": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Recommended O&M amount changes $6,140M to $6,255M; dropped graphic placeholder is page furniture.",
+   "reviewer": "draft"
+  },
+  "u0152": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New Bayou Teche paragraph directing a briefing \"within 90 days\" on Vermilion River dredging funds.",
+   "reviewer": "draft"
+  },
+  "u0153": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New Boeuf River paragraph: Committee \"encourages the Corps to prioritize updated project condition surveys\" and dredging.",
+   "reviewer": "draft"
+  },
+  "u0161": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "funding",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped DOTS digital twin paragraph with two \"$1,500,000\" items and a briefing \"not later than 90 days.\"",
+   "reviewer": "draft"
+  },
+  "u0164": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "EWN amount 'provides $12,500,000' becomes $8,500,000; $5,000,000 university share unchanged.",
+   "reviewer": "draft"
+  },
+  "u0176": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped Pine Flat Lake paragraph that \"directs the Corps to coordinate with local stakeholders.\"",
+   "reviewer": "draft"
+  },
+  "u0181": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "New directive that \"the Corps is directed to provide an accounting of funds obligated\" to inspection line items.",
+   "reviewer": "draft"
+  },
+  "u0192": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped Table Rock Lake paragraph where \"The Corps is reminded\" WRDA 2024 permitted existing habitation structures.",
+   "reviewer": "draft"
+  },
+  "u0198": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "Besides FY rollover and \"$67,000,000\" to \"$69,000,000\" estimate, adds \"or distribution to projects where user fees have been collected.\"",
+   "reviewer": "draft"
+  },
+  "u0200": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "Fiscal years roll forward, plus added sentence: Committee \"looks forward to receiving the report regarding fiscal year 2026 collections.\"",
+   "reviewer": "draft"
+  },
+  "u0209": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only the recommended Regulatory Program amount changes, $221M to $223M.",
+   "reviewer": "draft"
+  },
+  "u0216": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Record of Decision timing 'fiscal year 2026' advances to 2027 in both places with otherwise identical text.",
+   "reviewer": "draft"
+  },
+  "u0218": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only the recommended Expenses amount changes, $226M to $218M.",
+   "reviewer": "draft"
+  },
+  "u0225": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Recommended ASA(CW) amount changes $6M to $7M; 'the' inserted.",
+   "reviewer": "draft"
+  },
+  "u0230": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 101 description unchanged except each fiscal year reference advances by one year.",
+   "reviewer": "draft"
+  },
+  "u0232": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Adds 'water' to 'reallocations at a project'; clarifies same provision description.",
+   "reviewer": "draft"
+  },
+  "u0233": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "other"
+   ],
+   "rationale": "New general provision summary: \"Section 109 requires access to information by Congress.\"",
+   "reviewer": "draft"
+  },
+  "u0234": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Total unchanged; component amounts shift ($17,050,000 to $17,300,000; $4,000,000 to $3,800,000) without floor wording.",
+   "reviewer": "draft"
+  },
+  "u0235": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Punctuation/wording 'states Reclamation maintains' becomes 'states; it maintains'; background.",
+   "reviewer": "draft"
+  },
+  "u0236": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Recommended Water and Related Resources amount changes $1,710,630,000 to $1,675,000,000; graphic placeholder dropped.",
+   "reviewer": "draft"
+  },
+  "u0237": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Floor 'not less than $20,000,000' for canal repair becomes 'not less than $50,000,000'.",
+   "reviewer": "draft"
+  },
+  "u0241": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped prior Great Salt Lake paragraph where \"Reclamation shall evaluate opportunities to assist\" Utah.",
+   "reviewer": "draft"
+  },
+  "u0242": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New Colorado River below Davis Dam paragraph directing economic analysis and a report \"within 180 days.\"",
+   "reviewer": "draft"
+  },
+  "u0243": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped Inner Harbor Desalination paragraph where \"Reclamation is directed to collaborate\" with Corpus Christi.",
+   "reviewer": "draft"
+  },
+  "u0248": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Rewritten Great Salt Lake paragraph: Department \"shall undertake\" restoration activities and report \"not later than 90 days.\"",
+   "reviewer": "draft"
+  },
+  "u0262": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "Required deliverable changes from 'a briefing covering updated information' to 'an updated estimate' of exposed lands.",
+   "reviewer": "draft"
+  },
+  "u0267": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'per- and polyfluoroalkyl substances' abbreviated to 'PFAS'.",
+   "reviewer": "draft"
+  },
+  "u0268": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Fiscal year rollover with restated collections estimate $65,370,000 to $66,951,000; indefinite appropriation language unchanged.",
+   "reviewer": "draft"
+  },
+  "u0270": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 205 becomes Section 204; Calfed extension description unchanged.",
+   "reviewer": "draft"
+  },
+  "u0272": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 208 becomes Section 205; Northwestern New Mexico extension description unchanged.",
+   "reviewer": "draft"
+  },
+  "u0273": {
+   "kind": "substantive",
+   "same_passage": false,
+   "categories": [
+    "new_directive",
+    "dropped_directive"
+   ],
+   "rationale": "Different provisions: Secure Water Act extension (Sec. 204) replaced by Fort Peck Rural Water System Act extension (Sec. 206).",
+   "reviewer": "draft"
+  },
+  "u0274": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "DOE program list restructured: 'Grid Deployment' dropped, EERE and Fossil Energy replaced by Critical Minerals and Energy Innovation and Hydrocarbons and Geothermal.",
+   "reviewer": "draft"
+  },
+  "u0275": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "DOE recommended amount $48,753,873,000 to $50,358,654,000 with FY rollover and '(DOE)' acronym only.",
+   "reviewer": "draft"
+  },
+  "u0276": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Drops 'its' from 'meeting its Congressional reporting requirements'.",
+   "reviewer": "draft"
+  },
+  "u0281": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'and drive additional efficiencies' becomes 'to create efficiencies'; same directive force and scope.",
+   "reviewer": "draft"
+  },
+  "u0282": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped Indirect Cost Rates paragraph that \"directs the Department to pause implementation\" and develop new policies.",
+   "reviewer": "draft"
+  },
+  "u0284": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "condition"
+   ],
+   "rationale": "New condition: \"Before investing in new data lakes\" the Department \"shall assess and document\" existing data assets.",
+   "reviewer": "draft"
+  },
+  "u0288": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only 'fiscal year 2026 budget request' becomes 'fiscal year 2027'.",
+   "reviewer": "draft"
+  },
+  "u0303": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped hybrid nuclear-geothermal briefing \"not later than 180 days after the date of enactment.\"",
+   "reviewer": "draft"
+  },
+  "u0304": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Office names in coordination list updated to reorganized names (Critical Minerals and Energy Innovation; Hydrocarbons and Geothermal Energy); same directive.",
+   "reviewer": "draft"
+  },
+  "u0306": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "EERE renamed CMEI and \"three portfolios\" become \"four\"; solar, wind, geothermal programs replaced by critical minerals and other programs.",
+   "reviewer": "draft"
+  },
+  "u0307": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "condition"
+   ],
+   "rationale": "New CMEI account paragraph recommends \"$1,850,000,000\" including \"use of $200,000,000 in prior year balances.\"",
+   "reviewer": "draft"
+  },
+  "u0322": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Lead-in 'Vehicle Technologies' renamed 'Transportation Technologies'; not less than $90,000,000 floor unchanged.",
+   "reviewer": "draft"
+  },
+  "u0326": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding"
+   ],
+   "rationale": "'supports ongoing efforts of' the Battery Recycling Retail Collection Points program becomes 'includes $2,000,000 for' it.",
+   "reviewer": "draft"
+  },
+  "u0335": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Lead-in 'Bioenergy Technologies' renamed 'Alternative Fuels and Feedstocks'; floors unchanged.",
+   "reviewer": "draft"
+  },
+  "u0347": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped statement that the Committee \"supports funding to advance hydrogen production\" for aviation applications.",
+   "reviewer": "draft"
+  },
+  "u0348": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Lead-in 'Hydrogen and Fuel Cell Technologies' dropped and 'hydrogen research and development' folded into same directive.",
+   "reviewer": "draft"
+  },
+  "u0356": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'national labs' becomes 'national laboratories'.",
+   "reviewer": "draft"
+  },
+  "u0357": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "limit",
+    "funding"
+   ],
+   "rationale": "Dropped \"not less than $25,000,000 for distributed wind technologies.\"",
+   "reviewer": "draft"
+  },
+  "u0359": {
+   "kind": "moved",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical $5,000,000 PV recycling passage now under \"ENERGY GENERATION TECHNOLOGIES\" instead of \"RENEWABLE ENERGY\" after CMEI reorganization.",
+   "reviewer": "draft"
+  },
+  "u0361": {
+   "kind": "substantive",
+   "same_passage": false,
+   "categories": [
+    "dropped_directive",
+    "new_directive"
+   ],
+   "rationale": "Unrelated encouragements: \"post-exascale advanced computing technologies for artificial intelligence\" versus solar R&D reaching \"rural and remote regions.\"",
+   "reviewer": "draft"
+  },
+  "u0365": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Hydropower $30M to $50M and Marine Energy $70M to $100M with no floor wording; lead-in rename is editorial.",
+   "reviewer": "draft"
+  },
+  "u0367": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "limit",
+    "funding"
+   ],
+   "rationale": "Dropped geothermal paragraph providing \"not less than $100,000,000\" for EGS demonstrations plus related directives.",
+   "reviewer": "draft"
+  },
+  "u0371": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped ground source heat pump working group paragraph with briefing \"not later than 180 days.\"",
+   "reviewer": "draft"
+  },
+  "u0372": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Adds 'their' before affiliated universities; not less than $10,000,000 unchanged.",
+   "reviewer": "draft"
+  },
+  "u0378": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "discretion"
+   ],
+   "rationale": "'The Department is directed to continue to coordinate' weakened to 'The Committee urges increased coordination'.",
+   "reviewer": "draft"
+  },
+  "u0382": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph where \"the Department is directed to support research and development efforts on desalination.\"",
+   "reviewer": "draft"
+  },
+  "u0384": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped statement that the Committee \"supports continued research in chemicals manufacturing.\"",
+   "reviewer": "draft"
+  },
+  "u0390": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "funding"
+   ],
+   "rationale": "Dropped paragraph that \"directs the Department to provide funding to demonstrate\" rare earth recycling pathways.",
+   "reviewer": "draft"
+  },
+  "u0415": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding"
+   ],
+   "rationale": "'directs continued support' becomes 'provides $5,000,000 to support' capacitor film manufacturing, adding a specific amount.",
+   "reviewer": "draft"
+  },
+  "u0419": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph that \"encourages the Department to emphasize the importance of repairability\" in efficiency rules.",
+   "reviewer": "draft"
+  },
+  "u0432": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New paragraph: Committee \"supports projects to scale up domestic capacity\" of battery and energy materials.",
+   "reviewer": "draft"
+  },
+  "u0435": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'Cybersecurity' split as 'Cyber security' in office name; background.",
+   "reviewer": "draft"
+  },
+  "u0436": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only CESER recommended amount changes, $200M to $190M.",
+   "reviewer": "draft"
+  },
+  "u0439": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical text; heading differs only in capitalization of \"Cybersecurity, Energy Security, and Emergency Response.\"",
+   "reviewer": "draft"
+  },
+  "u0443": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'deployed across grid infrastructure' becomes 'deployed to harden grid infrastructure'; directive and 180-day briefing unchanged.",
+   "reviewer": "draft"
+  },
+  "u0449": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Adds lead-in 'Risk Management Technology and Tools.--'; text otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0451": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only 'provides $7,500,000' becomes $10,000,000 for quantum entanglement networking.",
+   "reviewer": "draft"
+  },
+  "u0457": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Office of Electricity recommended amount changes, $225M to $235M.",
+   "reviewer": "draft"
+  },
+  "u0458": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New paragraph: Committee \"recommends that the Department support expanded deployment of propane-based power generation.\"",
+   "reviewer": "draft"
+  },
+  "u0464": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped statement that \"The Committee supports the Grid Research Integration and Demonstration Center.\"",
+   "reviewer": "draft"
+  },
+  "u0472": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Adds lead-in 'Resilient Distribution Systems.--'; 'up to $10,000,000' and directive unchanged.",
+   "reviewer": "draft"
+  },
+  "u0475": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "discretion"
+   ],
+   "rationale": "'The Department is encouraged to support' becomes 'The Committee directs the Department to support'.",
+   "reviewer": "draft"
+  },
+  "u0476": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive to \"conduct a follow-up study\" on a nuclear microgrid hub with a report \"not later than 180 days.\"",
+   "reviewer": "draft"
+  },
+  "u0477": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "funding"
+   ],
+   "rationale": "Dropped statement that the Committee \"supports efforts to continue funding\" technical support for PUCs on long-duration storage.",
+   "reviewer": "draft"
+  },
+  "u0480": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive to coordinate with CMEI on reused battery work and brief \"not later than one year after\" enactment.",
+   "reviewer": "draft"
+  },
+  "u0482": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped urging: \"The Committee urges GDO to make use of all its available funding\" for hydroelectric incentives.",
+   "reviewer": "draft"
+  },
+  "u0486": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "New paragraph \"accepts the budget request proposal to combine the Grid Deployment Office (GDO) within the Office of Electricity.\"",
+   "reviewer": "draft"
+  },
+  "u0487": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "Descriptive 'GDO focuses on' transmission development becomes 'the Committee directs GDO to support' it.",
+   "reviewer": "draft"
+  },
+  "u0495": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "eligibility",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New paragraph encourages prioritizing insular territory utilities and directs a report \"not later than 180 days.\"",
+   "reviewer": "draft"
+  },
+  "u0496": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "Urged assessment of 'overall grid resiliency of Guam's electric power grid' becomes 'feasibility of LNG in Guam's energy mix'.",
+   "reviewer": "draft"
+  },
+  "u0498": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "Addressee 'GDO to coordinate with the Office of Electricity and the Office of Policy' becomes 'the Department', dropping coordination.",
+   "reviewer": "draft"
+  },
+  "u0499": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "eligibility"
+   ],
+   "rationale": "Dropped urging to \"prioritize HALEU to advanced reactor projects\" nearest to commercialization.",
+   "reviewer": "draft"
+  },
+  "u0501": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding"
+   ],
+   "rationale": "Drops 'recommends $88,000,000 for program direction' earmark; NE total $1,795M to $1,800M; up to $3M cap retained.",
+   "reviewer": "draft"
+  },
+  "u0505": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph where the Department \"is encouraged to consider a competitive, cost-shared program\" for recycling.",
+   "reviewer": "draft"
+  },
+  "u0512": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit",
+    "funding"
+   ],
+   "rationale": "Floor 'not less than $16,000,000' becomes $18,000,000 and AI tools support becomes 'up to $10,000,000'.",
+   "reviewer": "draft"
+  },
+  "u0514": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New Genesis Mission paragraph says AI capabilities \"must be demonstrated\" with quantifiable timeline and cost improvements.",
+   "reviewer": "draft"
+  },
+  "u0518": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Dropped paragraph only notes the Committee \"is aware\" of DOME test bed schedule; background with no directive.",
+   "reviewer": "draft"
+  },
+  "u0519": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "limit",
+    "funding"
+   ],
+   "rationale": "New paragraph provides \"up to $5,000,000\" for uranium conversion feasibility studies, a new funding ceiling.",
+   "reviewer": "draft"
+  },
+  "u0520": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only 'includes $28,500,000' for EBR-II processing becomes $29,400,000.",
+   "reviewer": "draft"
+  },
+  "u0526": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'spent nuclear fuel' becomes 'used nuclear fuel' throughout; synonym.",
+   "reviewer": "draft"
+  },
+  "u0529": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "funding"
+   ],
+   "rationale": "New paragraph recommends \"$8,000,000 to continue preparations for recovery of HALEU\" from ATR spent fuel.",
+   "reviewer": "draft"
+  },
+  "u0536": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New paragraph: Committee \"encourages the Department\" to review, test, evaluate, and license thorium fuels for microreactors.",
+   "reviewer": "draft"
+  },
+  "u0542": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit",
+    "funding",
+    "dropped_directive"
+   ],
+   "rationale": "MARVEL \"not less than $21,000,000\" becomes \"$40,000,000\", fast reactor \"up to $11,000,000\" dropped, space floor \"$3,000,000\" to \"$5,000,000\".",
+   "reviewer": "draft"
+  },
+  "u0555": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Recommended amount $687.5M to $700M; 'FE' renamed 'HGEO'; rest identical.",
+   "reviewer": "draft"
+  },
+  "u0558": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph that \"directs the Department to continue its technical derisking activities\" for lithium.",
+   "reviewer": "draft"
+  },
+  "u0560": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "limit",
+    "funding"
+   ],
+   "rationale": "Dropped \"up to $10,000,000\" for a critical mineral academia-industry partnership.",
+   "reviewer": "draft"
+  },
+  "u0562": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph that \"encourages the Department to support\" critical mineral extraction from unconventional feedstocks.",
+   "reviewer": "draft"
+  },
+  "u0568": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Lead-in 'Carbon Capture' renamed 'Point Source Capture'; $5,000,000 directive identical.",
+   "reviewer": "draft"
+  },
+  "u0583": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Adds lead-in and 'to continue efforts' to establish the center; $10,000,000 unchanged; 'labs' to 'laboratories'.",
+   "reviewer": "draft"
+  },
+  "u0584": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "deadline",
+    "funding"
+   ],
+   "rationale": "Report deadline 'not later than 120 days' becomes 180 days; funding $2,500,000 becomes $5,000,000.",
+   "reviewer": "draft"
+  },
+  "u0586": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Drops lead-in 'Methane Mitigation Technologies.--' and hyphenates public-private; directives unchanged.",
+   "reviewer": "draft"
+  },
+  "u0587": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph where \"EIA is encouraged to collect data\" on state-level computation sector electricity demand.",
+   "reviewer": "draft"
+  },
+  "u0592": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "'provides $10,000,000' becomes 'provides up to $10,000,000', making the amount a ceiling.",
+   "reviewer": "draft"
+  },
+  "u0598": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only SPR recommended amount changes, $294,628,000 to $225,000,000.",
+   "reviewer": "draft"
+  },
+  "u0603": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "discretion"
+   ],
+   "rationale": "EIA directed 'to consider increasing' survey detail and frequency becomes 'to increase'.",
+   "reviewer": "draft"
+  },
+  "u0605": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Non-Defense Environmental Cleanup recommended amount changes.",
+   "reviewer": "draft"
+  },
+  "u0607": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "DUF6 conversion amount $155,120,000 to $142,526,000; 'Hexaflouride' spelling corrected.",
+   "reviewer": "draft"
+  },
+  "u0608": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Small sites total and Moab amounts change with no floor wording; ETEC and INL amounts unchanged.",
+   "reviewer": "draft"
+  },
+  "u0611": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped statement that the Committee \"supports efforts to enhance quantum communication\" testbeds.",
+   "reviewer": "draft"
+  },
+  "u0613": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only UED&D Fund recommended amount changes.",
+   "reviewer": "draft"
+  },
+  "u0614": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Office of Science recommended amount changes, $8.4B to $8.525B.",
+   "reviewer": "draft"
+  },
+  "u0615": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "limit",
+    "funding",
+    "eligibility"
+   ],
+   "rationale": "Dropped \"not less than $2,500,000\" for academic nuclear science and \"shall prioritize collaboration with service academies.\"",
+   "reviewer": "draft"
+  },
+  "u0617": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "New paragraph on neuroscience lab-assets report; Committee \"awaits the delivery of this report,\" signaling a reporting expectation.",
+   "reviewer": "draft"
+  },
+  "u0618": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive for a Great Lakes Region capabilities report \"not later than one year after the date of enactment.\"",
+   "reviewer": "draft"
+  },
+  "u0630": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only 'includes $10,000,000' for High Performance Data Facility becomes $32,000,000.",
+   "reviewer": "draft"
+  },
+  "u0631": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "'provides $325,000,000' becomes 'provides not less than $310,000,000', adding a floor.",
+   "reviewer": "draft"
+  },
+  "u0632": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "limit",
+    "funding"
+   ],
+   "rationale": "New ceiling: \"up to $10,000,000 to accelerate the development of aerospace-relevant quantum computing.\"",
+   "reviewer": "draft"
+  },
+  "u0634": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive to \"publish not later than one year after\" enactment an AI strategic roadmap with budget projections.",
+   "reviewer": "draft"
+  },
+  "u0636": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "scope"
+   ],
+   "rationale": "New directive: \"The Department is directed to evaluate and test\" technologies improving large language model efficiency.",
+   "reviewer": "draft"
+  },
+  "u0638": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only facility operations amounts for light sources, neutron sources, and NSRCs change; no floor wording.",
+   "reviewer": "draft"
+  },
+  "u0640": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Floor 'not less than $23,100,000' becomes $23,400,000, with included project amounts swapped.",
+   "reviewer": "draft"
+  },
+  "u0643": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only BSS and EESS amounts change; no floor wording.",
+   "reviewer": "draft"
+  },
+  "u0646": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Joint Genome Institute amount changes, $92M to $101.9M.",
+   "reviewer": "draft"
+  },
+  "u0647": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Parenthetical '(including ...)' becomes ', to include ...,'; same list and force.",
+   "reviewer": "draft"
+  },
+  "u0649": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "funding",
+    "reporting"
+   ],
+   "rationale": "Dropped \"$1,500,000 for a feasibility study\" on Kr-85 production and its required report.",
+   "reviewer": "draft"
+  },
+  "u0650": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only ARM facility amount changes, $95M to $96M.",
+   "reviewer": "draft"
+  },
+  "u0653": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit",
+    "funding"
+   ],
+   "rationale": "Floor 'not less than $135,000,000' becomes $140,000,000 and adds '$90,000,000 for DIII-D Operations', dropping DIII-D Research mention.",
+   "reviewer": "draft"
+  },
+  "u0657": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only high energy density physics amount changes, $25M to $20M.",
+   "reviewer": "draft"
+  },
+  "u0658": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding"
+   ],
+   "rationale": "MPEX amount $25.5M to $31M and adds new sub-allocation 'including $11,000,000 for initial operations'.",
+   "reviewer": "draft"
+  },
+  "u0659": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only adds acronym '(FIRE)'.",
+   "reviewer": "draft"
+  },
+  "u0667": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Floor 'not less than $40,000,000' for SURF becomes $49,000,000; ACORN $10M to $15M.",
+   "reviewer": "draft"
+  },
+  "u0669": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Floors 'not less than $110,000,000' (FRIB) and '$155,000,000' (CEBAF) raise to $113M and $165M.",
+   "reviewer": "draft"
+  },
+  "u0672": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "funding"
+   ],
+   "rationale": "Dropped statement that the recommendation \"includes no funding for the Office of Energy Justice and Equity.\"",
+   "reviewer": "draft"
+  },
+  "u0673": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Voice change 'The Department is directed' to 'The Committee directs the Department'; 90-day briefing unchanged.",
+   "reviewer": "draft"
+  },
+  "u0676": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only ARPA-E recommended amount changes, $350M to $300M.",
+   "reviewer": "draft"
+  },
+  "u0677": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only 'includes $150,000,000' for nuclear credit subsidy becomes $100,000,000.",
+   "reviewer": "draft"
+  },
+  "u0687": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only ATVM administration amount changes, $13M to $9.5M.",
+   "reviewer": "draft"
+  },
+  "u0696": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Departmental Administration net appropriation changes.",
+   "reviewer": "draft"
+  },
+  "u0714": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph where the Committee \"urges the NSDD program to provide partner nations\" sustainable equipment.",
+   "reviewer": "draft"
+  },
+  "u0715": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Program renamed 'Stockpile Operations, formerly Stockpile Sustainment'; description of same program unchanged.",
+   "reviewer": "draft"
+  },
+  "u0719": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "Full funding target changed from SRS \"plutonium activities\" and LANL \"plutonium modernization\" to \"plutonium pit production activities\" at both.",
+   "reviewer": "draft"
+  },
+  "u0726": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only ICF and High-Yield Campaign recommended amount changes, $699,206,000 to $829,000,000.",
+   "reviewer": "draft"
+  },
+  "u0730": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New paragraph: \"NNSA is encouraged to prioritize the transfer of knowledge\" to commercial AI hardware manufacturers.",
+   "reviewer": "draft"
+  },
+  "u0737": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Drops 'The' before 'DNS protects'.",
+   "reviewer": "draft"
+  },
+  "u0740": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only legacy contractor pension payment amount changes.",
+   "reviewer": "draft"
+  },
+  "u0741": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical text; heading differs only in capitalization, \"DEFENSE NUCLEAR NONPROLIFERATION\" versus \"Defense Nuclear Nonproliferation.\"",
+   "reviewer": "draft"
+  },
+  "u0742": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "scope"
+   ],
+   "rationale": "New DNN paragraph: \"Reductions\" are intended to refocus \"the Global Material Security program,\" narrowing program scope.",
+   "reviewer": "draft"
+  },
+  "u0745": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Naval Reactors recommended amount changes.",
+   "reviewer": "draft"
+  },
+  "u0751": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Federal Salaries and Expenses amount changes, $500M to $525M.",
+   "reviewer": "draft"
+  },
+  "u0753": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Defense Environmental Cleanup recommended amount changes.",
+   "reviewer": "draft"
+  },
+  "u0761": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "other"
+   ],
+   "rationale": "Voice shift to \"Committee encourages EM\", but \"continue progress\" becomes \"expedite progress\", asking for faster remediation.",
+   "reviewer": "draft"
+  },
+  "u0764": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New H-Canyon paragraph directing a briefing \"not later than 120 days after the date of enactment\" on restart investments.",
+   "reviewer": "draft"
+  },
+  "u0766": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "'recommends $7,000,000' becomes 'recommends up to $7,000,000', making it a ceiling; lead-in expanded.",
+   "reviewer": "draft"
+  },
+  "u0769": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Use of prior year balances $310M to $275M and noted unobligated balance $900M to $507M; language unchanged.",
+   "reviewer": "draft"
+  },
+  "u0770": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Other Defense Activities recommended amount changes.",
+   "reviewer": "draft"
+  },
+  "u0775": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Background description drops county locations and 'rehabilitation' from statutory purposes list; no directive.",
+   "reviewer": "draft"
+  },
+  "u0785": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only a '<GRAPHIC(S) NOT AVAILABLE>' placeholder is dropped.",
+   "reviewer": "draft"
+  },
+  "u0787": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 308 becomes Section 307; SPR sale provision description unchanged.",
+   "reviewer": "draft"
+  },
+  "u0788": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 309 becomes Section 308; research security description unchanged.",
+   "reviewer": "draft"
+  },
+  "u0790": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 310 becomes Section 309; description unchanged.",
+   "reviewer": "draft"
+  },
+  "u0792": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 312 becomes Section 311; description unchanged.",
+   "reviewer": "draft"
+  },
+  "u0794": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "Section 313 funds for 'nuclear demonstration projects' broadened to 'nuclear projects'.",
+   "reviewer": "draft"
+  },
+  "u0796": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "POWER Plan floor 'not less than $48,750,000' becomes 'not less than $65,000,000'.",
+   "reviewer": "draft"
+  },
+  "u0797": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Broadband floor 'not less than $7,500,000' becomes 'not less than $10,000,000'.",
+   "reviewer": "draft"
+  },
+  "u0798": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Floor changed: \"not less than $12,000,000\" to \"not less than $16,000,000\" for Central Appalachia infrastructure.",
+   "reviewer": "draft"
+  },
+  "u0800": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "limit",
+    "funding"
+   ],
+   "rationale": "New floor: \"no less than $15,000,000 for counties within the Northern Appalachian region.\"",
+   "reviewer": "draft"
+  },
+  "u0803": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only change is recommended amount \"$45,000,000\" to \"$42,000,000\" for the DNFSB.",
+   "reviewer": "draft"
+  },
+  "u0808": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Floor changed: \"not less than $1,000,000\" to \"not less than $2,000,000\" for the DRA pilot program.",
+   "reviewer": "draft"
+  },
+  "u0810": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only change is recommended amount \"$13,815,497\" to \"$18,000,000\" for the Denali Commission.",
+   "reviewer": "draft"
+  },
+  "u0815": {
+   "kind": "funding_amount",
+   "same_passage": false,
+   "categories": [],
+   "rationale": "Different accounts: \"$135,000,000 for the EIA\" versus \"$5,000,000 for the GLA\"; boilerplate recommendation lookalikes.",
+   "reviewer": "draft"
+  },
+  "u0820": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Ceiling changed: \"not more than $11,494,000\" to \"not more than $11,662,000\" for Office of the Commission.",
+   "reviewer": "draft"
+  },
+  "u0823": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New NRC workforce paragraph is background on recruiting needs and workload growth with no directive.",
+   "reviewer": "draft"
+  },
+  "u0825": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only change is included amount \"$1,572,000\" to \"$1,345,000\" for DNFSB inspector general services.",
+   "reviewer": "draft"
+  },
+  "u0826": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only change is \"Section 512\" to \"Section 505\" for the spending reduction account.",
+   "reviewer": "draft"
+  }
+ }
+}

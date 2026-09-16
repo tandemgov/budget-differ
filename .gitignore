@@ -1,0 +1,14 @@
+.venv/
+out/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+
+# Local Netlify folder
+.netlify
+.mg-tools/scratch/
+.pdfhier-cache/
+.linkage-eval/
+.policy-eval/

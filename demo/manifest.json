@@ -1,0 +1,116 @@
+{
+  "comparisons": [
+    {
+      "page": "house-energy-water-fy2025-fy2026/index.html",
+      "old": "CRPT-118hrpt580",
+      "new": "CRPT-119hrpt213",
+      "policy_flags": 177,
+      "section_counts": {
+        "substantive": 101,
+        "dropped": 49,
+        "new": 15,
+        "numbers only": 16,
+        "minor": 8,
+        "unchanged": 36
+      }
+    },
+    {
+      "page": "house-energy-water-fy2026-fy2027/index.html",
+      "old": "CRPT-119hrpt213",
+      "new": "CRPT-119hrpt667",
+      "policy_flags": 184,
+      "section_counts": {
+        "substantive": 80,
+        "new": 21,
+        "dropped": 19,
+        "minor": 9,
+        "numbers only": 22,
+        "unchanged": 46
+      }
+    },
+    {
+      "page": "house-legislative-branch-fy2025-fy2026/index.html",
+      "old": "CRPT-118hrpt555",
+      "new": "CRPT-119hrpt178",
+      "policy_flags": 80,
+      "section_counts": {
+        "substantive": 34,
+        "dropped": 3,
+        "new": 5,
+        "minor": 7,
+        "numbers only": 9,
+        "unchanged": 11
+      }
+    },
+    {
+      "page": "house-legislative-branch-fy2026-fy2027/index.html",
+      "old": "CRPT-119hrpt178",
+      "new": "CRPT-119hrpt666",
+      "policy_flags": 57,
+      "section_counts": {
+        "substantive": 31,
+        "new": 10,
+        "dropped": 15,
+        "minor": 2,
+        "numbers only": 12,
+        "unchanged": 6
+      }
+    }
+  ],
+  "reports": {
+    "CRPT-118hrpt580": {
+      "chamber": "house",
+      "subcommittee": "Energy-Water",
+      "fiscal_year": 2025,
+      "title": "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS BILL, 2025",
+      "html_url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt580/html/CRPT-118hrpt580.htm",
+      "pdf_url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt580/pdf/CRPT-118hrpt580.pdf",
+      "sha256": "61258c8a2cd4184760da3e0aa817a991e8f3c9c5c4a8e75eeafef0fa6217c3c3"
+    },
+    "CRPT-119hrpt213": {
+      "chamber": "house",
+      "subcommittee": "Energy-Water",
+      "fiscal_year": 2026,
+      "title": "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS BILL, 2026",
+      "html_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/html/CRPT-119hrpt213.htm",
+      "pdf_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+      "sha256": "1ee20586fb499b0d7f1713646622a8d3cc1e7cc30b09dfa8e4062e45e435ee00"
+    },
+    "CRPT-119hrpt667": {
+      "chamber": "house",
+      "subcommittee": "Energy-Water",
+      "fiscal_year": 2027,
+      "title": "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS BILL, 2027",
+      "html_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt667/html/CRPT-119hrpt667.htm",
+      "pdf_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt667/pdf/CRPT-119hrpt667.pdf",
+      "sha256": "70d85bbc36fbe28df9b4786ae0791d424db8ef2882f9831dd42bc4dbb83c6217"
+    },
+    "CRPT-118hrpt555": {
+      "chamber": "house",
+      "subcommittee": "Legislative-Branch",
+      "fiscal_year": 2025,
+      "title": "LEGISLATIVE BRANCH APPROPRIATIONS BILL, 2025",
+      "html_url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt555/html/CRPT-118hrpt555.htm",
+      "pdf_url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt555/pdf/CRPT-118hrpt555.pdf",
+      "sha256": "40d585325b36185ac0be50a9b0393b3fe4b1886c025bc50bc12b96d5154015e5"
+    },
+    "CRPT-119hrpt178": {
+      "chamber": "house",
+      "subcommittee": "Legislative-Branch",
+      "fiscal_year": 2026,
+      "title": "LEGISLATIVE BRANCH APPROPRIATIONS BILL, 2026",
+      "html_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt178/html/CRPT-119hrpt178.htm",
+      "pdf_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt178/pdf/CRPT-119hrpt178.pdf",
+      "sha256": "cbe41f9a42bfdb3bd247805a2584892fdab0d600001426d450114788a4191a9c"
+    },
+    "CRPT-119hrpt666": {
+      "chamber": "house",
+      "subcommittee": "Legislative-Branch",
+      "fiscal_year": 2027,
+      "title": "LEGISLATIVE BRANCH APPROPRIATIONS BILL, 2027",
+      "html_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt666/html/CRPT-119hrpt666.htm",
+      "pdf_url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt666/pdf/CRPT-119hrpt666.pdf",
+      "sha256": "28568178a978d146b58bec83ed6f3eec76c33834ecb644c5b56ff0d8320f2df8"
+    }
+  }
+}

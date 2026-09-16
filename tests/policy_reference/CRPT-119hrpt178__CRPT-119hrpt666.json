@@ -1,0 +1,1605 @@
+{
+ "comparison": "CRPT-119hrpt178__CRPT-119hrpt666",
+ "labels": {
+  "u0000": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Table row fragment 'Architect of the Capitol (except Senate Office', not narrative.",
+   "reviewer": "draft"
+  },
+  "u0001": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Table row label, not narrative language.",
+   "reviewer": "draft"
+  },
+  "u0002": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Table row label, not narrative language.",
+   "reviewer": "draft"
+  },
+  "u0003": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Bill total restated with new amount ($5,005,964,900->$5,440,881,000) and FY2026->2027 rollover; no other language change.",
+   "reviewer": "draft"
+  },
+  "u0004": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Not truly removed: the 'transparent goals' sentence is folded into the start of u0006 unchanged.",
+   "reviewer": "draft"
+  },
+  "u0005": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Adds 'with' and a comma; meaning unchanged.",
+   "reviewer": "draft"
+  },
+  "u0006": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "Adds 'all are expected to promptly notify the Committee in the event of a breach' and a nonpartisan-conduct reminder.",
+   "reviewer": "draft"
+  },
+  "u0007": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "Adds 'further directs legislative branch agency leadership to assess their capacity to strengthen performance management practices'.",
+   "reviewer": "draft"
+  },
+  "u0008": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only fiscal years advance by one (2027->2028, 2025->2026, 2026->2027).",
+   "reviewer": "draft"
+  },
+  "u0009": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical reprogramming paragraph; old heading 'and Reporting Requirements' is a heading fragment, so the heading change looks like a splitter artifact.",
+   "reviewer": "draft"
+  },
+  "u0010": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical text; heading difference appears to be a splitter artifact of a split heading.",
+   "reviewer": "draft"
+  },
+  "u0011": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical text; heading difference appears to be a splitter artifact of a split heading.",
+   "reviewer": "draft"
+  },
+  "u0012": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "eligibility"
+   ],
+   "rationale": "FTE-data directive now covers 'legislative branch agencies and entities' instead of just agencies; 'congressional' and '(CBJ)' are editorial.",
+   "reviewer": "draft"
+  },
+  "u0013": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "First sentence moves into u0018, but 'agencies are encouraged to prioritize compliance' with the 2023 JES directive is dropped.",
+   "reviewer": "draft"
+  },
+  "u0014": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "eligibility",
+    "condition"
+   ],
+   "rationale": "'directs House agencies' becomes 'directs all agencies and entities' and adds 'Budget submissions that are not zero-based will not be accepted'.",
+   "reviewer": "draft"
+  },
+  "u0015": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Drops the encouragement for LOC, CRS, GAO, and CBO to collaborate on common AI/LLM policy standards.",
+   "reviewer": "draft"
+  },
+  "u0016": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "prohibition"
+   ],
+   "rationale": "New: agencies expected to include a distinct OIG budget request in the FY2028 CBJ and 'directed to refrain from interfering with' OIG communications.",
+   "reviewer": "draft"
+  },
+  "u0017": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "Reworked AI paragraph 'encourages legislative branch agencies to expand their work in AI' across agencies and 'requests biannual updates' from the CIO Council.",
+   "reviewer": "draft"
+  },
+  "u0018": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Prepends the 'proactive steps to protect critical IT' sentence moved from u0013 and 'high-level'->'highlevel'; the 180-day cybersecurity report is unchanged.",
+   "reviewer": "draft"
+  },
+  "u0019": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive to evaluate outside-agency services and deliver an information-systems inventory and findings 'six months after enactment'.",
+   "reviewer": "draft"
+  },
+  "u0020": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "condition",
+    "reporting"
+   ],
+   "rationale": "New: agencies 'encouraged to avoid sourcing from entities of concern' and 'must provide prior notification' before pursuing a Buy American Act exemption.",
+   "reviewer": "draft"
+  },
+  "u0021": {
+   "kind": "funding_amount",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Not truly removed: the MRA sentence reappears in u0029 with $850,000,000->$900,000,000.",
+   "reviewer": "draft"
+  },
+  "u0022": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only House total and increase figures change, with 'committee' capitalized and FY2025->2026 rollover.",
+   "reviewer": "draft"
+  },
+  "u0023": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Bare heading line for the intern allowance account.",
+   "reviewer": "draft"
+  },
+  "u0024": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New paragraph only 'supports the work' of the sexual misconduct task force; no directive to an agency.",
+   "reviewer": "draft"
+  },
+  "u0025": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "limit"
+   ],
+   "rationale": "Drops the Member intern amount and the statement that the recommendation 'maintains the intern allowance cap of $46,800 per Member office'.",
+   "reviewer": "draft"
+  },
+  "u0026": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only 'fiscal year 2025 enacted' -> '2026'; amount unchanged.",
+   "reviewer": "draft"
+  },
+  "u0027": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "share"
+   ],
+   "rationale": "Drops majority/minority intern splits ($322,300/$263,700) 'to be allocated among such offices by the Speaker' and Minority Floor Leader.",
+   "reviewer": "draft"
+  },
+  "u0028": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "share"
+   ],
+   "rationale": "Drops committee intern majority/minority split and allocation by the House Administration Chair in consultation with the Ranking Member.",
+   "reviewer": "draft"
+  },
+  "u0029": {
+   "kind": "funding_amount",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Counterpart of u0021: MRA amount $850,000,000->$900,000,000 plus added workforce-turnover background with no directive.",
+   "reviewer": "draft"
+  },
+  "u0030": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "share"
+   ],
+   "rationale": "Drops the Appropriations Committee intern majority/minority $231,500 split 'to be allocated by the Chair, in consultation with the Ranking Minority Member'.",
+   "reviewer": "draft"
+  },
+  "u0031": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Table lead-in line 'The allocation by account follows:'.",
+   "reviewer": "draft"
+  },
+  "u0032": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Standing and Select Committees sub-amount $184,787,000->$174,787,000 with no floor wording; the unchanged total no longer sums, possibly a report typo.",
+   "reviewer": "draft"
+  },
+  "u0033": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive",
+    "scope"
+   ],
+   "rationale": "Adds that House Officers 'are permitted, as necessary, to provide reasonable subsistence for staff' within these funds, beyond the amount changes.",
+   "reviewer": "draft"
+  },
+  "u0034": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only Clerk amount, increase figure, and fiscal year change.",
+   "reviewer": "draft"
+  },
+  "u0035": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Drops 'encourages the Office of the Clerk and the SAA to continue to work toward' streamlining ID cards.",
+   "reviewer": "draft"
+  },
+  "u0036": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New paragraph acknowledges receipt of the drafting study and 'expresses strong support'; no directive or funding.",
+   "reviewer": "draft"
+  },
+  "u0037": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Dropped paragraph only 'looks forward to receiving' a report requested in a prior report; no new directive.",
+   "reviewer": "draft"
+  },
+  "u0038": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Dropped paragraph only 'looks forward to receiving' a data-map inventory directed in a prior report.",
+   "reviewer": "draft"
+  },
+  "u0039": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "SAA amount and comparison figures change ('increase'->'decrease' restates the comparison); '(SAA)' acronym added.",
+   "reviewer": "draft"
+  },
+  "u0040": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "New: 'encourages the SAA to continue working with Members' and 'requests that the SAA provide quarterly briefings' on Member Security usage.",
+   "reviewer": "draft"
+  },
+  "u0041": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting"
+   ],
+   "rationale": "Drops 'directs the Office of the Clerk ... to conduct a study' on adding illustrations to bill drafting.",
+   "reviewer": "draft"
+  },
+  "u0042": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New: SAA 'is directed to lead and serve as the project manager for all House SCIF renovations' with AOC support.",
+   "reviewer": "draft"
+  },
+  "u0043": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New: 'requests SAA ... assess the feasibility of installing' turn signals on Independence Ave.",
+   "reviewer": "draft"
+  },
+  "u0044": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting"
+   ],
+   "rationale": "Drops 'directs the SAA to provide a report' on Capitol Plaza security protocols.",
+   "reviewer": "draft"
+  },
+  "u0045": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only CAO amount, increase figure, and fiscal year change.",
+   "reviewer": "draft"
+  },
+  "u0046": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Drops the 'Not later than 90 days' SAA report on parking for expectant mothers.",
+   "reviewer": "draft"
+  },
+  "u0047": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New: 'directs the CAO to consult with the SAA and report' on cybersecurity review 'within 60 days'.",
+   "reviewer": "draft"
+  },
+  "u0048": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Drops the SAA report 'within 90 days' on methods to bar individuals from Member offices.",
+   "reviewer": "draft"
+  },
+  "u0049": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Quarterly AI updates continue ('directed to continue to provide quarterly updates'); named recipient committees and 'promoting' dropped, background reworded.",
+   "reviewer": "draft"
+  },
+  "u0050": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Drops the 'Not later than 180 days' SAA/CAO report on district office emergency preparedness.",
+   "reviewer": "draft"
+  },
+  "u0051": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New: 'directs the CAO, within 180 days ... to submit a report' on a tiered technology review process.",
+   "reviewer": "draft"
+  },
+  "u0052": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Drops 'encourages the SAA to continue to work with the USCP to investigate' innovative security technologies.",
+   "reviewer": "draft"
+  },
+  "u0053": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "scope"
+   ],
+   "rationale": "Food allergy expectation widens from 'campus food service providers' to 'food service and catering providers'.",
+   "reviewer": "draft"
+  },
+  "u0054": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'encourages all to utilize these resources' becomes 'continues to urge utilization of temporary travel devices'; the dropped report-receipt sentence is background.",
+   "reviewer": "draft"
+  },
+  "u0055": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New: 'urges the CAO to upgrade the network' and 'directed to report within 90 days' on a private wireless network.",
+   "reviewer": "draft"
+  },
+  "u0056": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Reworded casework paragraph only 'commends the ongoing efforts by the CAO'; no directive.",
+   "reviewer": "draft"
+  },
+  "u0057": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New: 'directs the CAO to assess the feasibility' of more staff gym access, reported 'within 60 days'.",
+   "reviewer": "draft"
+  },
+  "u0058": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Dropped casework paragraph only commends and 'looks forward to' updates and a previously requested report; no new directive.",
+   "reviewer": "draft"
+  },
+  "u0059": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New: 'The CAO is encouraged to review pricing and procurement practices' for the House Office Supply Store.",
+   "reviewer": "draft"
+  },
+  "u0060": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Dropped paragraph only 'looks forward to receiving the report as outlined in House Report 118-555'.",
+   "reviewer": "draft"
+  },
+  "u0061": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New: 'Not later than 60 days' the CAO is directed to report on a staff recruitment and retention study.",
+   "reviewer": "draft"
+  },
+  "u0062": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New childcare paragraph only recognizes, applauds, and 'looks forward to' policies; no directive.",
+   "reviewer": "draft"
+  },
+  "u0063": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only the allowances and expenses total changes ($491,783,200->$473,603,200).",
+   "reviewer": "draft"
+  },
+  "u0064": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "eligibility"
+   ],
+   "rationale": "Drops 'encourages the CAO ... to potentially broaden the pool of applicants' such as active-duty spouses for Green and Gold.",
+   "reviewer": "draft"
+  },
+  "u0065": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Dropped paragraph only 'continues to look forward to receiving' Modernization Subcommittee recommendations.",
+   "reviewer": "draft"
+  },
+  "u0066": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "New: 'The CAO is directed to keep the Committee apprised' of the CMS Innovation Project.",
+   "reviewer": "draft"
+  },
+  "u0067": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Drops the Section 113 general provision modifying House long-term lease requirements.",
+   "reviewer": "draft"
+  },
+  "u0068": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 115->113; text otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0069": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Drops the Section 114 provision on telecommunications expenses and assistant director salaries for the House Child Care Center.",
+   "reviewer": "draft"
+  },
+  "u0070": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New Section 114 summary requires in-person workplace misconduct training for Members under active public misconduct investigations.",
+   "reviewer": "draft"
+  },
+  "u0071": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only change is 'fiscal year 2025' to '2026' in the comparison; JEC amount unchanged.",
+   "reviewer": "draft"
+  },
+  "u0072": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "JCT recommendation $14,900,000 to $14,770,000 and increase figure changed, plus fiscal-year rollover; no floor wording.",
+   "reviewer": "draft"
+  },
+  "u0073": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "OAP recommendation $4,856,000 to $5,462,000 and increase figure changed, plus fiscal-year rollover; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0074": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "new_directive"
+   ],
+   "rationale": "New paragraph states the recommendation includes funding for full implementation of new primary women's services for Members.",
+   "reviewer": "draft"
+  },
+  "u0075": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Accessibility Services recommendation $1,901,000 to $1,845,000 and increase figure changed with fiscal-year rollover only.",
+   "reviewer": "draft"
+  },
+  "u0076": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "scope"
+   ],
+   "rationale": "Dropped $687,355,000 USCP salaries recommendation including 'to include the cost of overtime necessary for providing training'; replaced by reworded $708,584,000 paragraph.",
+   "reviewer": "draft"
+  },
+  "u0077": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding"
+   ],
+   "rationale": "Added USCP salaries paragraph recommending $708,584,000, dropping the training-overtime clause and adding support/endorsement background.",
+   "reviewer": "draft"
+  },
+  "u0078": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "condition"
+   ],
+   "rationale": "Dropped statement withholding approval of sworn-position distribution and directive for Chief to confer with Capitol Police Board on assignments.",
+   "reviewer": "draft"
+  },
+  "u0079": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'continues to expect' to 'expects' and 'its' to 'the agency's'; same instruction to coordinate patrols.",
+   "reviewer": "draft"
+  },
+  "u0080": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding"
+   ],
+   "rationale": "Dropped 'The recommendation provides the same amount of funding for overtime as was provided in FY25'; percent signs spelled out otherwise.",
+   "reviewer": "draft"
+  },
+  "u0081": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "dropped_directive",
+    "scope"
+   ],
+   "rationale": "'directs the Chief... to revise the Congressional Budget Justification' becomes 'commends' plus directive to enhance CBJ with transparency, operations data, prioritization.",
+   "reviewer": "draft"
+  },
+  "u0082": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "quantity"
+   ],
+   "rationale": "Dropped funding for requested civilian level and expectation that Department hire the requested number of civilian employees.",
+   "reviewer": "draft"
+  },
+  "u0083": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "New Workforce Management paragraph says Committee looks forward to timely receipt of WMO workload, overtime, and cost-savings analysis.",
+   "reviewer": "draft"
+  },
+  "u0084": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "Added sentence 'encourages the Chief to work with the Workforce Management Office and the Committee to develop proposals to strengthen retention programs'.",
+   "reviewer": "draft"
+  },
+  "u0085": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped directive that sworn officials follow WMO guidance and encouragement to report on Concept of Operations Plan within 60 days.",
+   "reviewer": "draft"
+  },
+  "u0086": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'provide' to 'maintain' a crossing guard and added purpose 'to ensure pedestrian safety'; same locations, hours, and force.",
+   "reviewer": "draft"
+  },
+  "u0087": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'recommends that the Capitol Police Board review' to 'encourages the Capitol Police Board to continue its review of'; same request.",
+   "reviewer": "draft"
+  },
+  "u0088": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped encouragement for USCP to enforce First Street S.E. parking regulations, issue violations, and implement towing.",
+   "reviewer": "draft"
+  },
+  "u0089": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit",
+    "quantity"
+   ],
+   "rationale": "USCP OIG floor 'no fewer than 15 FTE' becomes 'no fewer than 18 FTE'.",
+   "reviewer": "draft"
+  },
+  "u0090": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding",
+    "share"
+   ],
+   "rationale": "Amount changed and dropped 'Of the total, $10,000,000 shall be available until September 30, 2030, for mutual aid reimbursements'.",
+   "reviewer": "draft"
+  },
+  "u0091": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline",
+    "condition"
+   ],
+   "rationale": "Added directive to provide a spend plan approved by the Capitol Police Board within 30 days of enactment.",
+   "reviewer": "draft"
+  },
+  "u0092": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New Mutual Aid paragraph only reaffirms support for the program and commends the Chief; no funding or directive.",
+   "reviewer": "draft"
+  },
+  "u0093": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped 'directs the Department to submit a report, in consultation with the WMO, on the findings within 120 days'.",
+   "reviewer": "draft"
+  },
+  "u0094": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "'is encouraged that' OIG has begun publishing becomes 'appreciates the ongoing efforts' of Board and OIG; praise only, no directive.",
+   "reviewer": "draft"
+  },
+  "u0095": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "dropped_directive"
+   ],
+   "rationale": "Dropped $10,000,000 multi-year mutual aid funds and stated intent to provide multi-year mutual aid funds annually.",
+   "reviewer": "draft"
+  },
+  "u0096": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "reporting",
+    "new_directive"
+   ],
+   "rationale": "New wellness paragraph urges continued PTSD focus and says Committee looks forward to 'bi-annual updates' from the Liebengood Center.",
+   "reviewer": "draft"
+  },
+  "u0097": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "prohibition",
+    "reporting"
+   ],
+   "rationale": "Dropped no funds for new home-to-work vehicles, directive for pool-based policy, and quarterly fleet reduction report.",
+   "reviewer": "draft"
+  },
+  "u0098": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "OCWR recommendation $8,350,000 to $8,500,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0099": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "Dropped body-worn camera paragraph looking forward to the interim report directed in House Report 117-389.",
+   "reviewer": "draft"
+  },
+  "u0100": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive for OCWR and Office of Employee Advocacy to assess resources and brief the Committee within 180 days of enactment.",
+   "reviewer": "draft"
+  },
+  "u0101": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "prohibition"
+   ],
+   "rationale": "Dropped statement that the recommendation does not include funding for continuation of the USCP field offices pilot.",
+   "reviewer": "draft"
+  },
+  "u0102": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "CBO recommendation $72,000,000 to $76,282,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0103": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped recommendation that Capitol Police Board review uniform policies for regionally representative headwear.",
+   "reviewer": "draft"
+  },
+  "u0104": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "discretion"
+   ],
+   "rationale": "Section describing estimate basis 'would include' becomes 'should include'; testimony reference dropped and 'encourages' becomes 'continues to encourage'.",
+   "reviewer": "draft"
+  },
+  "u0105": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New directive for CBO to consult with tribes before finalizing cost estimates for new self-determination authorities.",
+   "reviewer": "draft"
+  },
+  "u0106": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped paragraph encouraging the Liebengood Center to strengthen PTSD and acute stress support; similar urging reappears in new wellness paragraph.",
+   "reviewer": "draft"
+  },
+  "u0107": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "AOC total, amount below request, and Senate request figures changed; '(AOC)' dropped; description otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0108": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "condition"
+   ],
+   "rationale": "Dropped Section 116 summary requiring authorization for international travel for training purposes.",
+   "reviewer": "draft"
+  },
+  "u0109": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New paragraph voices concern about AOC delays and cost overruns but contains no directive, funding, or requirement.",
+   "reviewer": "draft"
+  },
+  "u0110": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "other"
+   ],
+   "rationale": "Dropped Section 117 summary updating reporting, appointment, and termination authority for senior personnel.",
+   "reviewer": "draft"
+  },
+  "u0111": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New 'AOC is directed to promptly complete its Capitol Complex Master Plan' and 'shall ensure' stakeholder coordination.",
+   "reviewer": "draft"
+  },
+  "u0112": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive for AOC to provide project management descriptions and reviews within 60 days of issuance of this report.",
+   "reviewer": "draft"
+  },
+  "u0113": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "condition"
+   ],
+   "rationale": "New statement that future AOC budget submissions 'that are not zero-based will not be accepted'.",
+   "reviewer": "draft"
+  },
+  "u0114": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "discretion",
+    "scope"
+   ],
+   "rationale": "'encourages the Office of Attending Physician to make these services known' becomes 'directs the AOC to take steps'; scope widened to family-friendly campus.",
+   "reviewer": "draft"
+  },
+  "u0115": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Capital Construction and Operations recommendation $166,303,000 to $159,450,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0116": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Capitol Building amount and multi-year portion changed with availability date advanced to 2031; no floor wording.",
+   "reviewer": "draft"
+  },
+  "u0117": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Spelling fix 'Capital Historical Society' to 'Capitol Historical Society'.",
+   "reviewer": "draft"
+  },
+  "u0118": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Capitol Grounds amount $19,939,000 to $19,385,000 with availability date advanced 2030 to 2031.",
+   "reviewer": "draft"
+  },
+  "u0119": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Table row 'Electrical Power Distribution System Replacement, 26,300,000'.",
+   "reviewer": "draft"
+  },
+  "u0120": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped 'continues to urge the Architect to assess the feasibility of upgrading the wireless local area network'.",
+   "reviewer": "draft"
+  },
+  "u0121": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding",
+    "scope"
+   ],
+   "rationale": "Amounts changed and dropped designation of until-expended funds 'for the House Historic Building Revitalization Fund for major House Office Building renovations'.",
+   "reviewer": "draft"
+  },
+  "u0122": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive",
+    "deadline",
+    "dropped_directive"
+   ],
+   "rationale": "Expectation to use lessons learned replaced by requirement to clear Lot 1, repave, and return to SAA parking 'no later than December 31, 2026'.",
+   "reviewer": "draft"
+  },
+  "u0123": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New Rayburn paragraph is background and appreciation for AOC briefings; no directive or funding.",
+   "reviewer": "draft"
+  },
+  "u0124": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive for AOC to provide a third Rayburn proposal using existing footprint within 30 days.",
+   "reviewer": "draft"
+  },
+  "u0125": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "New directive for AOC to initiate a Rayburn working group and provide monthly status updates.",
+   "reviewer": "draft"
+  },
+  "u0126": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Table row 'Emergency Generator and Backup Power Replacement 3,800,000'.",
+   "reviewer": "draft"
+  },
+  "u0127": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Added 'and escalator' to a statement of concern about outages; no directive attached.",
+   "reviewer": "draft"
+  },
+  "u0128": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "New directive to maintain restrooms and brief the Committee within 60 days on conditions and improvements.",
+   "reviewer": "draft"
+  },
+  "u0129": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New directive for AOC to assess feasibility of additional air tire pumps in House garages.",
+   "reviewer": "draft"
+  },
+  "u0130": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New directive for AOC to develop an annual lottery-based congressional quilting show.",
+   "reviewer": "draft"
+  },
+  "u0131": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Capitol Power Plant amount and multi-year portion changed with availability date advanced to 2031; no floor wording.",
+   "reviewer": "draft"
+  },
+  "u0132": {
+   "kind": "routine_numbers",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Only the restated cost-avoidance figure '$200,000,000' to '$206,000,000' changed; not an appropriation and encouragement unchanged.",
+   "reviewer": "draft"
+  },
+  "u0133": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Library Buildings amount and multi-year portion changed with availability date advanced to 2031; no floor wording.",
+   "reviewer": "draft"
+  },
+  "u0134": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New Visitor Experience Master Plan paragraph 'expects the AOC to take immediate and measurable steps to strengthen internal controls'.",
+   "reviewer": "draft"
+  },
+  "u0135": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Capitol Police Buildings amount and multi-year portion changed with availability date advanced to 2031; no floor wording.",
+   "reviewer": "draft"
+  },
+  "u0136": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "condition",
+    "other"
+   ],
+   "rationale": "'defer to the Capitol Police Board in determining' priorities becomes 'consult with the appropriate SAA to determine' them 'prior to presenting proposals'.",
+   "reviewer": "draft"
+  },
+  "u0137": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Botanic Garden amount $21,392,000 to $21,559,000 with availability date advanced 2030 to 2031.",
+   "reviewer": "draft"
+  },
+  "u0138": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped encouragement for USBG to consider cultivating culturally significant U.S. Territory plant species.",
+   "reviewer": "draft"
+  },
+  "u0139": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "CVC recommendation $29,827,000 to $29,901,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0140": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "Dropped Dome Tour paragraph looking forward to receiving the report directed in House Report 118-555.",
+   "reviewer": "draft"
+  },
+  "u0141": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "New directive for AOC to update the Committee quarterly on the online Dome tour reservation system.",
+   "reviewer": "draft"
+  },
+  "u0142": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 118 renumbered to 114 with fiscal year 2026 to 2027 rollover; contractor bonus prohibition unchanged.",
+   "reviewer": "draft"
+  },
+  "u0143": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive"
+   ],
+   "rationale": "Dropped Section 119 summary authorizing cooperative agreements for Capitol Grounds and Arboretum.",
+   "reviewer": "draft"
+  },
+  "u0144": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "LOC recommendation $767,623,900 to $875,239,000; description otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0145": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "New America 250 paragraph describes and praises an LOC exhibition; no directive or funding.",
+   "reviewer": "draft"
+  },
+  "u0146": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New Veterans History Project paragraph 'encourages the LOC to continue its substantial efforts to ensure public access'.",
+   "reviewer": "draft"
+  },
+  "u0147": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Lead-in line to a funding allocation table.",
+   "reviewer": "draft"
+  },
+  "u0148": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New encouragement for LOC and AFC to conduct a feasibility study on a Documenting America Initiative.",
+   "reviewer": "draft"
+  },
+  "u0149": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "dropped_directive"
+   ],
+   "rationale": "Dropped 'the Committee provides $1,000,000 to continue the deacidification preservation program'.",
+   "reviewer": "draft"
+  },
+  "u0150": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit",
+    "funding",
+    "scope"
+   ],
+   "rationale": "Specific until-expended amounts for four programs replaced by 'no less than $17,500,000' across a different program list.",
+   "reviewer": "draft"
+  },
+  "u0151": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "limit",
+    "discretion",
+    "funding"
+   ],
+   "rationale": "New language says LOC 'may continue utilizing up to $1,000,000' for deacidification, replacing a provided amount with a permissive ceiling.",
+   "reviewer": "draft"
+  },
+  "u0152": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Copyright Office direct, receipts, and total figures changed; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0153": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "CRS recommendation $141,093,000 to $139,709,000; description otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0154": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New directive for LOC to track and display CRS-identified bill relationships on Congress.gov and consult the Clerk.",
+   "reviewer": "draft"
+  },
+  "u0155": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "Receipt of feasibility report replaced by directive for CRS to 'continue to engage on this issue and provide quarterly progress updates'.",
+   "reviewer": "draft"
+  },
+  "u0156": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "funding"
+   ],
+   "rationale": "'provides $1,000,000 to continue the program' becomes 'provides funding'; specific earmark amount dropped.",
+   "reviewer": "draft"
+  },
+  "u0157": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "NLS recommendation $68,001,000 to $67,741,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0158": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "limit"
+   ],
+   "rationale": "Obligation ceiling from reimbursements and revolving funds raised '$332,285,000' to '$342,285,000'; section renumbered and FY rolled.",
+   "reviewer": "draft"
+  },
+  "u0159": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Congressional Publishing recommendation $83,000,000 to $80,000,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0160": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "New paragraph urges GPO to better coordinate report production and requests an update in the next budget justification.",
+   "reviewer": "draft"
+  },
+  "u0161": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Account heading line 'Public Information Programs of the Superintendent of Documents'.",
+   "reviewer": "draft"
+  },
+  "u0162": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "limit",
+    "quantity"
+   ],
+   "rationale": "Dropped GPO OIG floor 'no less than $6,899,000' for 'no fewer than 25 FTE'; reappears with $7,226,000 floor.",
+   "reviewer": "draft"
+  },
+  "u0163": {
+   "kind": "editorial",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Spelling variant 'cataloging' to 'cataloguing'.",
+   "reviewer": "draft"
+  },
+  "u0164": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "GPO Business Operations Revolving Fund recommendation $9,525,000 to $9,148,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0165": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "reporting",
+    "deadline"
+   ],
+   "rationale": "Dropped directive for GAO to implement a recommendation-timeframe pilot and brief results within two years.",
+   "reviewer": "draft"
+  },
+  "u0166": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "limit",
+    "quantity"
+   ],
+   "rationale": "Added GPO OIG floor 'no less than $7,226,000' for 'no fewer than 25 FTE'.",
+   "reviewer": "draft"
+  },
+  "u0167": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "limit",
+    "quantity",
+    "reporting",
+    "dropped_directive"
+   ],
+   "rationale": "Dropped GAO OIG floor 'no less than $2,451,000'/'no fewer than 14 FTE', floor reminder, and quarterly spend plan request.",
+   "reviewer": "draft"
+  },
+  "u0168": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "GAO direct appropriation and offsetting collections figures changed; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0169": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive",
+    "reporting"
+   ],
+   "rationale": "'looks forward to receiving' becomes 'is in receipt of' the report, and adds 'encourages all federal agencies to respond to congressional inquiries in a timely manner'.",
+   "reviewer": "draft"
+  },
+  "u0170": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "reporting"
+   ],
+   "rationale": "New paragraph says Committee looks forward to 'an update on the pilot requested in House Report 119-178'.",
+   "reviewer": "draft"
+  },
+  "u0171": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "new_directive"
+   ],
+   "rationale": "New directive for GAO to work with CBO on an independent audit of CBO technology tools and forecasting accuracy.",
+   "reviewer": "draft"
+  },
+  "u0172": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "funding",
+    "quantity"
+   ],
+   "rationale": "Added GAO OIG '$4,236,000 to support 16 FTE' without 'no less than' or 'no fewer than' floor wording.",
+   "reviewer": "draft"
+  },
+  "u0173": {
+   "kind": "renumbering",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "Section 121 renumbered to 116; civil action funding limitation text unchanged.",
+   "reviewer": "draft"
+  },
+  "u0174": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "prohibition"
+   ],
+   "rationale": "Dropped summary of new general provisions including prohibitions on DEI funding and discriminatory actions against religious beliefs.",
+   "reviewer": "draft"
+  },
+  "u0175": {
+   "kind": "funding_amount",
+   "same_passage": true,
+   "categories": [],
+   "rationale": "COIL recommendation $6,300,000 to $6,000,000; language otherwise identical.",
+   "reviewer": "draft"
+  },
+  "u0176": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "House rule XIII performance-goals lead-in ending in a colon, introducing a list.",
+   "reviewer": "draft"
+  },
+  "u0177": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical COIL oversight text; heading difference 'INTERNATIONAL LEADERSHIP' vs full office name is a splitter artifact.",
+   "reviewer": "draft"
+  },
+  "u0178": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Procedural boilerplate on considering program performance; no directive.",
+   "reviewer": "draft"
+  },
+  "u0179": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Heading line 'JOHN C. STENNIS CENTER FOR PUBLIC SERVICE TRAINING AND DEVELOPMENT'.",
+   "reviewer": "draft"
+  },
+  "u0180": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Rule XIII program-duplication boilerplate statement; no directive or funding.",
+   "reviewer": "draft"
+  },
+  "u0181": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Identical Stennis Center $430,000 text; heading difference is a splitter artifact.",
+   "reviewer": "draft"
+  },
+  "u0182": {
+   "kind": "out_of_scope",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Rule XIII transfer-of-funds lead-in ending in a colon, introducing a list.",
+   "reviewer": "draft"
+  },
+  "u0183": {
+   "kind": "substantive",
+   "same_passage": true,
+   "categories": [
+    "new_directive",
+    "prohibition",
+    "other"
+   ],
+   "rationale": "General provisions list adds 'prohibits certain telecommunications equipment procurement', COLA freeze, agency-head appointment update, and spending reduction account.",
+   "reviewer": "draft"
+  },
+  "u0184": {
+   "kind": "substantive",
+   "same_passage": null,
+   "categories": [
+    "dropped_directive",
+    "other"
+   ],
+   "rationale": "Dropped description of GPO provisos authorizing transfer of expired fiscal year 2026 balances to the Business Operations Revolving Fund.",
+   "reviewer": "draft"
+  },
+  "u0185": {
+   "kind": "editorial",
+   "same_passage": null,
+   "categories": [],
+   "rationale": "Rule XIII boilerplate stating the bill contains no rescissions.",
+   "reviewer": "draft"
+  }
+ }
+}

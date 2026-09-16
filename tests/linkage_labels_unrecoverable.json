@@ -1,0 +1,284 @@
+[
+ {
+  "id": "00511c0639e17550",
+  "label": "same",
+  "source": "judged",
+  "note": "Fossil Energy and Carbon Management account; identical opening text, one parent path garbled."
+ },
+ {
+  "id": "005ab87b2d1d0e52",
+  "label": "same",
+  "source": "judged",
+  "note": "Same DOE Departmental Administration offices directive block; identical recurring language about separate funding levels."
+ },
+ {
+  "id": "008ccd1e3fbb6cff",
+  "label": "same",
+  "source": "judged",
+  "note": "Technology Transitions account, lightly edited."
+ },
+ {
+  "id": "0096dd46fa541407",
+  "label": "different",
+  "source": "judged",
+  "note": "Sec. 312 renumbering collision: federal buildings vs indirect cost rates."
+ },
+ {
+  "id": "00a84397ae0ba00b",
+  "label": "same",
+  "source": "judged",
+  "note": "EERE portfolio description block; identical garbled heading both sides."
+ },
+ {
+  "id": "01d64abb2c770327",
+  "label": "same",
+  "source": "judged",
+  "note": "Office of Technology Transitions across years; text evolved but same office section."
+ },
+ {
+  "id": "026b01e09692f136",
+  "label": "different",
+  "source": "judged",
+  "note": "Sec. 514 energy conservation standards vs Sec. 511 recreation fees."
+ },
+ {
+  "id": "0273e33568e138d5",
+  "label": "different",
+  "source": "judged",
+  "note": "Central Louisiana ecosystem directives vs Regulatory Program account description."
+ },
+ {
+  "id": "03c4e6fb73f3f803",
+  "label": "different",
+  "source": "judged",
+  "note": "FY2027 DOE reorg: Oil, Gas and Critical Minerals vs Critical Minerals, Materials and Manufacturing are split/merge kin, not the same slot; related-hint territory."
+ },
+ {
+  "id": "0518dfe520ee9771",
+  "label": "same",
+  "source": "judged",
+  "note": "Overlapping fragments of the same DOE account-list enumeration; wrapped-heading fragmentation, not a real section boundary."
+ },
+ {
+  "id": "0708bd9d35305f15",
+  "label": "same",
+  "source": "judged",
+  "note": "Adjacent slices of the recurring Reclamation/DOE reporting-requirements table (table leakage)."
+ },
+ {
+  "id": "076d91b8f2a7833f",
+  "label": "different",
+  "source": "judged",
+  "note": "Committee Recommendations boilerplate vs Workforce Development directives."
+ },
+ {
+  "id": "08a4c129197bc035",
+  "label": "different",
+  "source": "judged",
+  "note": "ARC funding-table fragment vs NRC transformation initiative."
+ },
+ {
+  "id": "0967bb91a54949f9",
+  "label": "same",
+  "source": "judged",
+  "note": "FERC Salaries and Expenses year over year; heading glue hid the FERC prefix on one side."
+ },
+ {
+  "id": "09994d62fd516051",
+  "label": "different",
+  "source": "judged",
+  "note": "Sec. 310 renumbering collision: weapons facilities access vs SBIR/STTR."
+ },
+ {
+  "id": "0ae6e6bf7378e6a5",
+  "label": "different",
+  "source": "judged",
+  "note": "Sec. 209 WIIN Act extension vs Sec. 205 Calfed extension; shared 'extends the authorization' scaffold inflated the score. Accepted false positive of the rename pass."
+ },
+ {
+  "id": "0c468d1d9b844c3f",
+  "label": "same",
+  "source": "judged",
+  "note": "DOE general provisions summary; RESCISSIONS/RESCISSION heading variant."
+ },
+ {
+  "id": "0cbcd7a989fcf4ab",
+  "label": "different",
+  "source": "judged",
+  "note": "Methane emissions mitigation vs Industrial Assessment Centers; token_set inflated by shared dollar boilerplate. Accepted false positive."
+ },
+ {
+  "id": "0f7bb6dd8be70d72",
+  "label": "different",
+  "source": "judged",
+  "note": "Sec. 313 renumbering collision: energy storage vs nuclear demonstration."
+ },
+ {
+  "id": "10345a97cec387fa",
+  "label": "same",
+  "source": "judged",
+  "note": "Fossil Energy R&D account, identical opening."
+ },
+ {
+  "id": "1108448eca2773aa",
+  "label": "different",
+  "source": "judged",
+  "note": "Sec. 112 prior funds vs Sec. 108 Clean Water Act documents."
+ },
+ {
+  "id": "112f4e76e3decce0",
+  "label": "same",
+  "source": "judged",
+  "note": "Multi-program directives block across years; old side heading glued from a directive lead-in."
+ },
+ {
+  "id": "136f1a4f49844518",
+  "label": "different",
+  "source": "judged",
+  "note": "Flood mitigation directives fragment vs Program Delivery cost-escalation block."
+ },
+ {
+  "id": "13f1a54e6fcec822",
+  "label": "same",
+  "source": "judged",
+  "note": "Same recurring Corps reporting-requirements table, different slices (table leakage)."
+ },
+ {
+  "id": "13fea65277b10c71",
+  "label": "same",
+  "source": "judged",
+  "note": "NRC net appropriation block; NRC parent heading missing on one side."
+ },
+ {
+  "id": "174f04081de1ea39",
+  "label": "different",
+  "source": "judged",
+  "note": "Technology Commercialization vs Critical Minerals, Materials and Manufacturing."
+ },
+ {
+  "id": "17612d92d9df6bff",
+  "label": "different",
+  "source": "judged",
+  "note": "NNSA funding adjustments vs NETL Infrastructure."
+ },
+ {
+  "id": "178545ee7986a32f",
+  "label": "different",
+  "source": "judged",
+  "note": "ARPA-E vs Project Management."
+ },
+ {
+  "id": "17e33ea3c4af838a",
+  "label": "same",
+  "source": "judged",
+  "note": "DNFSB Salaries and Expenses; DNFSB parent heading missing on one side."
+ },
+ {
+  "id": "193663834c992510",
+  "label": "same",
+  "source": "judged",
+  "note": "Marine energy / Solar Energy Technologies passage, near-identical."
+ },
+ {
+  "id": "1a3d648704e251a2",
+  "label": "same",
+  "source": "judged",
+  "note": "Electricity Delivery and Energy Reliability renamed to Electricity Delivery; near-identical program description. Rejected false negative."
+ },
+ {
+  "id": "1ad6c85ee97e4da2",
+  "label": "different",
+  "source": "judged",
+  "note": "Corporate Support quantum directive vs Hydrocarbons and Geothermal Energy program."
+ },
+ {
+  "id": "1f7d0bafe7220265",
+  "label": "same",
+  "source": "judged",
+  "note": "ARPA-E account both sides; parent path garbage differs."
+ },
+ {
+  "id": "2609db5cc9afeeba",
+  "label": "different",
+  "source": "judged",
+  "note": "McCook Reservoir directive vs Chesapeake Bay oyster recovery directive."
+ },
+ {
+  "id": "265eef0643c6cbe6",
+  "label": "different",
+  "source": "judged",
+  "note": "FECM program description vs Technology Commercialization."
+ },
+ {
+  "id": "27bd2f1409f93d01",
+  "label": "different",
+  "source": "judged",
+  "note": "Office of Electricity vs FECM program descriptions."
+ },
+ {
+  "id": "29930e9178b81848",
+  "label": "same",
+  "source": "judged",
+  "note": "Same recurring Corps reporting-requirements table, adjacent slices (table leakage)."
+ },
+ {
+  "id": "37da380cac8afd3a",
+  "label": "same",
+  "source": "judged",
+  "note": "Tail of the recurring DOE reporting-requirements table, overlapping rows (table leakage)."
+ },
+ {
+  "id": "4d1f5b23b86d5ec0",
+  "label": "different",
+  "source": "judged",
+  "note": "Directed Stockpile Work split into Stockpile Management and others ('much of this work was previously funded'); split, so exclusive pairing would hide the other successors."
+ },
+ {
+  "id": "4fcc630b60b6695a",
+  "label": "same",
+  "source": "judged",
+  "note": "Same recurring Reclamation reporting-requirements table, adjacent slices (table leakage)."
+ },
+ {
+  "id": "550cf638bdf9856c",
+  "label": "same",
+  "source": "judged",
+  "note": "Overlapping fragments of the same Title III account enumeration (wrapped-heading fragmentation)."
+ },
+ {
+  "id": "59b36cd4e0bece11",
+  "label": "same",
+  "source": "judged",
+  "note": "Same recurring DOE reporting-requirements table, adjacent slices (table leakage)."
+ },
+ {
+  "id": "59df76fcd6c4d222",
+  "label": "different",
+  "source": "judged",
+  "note": "Oil, Gas and Critical Minerals vs CMEI (renamed EERE) - CMEI succeeds EERE, not OGCM."
+ },
+ {
+  "id": "68daea580ebc4376",
+  "label": "different",
+  "source": "judged",
+  "note": "Corps reporting table vs DOE reporting table - different tables."
+ },
+ {
+  "id": "84aebe67ffd5559b",
+  "label": "different",
+  "source": "judged",
+  "note": "Natural gas decarbonization directives vs Coal and Carbon Utilization."
+ },
+ {
+  "id": "adbf5c43ba45bef4",
+  "label": "same",
+  "source": "judged",
+  "note": "Same recurring DOE reporting-requirements table, adjacent slices (table leakage)."
+ },
+ {
+  "id": "dc1abc44c0542e5c",
+  "label": "same",
+  "source": "judged",
+  "note": "PMA general provisions summary; TRANSFERS/TRANSFER heading variant."
+ }
+]

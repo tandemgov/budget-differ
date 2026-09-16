@@ -1,0 +1,1354 @@
+[
+ {
+  "id": "0000e859292e77e7",
+  "label": "same",
+  "note": "Identical heading and account, Broadcasting Capital Improvements, continuing across years with updated funding figure.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-state-foreign-ops-fy2020-fy2024",
+   "old_heading": "BROADCASTING CAPITAL IMPROVEMENTS",
+   "new_heading": "BROADCASTING CAPITAL IMPROVEMENTS",
+   "old_text": "The Committee recommends $11,700,000 for Broadcasting Capital Improvements, which includes $2,000,000 for repairs to USAGM stations on the islands of Tinian and Saipan in the Commonwealth of the Northern Mariana Islands.",
+   "new_text": "The Committee recommends $9,700,000 for Broadcasting Capital Improvements."
+  }
+ },
+ {
+  "id": "000145ce5e64131e",
+  "label": "different",
+  "note": "Same number 8102, different substance: NRO transfer vs National Guard functions transfer.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2024-fy2025",
+   "old_heading": "(RESCISSIONS) — Section 8102",
+   "new_heading": "GENERAL PROVISIONS — Section 8102",
+   "old_text": "Section 8102 prohibits the transfer of the National Reconnaissance Office to the Space Force.",
+   "new_text": "Section 8102 prohibits funding for moving National Guard missions, functions, or personnel to the Space Force in contravention of current law."
+  }
+ },
+ {
+  "id": "00066866f80f6a30",
+  "label": "different",
+  "note": "Old is about William Beaumont Army Medical Center water/facility issues; new is about limb loss/limb difference family support - unrelated provisions.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2026-fy2027",
+   "old_heading": "WILLIAM BEAUMONT ARMY MEDICAL CENTER",
+   "new_heading": "MILITARY FAMILY LIMB LOSS AND LIMB DIFFERENCE SUPPORT",
+   "old_text": "The Committee understands that William Beaumont Army Medical Center, located on Fort Bliss, Texas, has sustained a series of publicly reported water restrictions and water leaks which have, at times, negatively impacted patient experience and posed a risk to facility servers located within the hospi",
+   "new_text": "The Committee recognizes the unique challenges faced by military families caring for dependents with limb loss or limb difference and the important role that peer mentorship, care coordination, and educational resources play in supporting rehabilitation and long-term quality of life. The Committee e"
+  }
+ },
+ {
+  "id": "000706b0cb7d8f3a",
+  "label": "different",
+  "note": "Same 'Section 217' label both years but old covers a capital investment plan requirement and new covers ICE detention statistics - a renumbering collision, not the same provision.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2020-fy2021",
+   "old_heading": "Title II--Administrative Provisions--This Act — Section 217",
+   "new_heading": "Title II--Administrative Provisions--This Act — Section 217",
+   "old_text": "Section 217. The Committee continues a provision requiring submission of a future-years capital investment plan.",
+   "new_text": "Section 217. The Committee continues and modifies a provision that requires ICE to provide statistics about its detention population."
+  }
+ },
+ {
+  "id": "0009c6ac021f3552",
+  "label": "different",
+  "note": "Old is VA Construction Major Projects administrative/reprogramming rules; new is a report directive on Asian Pacific American Veterans mental health data - unrelated.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-milcon-va-fy2019-fy2020",
+   "old_heading": "CONSTRUCTION, MAJOR PROJECTS",
+   "new_heading": "Mental Health Data on Asian Pacific American Veterans.--The",
+   "old_text": "(in thousands of dollars) To enhance the Committee's capacity to conduct oversight on VA's facility construction efforts, several administrative provisions are continued in the bill: (1) No funding amount greater than $7,000,000 may be reprogrammed between construction projects unless approved by th",
+   "new_text": "Committee recognizes the lack of mental health data specific to Asian Pacific American Veterans. The Committee directs the Department to submit a report within 90 days after enactment of this Act on its data collection efforts."
+  }
+ },
+ {
+  "id": "000ac843130a0a5c",
+  "label": "different",
+  "note": "Army SHORAD/UH-60 procurement vs Navy bromine-free water purification systems.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-defense-fy2019-fy2020",
+   "old_heading": "SHORAD",
+   "new_heading": "Bromine-Free Water Purification Systems.--The Committee has",
+   "old_text": "ahead of need",
+   "new_text": "previously encouraged and provided funding for the Navy to explore and pilot bromine-free shipboard water disinfectant systems in destroyers, as it does with large deck ships. The Committee understands that technology improvements make bromine-free systems more practical for smaller ships and that t"
+  }
+ },
+ {
+  "id": "000c818cf43be4ca",
+  "label": "same",
+  "note": "Both are fragments of the same recurring BIE/Forest Service deferred-maintenance project list table, differing only in rows/years.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2023-fy2024",
+   "old_heading": "Alabama. Alabama Deferred",
+   "new_heading": "Lakes National Lakes National Recreation Area. Recreation Area",
+   "old_text": "Maintenance. FL National Forests in National Forests in 2,070,000",
+   "new_text": "Deferred Maintenance. MN Chippewa National Chippewa National 839,500"
+  }
+ },
+ {
+  "id": "00129c3598f14909",
+  "label": "same",
+  "note": "Same Educational and Cultural Exchange Programs account continuing; new text is just the table caption preceding the account's dollar figures.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-state-foreign-ops-fy2020-fy2021",
+   "old_heading": "EDUCATIONAL AND CULTURAL EXCHANGE PROGRAMS",
+   "new_heading": "EDUCATIONAL AND CULTURAL EXCHANGE PROGRAMS",
+   "old_text": "The Committee recommendation includes $730,000,000 for Educational and Cultural Exchange Programs. The Committee recognizes the importance of international exchange programs and directs that funds made available under this heading be directed to support United States foreign policy objectives and be",
+   "new_text": "[Budget authority in thousands of dollars]"
+  }
+ },
+ {
+  "id": "001f317b66945a36",
+  "label": "same",
+  "note": "Recurring Transportation congressionally directed spending project list, different projects.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-thud-fy2022-fy2023",
+   "old_heading": "Priorities",
+   "new_heading": "Transportation Programs. Greenbelt Trail",
+   "old_text": "Department of Local State Route 91 Improvement Project CA 3,000,000 Transportation Transportation",
+   "new_text": "Improvement Project."
+  }
+ },
+ {
+  "id": "001f91ca7ded8602",
+  "label": "same",
+  "note": "Rows of the recurring Forest Service deferred maintenance project table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2022-fy2023",
+   "old_heading": "Forest. Recreation Complex",
+   "new_heading": "National Forests and National Forests and Cimarron and Comanche Cimarron and National Grasslands. Comanche National",
+   "old_text": "Water/Wastewater Reconstruction and Deferred Maintenance Reduction. Lincoln County. PA Allegheny National Irwin Run Boat Launch 250,074 Forest. Deferred Maintenance. CO Grand Mesa, Forest-wide Toilet 780,000 Uncompahgre and Replacement. Gunnison National Forests. WY Shoshone National Shoshone Develo",
+   "new_text": "Grasslands Deferred Maintenance. CO Rio Grande National Rio Grande National 313,000"
+  }
+ },
+ {
+  "id": "00209296095fe736",
+  "label": "different",
+  "note": "Old is about recycled content procurement policy; new is about the MK93 machine gun mount upgrade - unrelated procurement items.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2020-fy2021",
+   "old_heading": "RECYCLED CONTENT PRODUCTS",
+   "new_heading": "MK93 MACHINE GUN MOUNT",
+   "old_text": "The Committee commends the Department of Defense on its most recent update to Department of Defense Instruction 4105.72 regarding sustainable procurement. The Committee supports efforts to procure sustainable goods and recycled content products, including clothing items with these materials. The Com",
+   "new_text": "The Committee believes that the MK93 machine gun mount upgrade will improve existing systems and supports Army modernization investments that rely on the performance of the MK93 mount. The Committee encourages the Secretary of the Army to include funding for the MK93 machine gun mount upgrade in fut"
+  }
+ },
+ {
+  "id": "0020c0984e30419e",
+  "label": "different",
+  "note": "Old is a War Powers hostilities reporting requirement; new is a study on shifting Mexico between combatant commands - unrelated directives.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2022-fy2023",
+   "old_heading": "REPORT ON HOSTILITIES",
+   "new_heading": "MEXICO",
+   "old_text": "The Committee directs the Secretary of Defense to submit a report to the congressional defense committees not later than 120 days after the enactment of this Act on ongoing activities considered hostilities under the War Powers Resolution (50 U.S.C. 1541 et seq.).",
+   "new_text": "The Committee understands that having a combatant command with a focus on the nations on our direct borders is vital to the security of the United States. The Committee also appreciates the close ties between Mexico and its Central and South American neighbors. Given these considerations, the Commit"
+  }
+ },
+ {
+  "id": "002129624ef84d64",
+  "label": "same",
+  "note": "Same CBP 'Committee Recommendations' funding summary account continuing across years with updated dollar figures.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-homeland-security-fy2020-fy2024",
+   "old_heading": "COMMITTEE RECOMMENDATIONS",
+   "new_heading": "COMMITTEE RECOMMENDATIONS",
+   "old_text": "The Committee recommends $20,613,714,000 for CBP, which is $234,200,000 below the budget request amount and $3,317,464,000 above the fiscal year 2019 enacted level. The budget request assumed CBP would retain $160,800,000 in additional collections for the Electronic System for Travel Authorization [",
+   "new_text": "The Committee recommends $18,092,605,000 for CBP, which is $1,646,543,000 above the budget request amount and $65,210,000 above the fiscal year 2023 enacted level when adding in $1,563,143,000 provided in fiscal year 2023 border management funding. The following table summarizes the Committee's reco"
+  }
+ },
+ {
+  "id": "00225484f16dbda6",
+  "label": "different",
+  "note": "Both are '(RESCISSIONS)' sections but Sec. 8091 (missile defense info) and Sec. 8121 (MANPADS) are unrelated provisions - a renumbering collision.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2023-fy2024",
+   "old_heading": "(RESCISSIONS) — Section 8091",
+   "new_heading": "(RESCISSIONS) — Section 8121",
+   "old_text": "Section 8091 prohibits the use of funds providing certain missile defense information to certain entities.",
+   "new_text": "Section 8121 prohibits the use of funds under certain headings to procure or transfer man-portable air defense systems."
+  }
+ },
+ {
+  "id": "0024af527f46cff3",
+  "label": "different",
+  "note": "Same number 8132, unrelated content: named officer pay vs Office of Strategic Capital.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2024-fy2025",
+   "old_heading": "(RESCISSIONS) — Section 8132",
+   "new_heading": "YEAR 2025 — Section 8132",
+   "old_text": "Section 8132 requires the Secretary of the Navy to provide pay and allowances to Lieutenant Ridge Alkonis.",
+   "new_text": "Section 8132 enables the Office of Strategic Capital to use appropriated funds for loans and loan guarantees."
+  }
+ },
+ {
+  "id": "00278030b8e84c13",
+  "label": "different",
+  "note": "Old is a HUD community-project funding list (SC facility renovation, demolition project); new is a Transportation transit-access project in Portland, OR - different project-list tables.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-thud-fy2022-fy2023",
+   "old_heading": "Initiatives",
+   "new_heading": "Transportation Programs. Access to Transit",
+   "old_text": "Department of Housing and Economic Renovate and improve the outdated SC 3,000,000 Urban Development Development Industrial Related Technologies Initiatives facilities Department of Housing and Economic South Sumter Demolition Project SC 1,600,000 Urban Development Development",
+   "new_text": "Project -- Portland, OR."
+  }
+ },
+ {
+  "id": "00289a6643fe739b",
+  "label": "different",
+  "note": "Renumbering collision: Sec. 243 repeal vs Sec. 238 notice-to-vacate prohibition.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-thud-fy2025-fy2026",
+   "old_heading": "Government Corporation Control Act and the Housing Act, and to — Section 243",
+   "new_heading": "Government Corporation Control Act and the Housing Act, and to — Section 238",
+   "old_text": "Section 243 repeals a provision of P.L. 116-136.",
+   "new_text": "Section 238 prohibits funds for the notice to vacate rule."
+  }
+ },
+ {
+  "id": "002c113c5686544f",
+  "label": "same",
+  "note": "Special Benefits account under OWCP, continuation with updated funding.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-labor-hhs-education-fy2016-fy2017",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS)",
+   "new_heading": "(INCLUDING TRANSFER OF FUNDS)",
+   "old_text": "The Committee recommends $210,000,000 for Special Benefits. This recommendation is the same as the fiscal year 2015 enacted level and the fiscal year 2016 budget request. These funds provide mandatory benefits under the Federal Employees' Compensation Act.",
+   "new_text": "The Committee recommends $220,000,000 for Special Benefits, which is $10,000,000 more than the fiscal year 2016 enacted level and the same as the fiscal year 2017 budget request. These funds provide mandatory benefits under the Federal Employees' Compensation Act."
+  }
+ },
+ {
+  "id": "002c694d7a572a9a",
+  "label": "different",
+  "note": "Army network-readiness RDT&E item vs Air Force data-transmission RDT&E item.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2019-fy2020",
+   "old_heading": "ARMY NETWORK READINESS",
+   "new_heading": "DATA TRANSMISSION IN CONTESTED ENVIRONMENTS",
+   "old_text": "The Committee encourages the Army to test and down-select readily available non-developmental tactical communications technologies that deliver the highest quality performance in voice, video, and data dissemination at the squad and individual soldier level. The Committee directs the Director, Opera",
+   "new_text": "The Committee is aware of increasing data transmission challenges in the multi-domain battlespace with the rising demand for high-definition full motion video, voice, geolocation, and intelligence data requests. Data transmission is particularly difficult in contested environments where shared infor"
+  }
+ },
+ {
+  "id": "002ccdeb1819bbdd",
+  "label": "same",
+  "note": "Same Summary of the Bill section for DOD appropriations, updated figures.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-defense-fy2020-fy2024",
+   "old_heading": "Summary of the Bill",
+   "new_heading": "Summary of the Bill",
+   "old_text": "The Committee recommendation of $687,546,478,000 includes funding to develop, maintain, and equip the military forces of the United States and for other purposes, including $70,665,000,000 in overseas contingency operations, $1,710,245,000 in emergency funding and $514,000,000 in mandatory spending.",
+   "new_text": "The Committee recommendation of $831,781,268,000 includes funding to develop, maintain, and equip the military forces of the United States and for other purposes, including $514,000,000 in mandatory spending and $8,000,000,000 in emergency funding. The fiscal year 2024 budget request for activities "
+  }
+ },
+ {
+  "id": "002d6375b12601b6",
+  "label": "different",
+  "note": "Old covers Sec. 109-112 (IT transfer authority, WIOA, minimum wage rule); new is Sec. 114 rescinding Dislocated Workers funds - unrelated numbered provisions.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-labor-hhs-education-fy2016-fy2017",
+   "old_heading": "(TRANSFER OF FUNDS)",
+   "new_heading": "(RESCISSION)",
+   "old_text": "Sec. 109. The Committee continues a provision that allows up to 0.25 percent of discretionary appropriations provided in this Act for specific Department of Labor agencies to be used by the Office of the Chief Information Officer for authorized information technology purposes. Sec. 110. The Committe",
+   "new_text": "Sec. 114. The Committee includes a new provision rescinding advance appropriations in the Dislocated Workers' National Reserve account."
+  }
+ },
+ {
+  "id": "002e2db2298c17db",
+  "label": "same",
+  "note": "Both are fragments of the same recurring BIE/Forest Service deferred-maintenance project list (ID Payette National appears in both), just different rows/years.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2022-fy2023",
+   "old_heading": "National Forest. Trail Bridge",
+   "new_heading": "Forest. Forest Deferred",
+   "old_text": "Replacement to Maintain Safe Trail Public Access. ID Payette National Payette Bridge 100,000 Forest. Repairs. MN Chippewa National North Country Trail 124,000",
+   "new_text": "Maintenance. ID Payette National Payette National 1,174,000"
+  }
+ },
+ {
+  "id": "0030961b81ac3706",
+  "label": "same",
+  "note": "Same USCIS Operations and Support account, continuing backlog-reduction discussion.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2022-fy2023",
+   "old_heading": "OPERATIONS AND SUPPORT",
+   "new_heading": "OPERATIONS AND SUPPORT",
+   "old_text": "The Committee supports the Administration's request of $345,000,000 to address the USCIS backlog by hiring 1,316 additional personnel, including 301 refugee officers; increasing overtime; investing in case file management support; provisioning equipment for increased video interviewing capability; p",
+   "new_text": "The Committee supports the Administration's request to continue to increase capacity to address the USCIS backlog, increase USCIS's capacity to support anticipated increases in credible fear interviews and asylum adjudications, and begin to reduce the burden on fee-paying applicants and petitioners "
+  }
+ },
+ {
+  "id": "0031cd46d7d65ad9",
+  "label": "different",
+  "note": "Polar icebreaker recapitalization vs bare acquisition-strategy note under unrelated code.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-defense-fy2017-fy2019",
+   "old_heading": "LX(R)",
+   "new_heading": "177A",
+   "old_text": "class of ships Polar Icebreaker Recapitalization Project.--As detailed in the report accompanying the Senate version of the fiscal year 2015 Department of Defense Appropriations Bill (Senate Report 113-211), the Committee is concerned that the United States is operating an icebreaker fleet consistin",
+   "new_text": "acquisition strategy"
+  }
+ },
+ {
+  "id": "0036585f5b0f8cd6",
+  "label": "same",
+  "note": "Food for Peace Title II Grants account continuing under slightly different parent title.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-agriculture-fy2025-fy2026",
+   "old_heading": "FOOD FOR PEACE TITLE II GRANTS",
+   "new_heading": "FOOD FOR PEACE TITLE II GRANTS",
+   "old_text": "Commodities Supplied in Connection with Dispositions Abroad (Title II) (7 U.S.C. 1721-1726).--Commodities are supplied without cost through foreign governments to combat malnutrition and to meet famine and other emergency requirements. Commodities are also supplied for non-emergencies through public",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "0038b733e5280a74",
+  "label": "same",
+  "note": "Fragments of the recurring Forest Service deferred-maintenance project table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2022-fy2023",
+   "old_heading": "Forest. Scenic River Access",
+   "new_heading": "National Forests and National Forests and Cimarron and Comanche Cimarron and National Grasslands. Comanche National",
+   "old_text": "Site Deferred Maintenance. ID Sawtooth National Minidoka Ranger 75,000",
+   "new_text": "Grasslands Deferred Maintenance. CO Rio Grande National Rio Grande National 313,000"
+  }
+ },
+ {
+  "id": "003c52b5b5fd8651",
+  "label": "same",
+  "note": "WMATA safety capital grants Committee Recommendation, same recurring account.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-thud-fy2018-fy2019",
+   "old_heading": "COMMITTEE RECOMMENDATION",
+   "new_heading": "COMMITTEE RECOMMENDATION",
+   "old_text": "The Committee recommendation includes $150,000,000 for safety capital grants for WMATA, which is $285,150 greater than the budget request and equal to the fiscal year 2017 enacted level. The Committee directs WMATA to continue addressing the safety issues within the agency, specifically, those ident",
+   "new_text": "The Committee recommendation includes $150,000,000 for safety capital grants for WMATA, which is $30,000,000 above the budget request and equal to last year's enacted level. The Committee directs WMATA to continue addressing the safety issues within the agency, specifically, those identified, and in"
+  }
+ },
+ {
+  "id": "003cb65f76f430cc",
+  "label": "different",
+  "note": "Same Section 220 number: law enforcement task force vs accreditation requirement - reuse collision.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-commerce-justice-science-fy2021-fy2022",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS) — Section 220",
+   "new_heading": "(INCLUDING TRANSFER OF FUNDS) — Section 220",
+   "old_text": "Section 220 establishes a National Task Force on Law Enforcement Oversight.",
+   "new_text": "Section 220 prohibits Department of Justice funding from being made available to any law enforcement agency of any State, unit of local government, or federally-recognized Tribal Government unless the Attorney General has certified that such agency has begun or completed the process of receiving acc"
+  }
+ },
+ {
+  "id": "003f91077fed9ba7",
+  "label": "different",
+  "note": "Sec. 539 and Sec. 578 are unrelated rescission provisions sharing only the '(RESCISSIONS)' label.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-commerce-justice-science-fy2023-fy2025",
+   "old_heading": "(RESCISSIONS) — Section 539",
+   "new_heading": "(RESCISSIONS) — Section 578",
+   "old_text": "Section 539 prohibits the use of funds made available by this Act to the Department of Justice to prevent States, the District of Columbia, or Territories from implementing laws that authorize marijuana use, distribution, possession, or cultivation.",
+   "new_text": "Section 578 prohibits the use of funds made available by this or any other Act for sex-altering surgeries."
+  }
+ },
+ {
+  "id": "00436a6ce99fd742",
+  "label": "same",
+  "note": "Capitol Police General Expenses account continuation.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-legislative-branch-fy2023-fy2024",
+   "old_heading": "General Expenses",
+   "new_heading": "General Expenses",
+   "old_text": "The Committee recommends $185,818,000 for general expenses to support the responsibilities for law enforcement, Capitol complex physical and technological security, dignitary protection, intelligence analysis, event management, hazardous material/devices, IT, and other specialized responses, as well",
+   "new_text": "The Committee recommends $192,846,000 for general expenses to support the responsibilities for law enforcement, Capitol complex physical and technological security, dignitary protection, intelligence analysis, event management, hazardous material/devices, IT, and other specialized responses, as well"
+  }
+ },
+ {
+  "id": "00454d8c547b7443",
+  "label": "different",
+  "note": "HUD community-project earmark row vs Transportation grade-separation earmark row - different tables.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-thud-fy2022-fy2023",
+   "old_heading": "Initiatives",
+   "new_heading": "Transportation Programs. Highway Grade",
+   "old_text": "Department of Housing and Economic Queens Together Project NY 250,000 Urban Development Development",
+   "new_text": "Separation Environmental Review and Planning Project."
+  }
+ },
+ {
+  "id": "0045e964b1fe92e7",
+  "label": "different",
+  "note": "Old is a bare adjustments-table intro under a demilitarization/Destruction Defense heading; new is substantive Office of Inspector General appropriation and reporting language, unrelated content.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-defense-fy2017-fy2019",
+   "old_heading": "COMMITTEE RECOMMENDED ADJUSTMENTS",
+   "new_heading": "Office of the Inspector General",
+   "old_text": "The following table details the adjustments recommended by the Committee:",
+   "new_text": "The Committee recommends an appropriation of $329,273,000. This is equal to the budget estimate. committee recommended program The following table summarizes the budget estimate for this appropriation, the Committee recommendation, and the Committee recommended adjustments to the budget estimate: Qu"
+  }
+ },
+ {
+  "id": "004b811a8dcbe14b",
+  "label": "different",
+  "note": "Renumbering collision at Sec. 114: PILT funding vs tribal school vehicle access.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2023-fy2024",
+   "old_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 114",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 114",
+   "old_text": "Section 114 provides funding for the Payments in Lieu of Taxes (PILT) program.",
+   "new_text": "Section 114 continues a provision authorizing Triballycontrolled schools access to interagency motor vehicles in the same manner as if performing activities under the Indian Self Determination and Education Assistance Act."
+  }
+ },
+ {
+  "id": "0050808979c9dd92",
+  "label": "same",
+  "note": "Rows of the recurring Forest Service deferred maintenance project table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2023-fy2024",
+   "old_heading": "Forest. and Facility",
+   "new_heading": "Lakes National Lakes National Recreation Area. Recreation Area",
+   "old_text": "Maintenance. CO White River National White River National 6,792,000",
+   "new_text": "Deferred Maintenance. MN Chippewa National Chippewa National 839,500"
+  }
+ },
+ {
+  "id": "005199d252b6ef17",
+  "label": "same",
+  "note": "Central Valley Project Restoration Fund account continuation.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-energy-water-fy2018-fy2019",
+   "old_heading": "CENTRAL VALLEY PROJECT RESTORATION FUND",
+   "new_heading": "NET APPROPRIATION",
+   "old_text": "The Committee recommends $41,376,000 for the Central Valley Project Restoration Fund, the same as the budget request. This appropriation is fully offset by a scorekeeping adjustment from revenues. The Central Valley Project Restoration Fund was authorized in the Central Valley Project Improvement Ac",
+   "new_text": "The Committee recommends $62,008,000 for the Central Valley Project Restoration Fund, the same as the budget request. This appropriation is fully offset by collections, resulting in a net appropriation of $0. The Central Valley Project Restoration Fund was authorized in the Central Valley Project Im"
+  }
+ },
+ {
+  "id": "005d30e9120432df",
+  "label": "different",
+  "note": "Presidential Transition Administrative Support vs Unanticipated Needs account.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-financial-services-fy2017-fy2018",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS)",
+   "new_heading": "Unanticipated Needs",
+   "old_text": "The Presidential Transition Administrative Support account is for costs of processing of records of departing President and Vice President under the Presidential Records Act for transfer to the National Archives and Records Administration and other transition-related administrative expenses.",
+   "new_text": "The unanticipated needs account enable the President to meet unanticipated exigencies in support of the national interest, security, or defense."
+  }
+ },
+ {
+  "id": "006c53582d6dd5d9",
+  "label": "same",
+  "note": "Same Arlington Memorial Bridge repair provision, updated cost estimate.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2017-fy2018",
+   "old_heading": "Arlington Memorial Bridge by the Federal Highway Administration",
+   "new_heading": "Arlington Memorial Bridge by the Federal Highway Administration",
+   "old_text": "(FHA) revealed severe deterioration that had accelerated since a 2015 inspection. More than 68,000 vehicles traverse the bridge between Virginia and the District of Columbia on a daily basis. Repair and renovation costs to the bridge--the symbolic entry to Washington, DC, as well as the gateway to A",
+   "new_text": "(FHA) revealed severe deterioration that had accelerated since a 2015 inspection. More than 68,000 vehicles traverse the bridge between Virginia and the District of Columbia on a daily basis. Repair and renovation costs to the bridge--the symbolic entry to Washington, DC, as well as the gateway to A"
+  }
+ },
+ {
+  "id": "006cb156a1fed474",
+  "label": "different",
+  "note": "Renumbering collision: Sec. 8118 Iraq War Powers vs Sec. 8115 Rosoboronexport.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2024-fy2025",
+   "old_heading": "(RESCISSIONS) — Section 8118",
+   "new_heading": "GENERAL PROVISIONS — Section 8115",
+   "old_text": "Section 8118 prohibits the use of funds with respect to Iraq in contravention of the War Powers Resolution.",
+   "new_text": "Section 8115 prohibits the use of funds to enter into a contract with Rosoboronexport."
+  }
+ },
+ {
+  "id": "00708e940cc22a3b",
+  "label": "different",
+  "note": "Sec. 445 (Springfield Race Riot resource study) and Sec. 431 (fund allocation) are unrelated provisions, a General Provisions renumbering collision.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2021-fy2022",
+   "old_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 445",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 431",
+   "old_text": "Section 445 requires the Secretary of Interior to conduct a resource study of sites associated with the 1908 Springfield Race Riot.",
+   "new_text": "Section 431 requires the allocation of funds from the"
+  }
+ },
+ {
+  "id": "007976e98c6a568f",
+  "label": "same",
+  "note": "Same VA Readjustment Benefits account, continuing budget table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-milcon-va-fy2025-fy2026",
+   "old_heading": "READJUSTMENT BENEFITS",
+   "new_heading": "READJUSTMENT BENEFITS",
+   "old_text": "Appropriations, 2024 $8,827,352,000 Advance Appropriations, 2025 13,399,805,000 Budget estimate, 2025 2,657,656,000 Committee recommendation, 2025 2,657,656,000 Budget estimate, advance appropriations, 2026 17,614,235,000 Committee recommendation, advance appropriations, 2026 17,614,235,000",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "0083d9dded55788b",
+  "label": "different",
+  "note": "Forest Products Laboratory research vs Forest Lands subsistence uses directives.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-interior-environment-fy2020-fy2024",
+   "old_heading": "Forest Products Laboratory.--The Forest Products Laboratory",
+   "new_heading": "Maintenance, Range Betterment Fund, and Management of National",
+   "old_text": "[FPL] provides benefits across a wide range of forest related issues, as demonstrated in part by the requests for FPL participation in a variety of endeavors important to Members of Congress. The Service is encouraged to engage in a program of work that provides economic insights, research, internat",
+   "new_text": "Forest Lands for Subsistence Uses accounts. Additional Guidance.--The Committee provides the following additional guidance related to activities funded in this account. Hoosier National Forest.--The Committee notes that the Hoosier National Forest Land Management Plan has not been updated in over 16"
+  }
+ },
+ {
+  "id": "008829c4ccdc7faf",
+  "label": "same",
+  "note": "Both discuss the NICHD section (Centers of Excellence for Maternal Morbidity/Mortality) verbatim continuation; old heading is a garbled/pre-rename artifact of the same institute.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-labor-hhs-education-fy2025-fy2026",
+   "old_heading": "NATIONAL INSTITUTE FOR DISABILITY RELATED RESEARCH",
+   "new_heading": "EUNICE KENNEDY SHRIVER NATIONAL INSTITUTE OF CHILD HEALTH AND HUMAN DEVELOPMENT (NICHD)",
+   "old_text": "The report language that follows includes references to the Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD) and the National Institute on Deafness and Other Communication Disorders (NIDCD). Centers of Excellence to Reduce Maternal Morbidity and Mortality.--The",
+   "new_text": "Mission.--NICHD's mission is to lead research and training to understand human development, improve reproductive health, enhance the lives of children and adolescents, and optimize abilities for all. Centers of Excellence to Reduce Maternal Morbidity and Mortality.--The Committee is aware that NICHD"
+  }
+ },
+ {
+  "id": "008b385d4072f272",
+  "label": "different",
+  "note": "Renumbering collision at Sec. 533: cannabis immigration benefits vs presidential protection reporting.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2022-fy2023",
+   "old_heading": "(INCLUDING RESCISSIONS AND TRANSFERS OF FUNDS) — Section 533",
+   "new_heading": "(INCLUDING TRANSFERS AND RESCISSIONS OF FUNDS) — Section 533",
+   "old_text": "Section 533. The Committee includes a new provision that prohibits the denial of immigration benefits when solely based on grounds related to cannabis use.",
+   "new_text": "Section 533. The Committee continues a provision requiring notifications when the President designates a former or retired federal official or employee for protection and reporting regarding the costs of such protection."
+  }
+ },
+ {
+  "id": "0097396772958f0a",
+  "label": "different",
+  "note": "Truman Scholarship Foundation vs OPM Office of Inspector General.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-financial-services-fy2019-fy2020",
+   "old_heading": "COMMITTEE RECOMMENDATION",
+   "new_heading": "COMMITTEE RECOMMENDATION",
+   "old_text": "The Committee recommends an appropriation of $1,000,000 for the Harry S Truman Scholarship Foundation.",
+   "new_text": "The Committee recommends a general fund appropriation of $5,000,000 for the OIG. In addition, the recommendation includes $25,265,000 from the appropriate trust funds. OPM Organization.--The Committee is concerned with the Administration's proposal to eliminate OPM as a standalone agency and transfe"
+  }
+ },
+ {
+  "id": "009856985fa48486",
+  "label": "different",
+  "note": "HUD community-project earmark row (TN) vs Transportation harbor-project earmark row.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-thud-fy2022-fy2023",
+   "old_heading": "Initiatives",
+   "new_heading": "Transportation Programs. Resiliency for Amity",
+   "old_text": "Department of Housing and Economic American Baptist College Historic Building TN 796,812 Urban Development Development Improvements and Civil Rights Walking Initiatives Tour Department of Housing and Economic Memphis Home Repair Program TN 1,000,000 Urban Development Development",
+   "new_text": "Harbor and American Venice Project."
+  }
+ },
+ {
+  "id": "009bfaf5cfc4010c",
+  "label": "different",
+  "note": "Under Secretary for Natural Resources appropriation vs Federal Crop Insurance Corporation Fund.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-agriculture-fy2017-fy2018",
+   "old_heading": "For the Office of the Under Secretary for Natural Resources",
+   "new_heading": "COMMITTEE PROVISIONS",
+   "old_text": "and Environment, the Committee provides an appropriation of $898,000.",
+   "new_text": "For the Federal Crop Insurance Corporation Fund, the Committee provides an appropriation of such sums as may be necessary (estimated to be $8,245,000,000 in the President's fiscal year 2018 budget request)."
+  }
+ },
+ {
+  "id": "00a0896cfbe93d25",
+  "label": "different",
+  "note": "HRSA Ryan White formula vs CDC rapid response reserve.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-labor-hhs-education-fy2026-fy2027",
+   "old_heading": "FY 2026",
+   "new_heading": "Facilities; and the Infectious Diseases Rapid Response Reserve",
+   "old_text": "Budget Activity Committee Ryan White Formula Funding.--The Committee is concerned that the Ryan White Part A funding formula, which is calculated based on jurisdiction of diagnosis, disadvantages jurisdictions that experience increasing population sizes due to new incoming residents. When HRSA last ",
+   "new_text": "Fund; Public Health Infrastructure. As part of the fiscal year 2028 congressional justification, CDC is directed to provide a breakout table detailing the funding requested for these core capacity program lines. Public Awareness of CDC Activities.--The Committee recognizes that many public health in"
+  }
+ },
+ {
+  "id": "00a2bdb8d739d1d3",
+  "label": "different",
+  "note": "Old is a general 'Independent Agencies' paragraph about several regional commissions; new is specifically the separate Southwest Border Regional Commission - a split/mismatched pairing.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-energy-water-fy2020-fy2022",
+   "old_heading": "INDEPENDENT AGENCIES",
+   "new_heading": "Southwest Border Regional Commission",
+   "old_text": "The budget request again proposes to eliminate the Delta Regional Authority, Denali Commission, and Northern Border Regional Commission. The budget requests funding to conduct closeout of the agencies in fiscal year 2020. The Committee strongly opposes the termination of these agencies, and recommen",
+   "new_text": "The Committee recommends $2,500,000 for the Southwest Border Regional Commission."
+  }
+ },
+ {
+  "id": "00a3ca080d90bd03",
+  "label": "different",
+  "note": "Renumbering collision: Sec. 766 hemp pilot vs Sec. 749 Food for Peace.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-agriculture-fy2022-fy2023",
+   "old_heading": "(INCLUDING RESCISSIONS AND TRANSFERS OF FUNDS) — Section 766",
+   "new_heading": "(INCLUDING RESCISSIONS AND TRANSFERS OF FUNDS) — Section 749",
+   "old_text": "Section 766.--The bill includes language extending the hemp pilot program.",
+   "new_text": "Section 749.--The bill includes language regarding Food for Peace."
+  }
+ },
+ {
+  "id": "00aa0f490a565eab",
+  "label": "different",
+  "note": "Sec. 8063 O&M Army classified transfer vs Sec. 8140 Taliban funding prohibition.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2021-fy2022",
+   "old_heading": "(RESCISSIONS) — Section 8063",
+   "new_heading": "(RESCISSIONS) — Section 8140",
+   "old_text": "Section 8063 has been amended and provides for the transfer of funds made available in this Act under Operation and Maintenance, Army to other activities of the federal government for classified purposes.",
+   "new_text": "Section 8140 has been amended and prohibits funds for any member of the Taliban."
+  }
+ },
+ {
+  "id": "00b316dc14f4fa9f",
+  "label": "different",
+  "note": "CBP Salaries and Expenses vs Research and Development under Management and Administration.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2016-fy2017",
+   "old_heading": "Recommendation",
+   "new_heading": "Recommendation",
+   "old_text": "For fiscal year 2016, the Committee recommends $8,695,238,000 for Salaries and Expenses, $429,032,000 below the amount requested and $235,581,000 above the amount provided in fiscal year 2015. Included in the total is $3,274,000 derived from the Harbor Maintenance Trust Fund. The recommendation prom",
+   "new_text": "The Committee recommends $2,500,000 for Research and Development, the same as the request and $2,250,000 above fiscal year 2016. A comparison of the budget request to the Committee recommended level by budget activity is as follows:"
+  }
+ },
+ {
+  "id": "00d3f36d69a04fe3",
+  "label": "different",
+  "note": "Broad State and Private Forestry summary vs narrow Lake Tahoe fire-grants subsection - parent/child mismatch.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2023-fy2024",
+   "old_heading": "STATE AND PRIVATE FORESTRY",
+   "new_heading": "Lake Tahoe Basin State Fire Capacity Grants.--The Committee",
+   "old_text": "The Committee recommends $332,626,000 for State and Private Forestry. The recommendation is $17,428,000 above the enacted level and $25,663,000 above the budget request. Community Project Funding.--A detailed list of projects can be found at the back of this report. The State and Private appropriati",
+   "new_text": "recognizes the Forest Service's efforts to create fireresilient communities utilizing active fuel reduction treatments and collaboration with municipal water and fire agencies to improve critical infrastructure and expand wildfire response capabilities in the Lake Tahoe Basin and urges the Forest Se"
+  }
+ },
+ {
+  "id": "00d7b8abd1f58e31",
+  "label": "different",
+  "note": "Old Sec. 777 merged into a blob covering six unrelated sections; exclusive pairing hides other successors.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-agriculture-fy2022-fy2023",
+   "old_heading": "(INCLUDING RESCISSIONS AND TRANSFERS OF FUNDS) — Section 777",
+   "new_heading": "(INCLUDING RESCISSIONS AND TRANSFERS OF FUNDS)",
+   "old_text": "Section 777.--The bill includes language related to the purchase of agricultural land.",
+   "new_text": "Sec. 764.--The bill includes language related to yogurt. Sec. 765.--The bill includes language related to administrative and operating expenses available for crop insurance contracts. Sec. 766.--The bill includes funding for agricultural disasters in calendar year 2022. Sec. 767.--The bill includes "
+  }
+ },
+ {
+  "id": "00fd8e85476a846c",
+  "label": "different",
+  "note": "Friendly force tracking vs tribal consultation requirements.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2022-fy2023",
+   "old_heading": "Actions Needed to Enhance Friendly Force Tracking Capabilities",
+   "new_heading": "TRIBAL CONSULTATION",
+   "old_text": "and Fully Evaluate Training'' included recommendations to prevent friendly fire incidents in this type of operation. The Committee encourages the Secretary of Defense to fully implement the report's recommendations. Further, the Committee directs the Secretary of Defense to submit a report to the co",
+   "new_text": "The Administration issued a Presidential Memorandum on January 26, 2021, regarding Tribal Consultation and Strengthening Nation-to-Nation Relationships. This memorandum requires agencies to create a plan of action to implement Executive Order 13175 which obligates federal agencies to consult with tr"
+  }
+ },
+ {
+  "id": "00fe73c3c9c7d5ae",
+  "label": "different",
+  "note": "Egyptian prisoners/Sinai counterterrorism vs Uyghur refugees/Vietnam provisions.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-state-foreign-ops-fy2024-fy2025",
+   "old_heading": "Khalaf, Salah Soltan, Anas El-Beltagy, and Alaa Abdel",
+   "new_heading": "TIBET",
+   "old_text": "Fattah. The Committee urges that humane treatment and fair trials be afforded to these and other prisoners in Egypt. Counterterrorism Campaign in the Sinai.--Not later than 60 days after the date of enactment of the act, the Secretary of State, in consultation with the Secretary of Defense, shall up",
+   "new_text": "[Budget authority in thousands of dollars] Uyghur Refugees.--Not later than 90 days after the date of enactment of the act, the Secretary of State shall brief the Committees on Appropriations on efforts to pursue resettlement of Uyghur refugees and to help meet their basic needs in the interim. Viet"
+  }
+ },
+ {
+  "id": "010471e691ae2115",
+  "label": "different",
+  "note": "Both headed 'Recommendation' but PC&I funding vs S&T budget commentary.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2018-fy2019",
+   "old_heading": "Recommendation",
+   "new_heading": "Recommendation",
+   "old_text": "The Committee recommends $22,657,000 in discretionary funding for PC&I, the same as the request and $7,430,000 above the amount provided in fiscal year 2017.",
+   "new_text": "The fiscal year 2019 President's budget request, for the second year in a row, proposes significant reductions to S&T, which raises questions about the strategic direction the Department envisions for the capabilities provided by S&T. This is especially true in the case of S&T's laboratory capabilit"
+  }
+ },
+ {
+  "id": "0161fb8cd9b76b11",
+  "label": "same",
+  "note": "Section 209 to 210, A-76 competition prohibition for BOP/FPI, near-identical.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-commerce-justice-science-fy2023-fy2025",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS) — Section 209",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 210",
+   "old_text": "Section 209 prohibits the use of funds for OMB Circular A- 76 competitions for work performed by employees of the Bureau of Prisons or of the Federal Prison Industries, Inc.",
+   "new_text": "Section 210 prohibits the use of funds for A-76 competitions for work performed by employees of BOP or Federal Prison Industries, Inc."
+  }
+ },
+ {
+  "id": "016c7512804d4004",
+  "label": "same",
+  "note": "Continuing GAO oversight narrative on NASA SLS/Orion cost and schedule baselines.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-commerce-justice-science-fy2019-fy2020",
+   "old_heading": "DEEP SPACE EXPLORATION SYSTEMS",
+   "new_heading": "Human Exploration Programs, the U.S. Government Accountability",
+   "old_text": "The Committee recommends $5,083,900,000 for Deep Space Exploration Systems, which is $293,900,000 above fiscal year 2018 and $525,100,000 above the request. The Government Accountability Office (GAO) shall continue its review of NASA's human exploration programs, specifically the SLS program, the Or",
+   "new_text": "Office (GAO) recommended that NASA establish a separate cost and schedule baseline for work required to support Space Launch System (SLS) Block I Exploration Mission-2 and establish separate cost and schedule baselines for each additional capability of SLS, Orion, and associated exploration ground s"
+  }
+ },
+ {
+  "id": "01b5087e57774e2a",
+  "label": "same",
+  "note": "Same NOAA NESDIS account (heading trimmed but same office), both paragraphs discuss NCEI-related data programs within it.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-commerce-justice-science-fy2023-fy2025",
+   "old_heading": "NATIONAL ENVIRONMENTAL SATELLITE, DATA AND INFORMATION SERVICE OPERATIONS, RESEARCH, AND FACILITIES",
+   "new_heading": "NATIONAL ENVIRONMENTAL SATELLITE, DATA AND INFORMATION SERVICE",
+   "old_text": "(In thousands of dollars) National Centers for Environmental Information (NCEI).--The Committee continues to support the NCEI and their efforts to provide more products and services for the Nation. The recommendation supports the requests for Climate Data Records, Sustainment of Cloud Framework for ",
+   "new_text": "Uncrewed Systems Data.--The Committee recognizes the importance of maximizing the utility of NOAA investments in the collection of uncrewed systems (UxS) data. The recommendation includes $5,000,000 to support the development of a Data Assembly Hub for uncrewed systems. The Committee directs NOAA to"
+  }
+ },
+ {
+  "id": "01ef882c6ac0e817",
+  "label": "same",
+  "note": "Both are fragments of the same recurring BIE/Forest Service deferred-maintenance project list table, differing only in the specific rows shown.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2022-fy2023",
+   "old_heading": "North Carolina. Campground Pit",
+   "new_heading": "North Carolina. North Carolina",
+   "old_text": "Toilet Replacement. WY Bighorn National Bighorn Forest-wide 100,000",
+   "new_text": "Deferred Maintenance. AR Ouachita National Shady Lake Recreation 1,300,000"
+  }
+ },
+ {
+  "id": "0209122477118e4f",
+  "label": "unsure",
+  "note": "Both excerpts are only a couple of words with divergent paths; too little text to judge.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-defense-fy2019-fy2020",
+   "old_heading": "(MOD)",
+   "new_heading": "III",
+   "old_text": "Integrated Management",
+   "new_text": "Programs adjustment"
+  }
+ },
+ {
+  "id": "0221c9579c574661",
+  "label": "same",
+  "note": "Rows of the recurring Forest Service deferred maintenance project table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2022-fy2023",
+   "old_heading": "National Forest. Cemetery Point",
+   "new_heading": "Forest. National Forest",
+   "old_text": "Stabilization Project. AK Tongass National Ohmer Creek Trail 210,000",
+   "new_text": "Deferred Maintenance. ID, WY Caribou-Targhee Caribou-Targhee 2,082,000"
+  }
+ },
+ {
+  "id": "0255e6e30cfc5136",
+  "label": "same",
+  "note": "Same VA Information Technology Systems account despite garbled intermediate headings.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-milcon-va-fy2019-fy2020",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS)",
+   "new_heading": "(INCLUDING TRANSFER OF FUNDS)",
+   "old_text": "The Information Technology Systems account supports IT services such as systems development and performance, operations and maintenance, information protection, and customer support. The program permits the effective and efficient delivery of veterans' health care services and benefits programs. Wit",
+   "new_text": "The Information Technology (IT) Systems account supports IT services such as systems development and performance, operations and maintenance, information protection, and customer support. The program permits the effective and efficient delivery of Veterans' healthcare services and benefits programs."
+  }
+ },
+ {
+  "id": "02a025a7490d94f1",
+  "label": "same",
+  "note": "Committee narrative under the same NOAA NMFS Operations, Research, and Facilities account.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-commerce-justice-science-fy2023-fy2025",
+   "old_heading": "NATIONAL MARINE FISHERIES SERVICE OPERATIONS, RESEARCH, AND FACILITIES",
+   "new_heading": "NATIONAL MARINE FISHERIES SERVICE",
+   "old_text": "(In thousands of dollars) Offshore Wind.--The Committee applauds the President's initiative to support the growth of offshore wind energy as part of the broader goal of reducing carbon emissions. As such, the recommendation includes an increase of no less than $39,149,000 above the fiscal year 2022 ",
+   "new_text": "Observation through Electronic Monitoring.--The Committee believes that there are substantial benefits to the implementation of Electronic Monitoring (EM) and Electronic Reporting (ER) in U.S. fisheries. The Committee encourages NMFS to clarify the ability for the Regional Observer & Monitoring Prog"
+  }
+ },
+ {
+  "id": "02cb9b95b4f4d7b0",
+  "label": "same",
+  "note": "PILT program funding, relocated from account section to numbered general provision.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2019-fy2020",
+   "old_heading": "PAYMENTS IN LIEU OF TAXES (PILT)",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 114",
+   "old_text": "Payments in Lieu of Taxes (PILT).--The Payments in Lieu of Taxes (PILT) program provides compensation to local governments for the loss of tax revenue resulting from the presence of Federal land in their county or State. In 2018, 49 states, the District of Columbia, Guam, the Commonwealth of Puerto ",
+   "new_text": "Section 114 provides funding for the Payments in Lieu of Taxes (PILT) program."
+  }
+ },
+ {
+  "id": "02cdaf56a94da657",
+  "label": "different",
+  "note": "Sec. 824 DC traffic cameras vs Sec. 825 noncitizen voter registration.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-financial-services-fy2024-fy2025",
+   "old_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 824",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 825",
+   "old_text": "Section 824. The Committee includes a new provision prohibiting funds used by the District of Columbia to carry out DC Automated Traffic Enforcement.",
+   "new_text": "Section 825. The Committee includes a new provision prohibiting funds used by the District of Columbia to enact or carry out any law which enrolls or registers noncitizens into voter rolls."
+  }
+ },
+ {
+  "id": "0332bb5ed1e60d37",
+  "label": "same",
+  "note": "Architect of the Capitol account renamed Capitol to Capital Construction and Operations.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-legislative-branch-fy2016-fy2017",
+   "old_heading": "Capitol Construction and Operations",
+   "new_heading": "Capital Construction and Operations",
+   "old_text": "The Capitol Construction and Operations appropriation provides funding for salaries and related benefits of the Architect, officers, administrative and support staff, including engineering and architecture employees. This account also provides for administrative items such as agency-wide contractual",
+   "new_text": "The Capital Construction and Operations appropriation provides funding for salaries and related benefits of the Architect, officers, administrative and support staff, including engineering and architecture employees. This account also provides for administrative items such as agency-wide contractual"
+  }
+ },
+ {
+  "id": "0350a30ad6cf566d",
+  "label": "same",
+  "note": "Rows from the same recurring Priority Area Trails maintenance-backlog table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2022-fy2023",
+   "old_heading": "Payette National Wilderness Complex Forest; Salmon- Priority Area Trails",
+   "new_heading": "Forest, Six Rivers Wilderness Trails National Forest. Priority Area",
+   "old_text": "Challis National Maintenance. Forest. AK Chugach National Heney Ridge Complex 205,000",
+   "new_text": "Maintenance. CA Lake Tahoe Basin Bayview Parking Lot 400,000 Management Unit. Upgrades. CA Lassen National Forest Recreation Deferred 555,600 Maintenance. CA Mendocino National Critical Forest-Wide 122,000 Forest. Roof Replacement. CA Modoc National Forest. Blue Lake Recreation 2,550,000 Improvement"
+  }
+ },
+ {
+  "id": "0384a5fd59d6dd02",
+  "label": "different",
+  "note": "Saudi Arabia/Syria/Tunisia human-rights directives vs Enterprise Funds/family planning/Internet freedom.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-state-foreign-ops-fy2018-fy2019",
+   "old_heading": "RELIEF AND RECOVERY FUND",
+   "new_heading": "RELIEF AND RECOVERY FUNDP(IN THE ACT)",
+   "old_text": "[Budget authority in thousands of dollars] Saudi Arabia.--The Committee is concerned with human rights in Saudi Arabia, including the imprisonment of blogger Raif Badawi and his lawyer Waleed Abu al-Khair. Syria.--Funds appropriated by the act for assistance for Syria shall be made available for pro",
+   "new_text": "[Budget authority in thousands of dollars] Sec. 7070. Enterprise Funds. Sec. 7071. International Family Planning and Women's Health. Sec. 7072. Global Internet Freedom. Broadcasting Board of Governors.--The Committee recommends $69,875,000 for BBG program delivery costs (including shortwave, mediumw"
+  }
+ },
+ {
+  "id": "042d00423ecd5f19",
+  "label": "same",
+  "note": "IRS account rename from Operations Support to Technology and Operations Support; same recurring appropriations account.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-financial-services-fy2024-fy2025",
+   "old_heading": "OPERATIONS SUPPORT",
+   "new_heading": "TECHNOLOGY AND OPERATIONS SUPPORT",
+   "old_text": "",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "045c2ea709a72a95",
+  "label": "same",
+  "note": "Recurring Africa regional security partnerships list in Title VII general provisions, programs added/dropped between years.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-state-foreign-ops-fy2017-fy2018",
+   "old_heading": "Regional Security Initiative; the Trans-Sahara Counterterrorism",
+   "new_heading": "CBSI; CARSI; the Trans-Sahara Counterterrorism Partnership; the",
+   "old_text": "Partnership; the Partnership for Regional East Africa Counterterrorism; the West Africa Regional Security Initiative; the Global Peace Operations Initiative, including Africa Contingency Operations Training and Assistance; the African Peacekeeping Rapid Response Partnership; the Africa Conflict Stab",
+   "new_text": "Partnership for Regional East Africa Counterterrorism; the Global Peace Operations Initiative, including Africa Contingency Operations Training and Assistance; the Africa Conflict Stabilization and Border Security program; the African Military Education Program; the Africa Maritime Security Initiati"
+  }
+ },
+ {
+  "id": "0483fb8514453644",
+  "label": "same",
+  "note": "DHS I&A Annual Budget Justifications requirement, renamed to add 'and Obligation Plans'.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-homeland-security-fy2016-fy2017",
+   "old_heading": "ANNUAL BUDGET JUSTIFICATIONS",
+   "new_heading": "ANNUAL BUDGET JUSTIFICATIONS AND OBLIGATION PLANS",
+   "old_text": "The Committee emphasizes that the fiscal year 2017 budget justifications for the classified budget shall include the same level of detail required of other appropriations and PPAs. I&A failed to provide adjustments to base, programmatic changes, and other details at the PPA level, providing only off",
+   "new_text": "The Committee expects to receive the same level of information for the Department's classified budget as is required under the Chief Financial Officer both in annual budget justifications and quarterly obligation plans. Additionally, while the Committee does not require an Intelligence Expenditure P"
+  }
+ },
+ {
+  "id": "061a1757fb81d9a0",
+  "label": "different",
+  "note": "Old bundled surveillance tech plus EVUS; new is solely EVUS - a split.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-homeland-security-fy2016-fy2017",
+   "old_heading": "FIELD OPERATIONS TECHNOLOGY AND SECURITY ENHANCEMENTS",
+   "new_heading": "ELECTRONIC VISA UPDATE SYSTEM",
+   "old_text": "The Committee recommends $11,100,000, the same amount as requested, for an integrated surveillance and intrusion detection system that will improve security and situational awareness for land POEs, and directs that CBP provide semiannual briefings on implementation and planned spending for this prog",
+   "new_text": "The Committee recommends $27,800,000, as requested, for the Electronic Visa Update System [EVUS], a program that allows non-immigrant visa holders to provide updated biographic and travel-related information through a public Web site, and enables CBP to facilitate admissibility determinations postvi"
+  }
+ },
+ {
+  "id": "062224af9ed9a492",
+  "label": "same",
+  "note": "Sections 213->214, renumbered continuation of the 287(g) program provision.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2023-fy2024",
+   "old_heading": "Title II--Administrative Provisions — Section 213",
+   "new_heading": "Title II--Administrative Provisions — Section 214",
+   "old_text": "Section 213. The Committee continues a provision regarding the 287(g) program.",
+   "new_text": "Section 214. The Committee includes a new provision prohibiting the use of funds to reduce participation in the 287(g) program."
+  }
+ },
+ {
+  "id": "063034c29c619659",
+  "label": "same",
+  "note": "Same Corps of Engineers 'Inspection of Completed Works, FL' line item, amount changed from 1,003 to 880.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-energy-water-fy2022-fy2024",
+   "old_heading": "INSPECTION OF COMPLETED WORKS, FL.. .............. 1,003",
+   "new_heading": "INSPECTION OF COMPLETED WORKS, FL.. .............. 880",
+   "old_text": "",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "07beaf0c8d9e6cd7",
+  "label": "same",
+  "note": "Text is a continuous sentence about the State/USAID Bureau for Conflict Prevention and Stabilization and Women, Peace and Security programs across both years.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-state-foreign-ops-fy2022-fy2023",
+   "old_heading": "Issues at the State Department and USAID's Bureau for Conflict",
+   "new_heading": "State Department and USAID's Bureau for Conflict Prevention and",
+   "old_text": "Prevention and Stabilization play in implementing Women, Peace, and Security strategies. The Secretary of State and USAID Administrator shall consult with the Committees on Appropriations on operational requirements, including staffing and training, to carry out these responsibilities. Pursuant to s",
+   "new_text": "Stabilization play in implementing Women, Peace, and Security strategies. The Secretary of State and USAID Administrator shall consult with the Committees on Appropriations on operational requirements, including staffing and training, to carry out these responsibilities. Women and girls at risk from"
+  }
+ },
+ {
+  "id": "0821f1409225c98c",
+  "label": "same",
+  "note": "Same 501(c)(4) tax-exempt regulation prohibition provision, renumbered from Sec. 129 to Sec. 127 with near-identical text.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-financial-services-fy2016-fy2017",
+   "old_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 129",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS) — Section 127",
+   "old_text": "Section 129. The Committee includes a new provision that prohibits the Department from finalizing any regulation related to the standards used to determine the tax-exempt status of a 501(c)(4) organization.",
+   "new_text": "Section 127. The Committee continues a provision that prohibits the Department from finalizing any regulation related to the standards used to determine the tax-exempt status of a 501(c)(4) organization."
+  }
+ },
+ {
+  "id": "09340aaeb8302636",
+  "label": "same",
+  "note": "Identical Budget Activity 4 heading, ampersand-to-'and' rename.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-defense-fy2024-fy2025",
+   "old_heading": "BUDGET ACTIVITY 4: ADMIN & SERVICEWIDE ACTIVITIES",
+   "new_heading": "BUDGET ACTIVITY 4: ADMIN AND SERVICEWIDE ACTIVITIES",
+   "old_text": "",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "095c5654304e5480",
+  "label": "different",
+  "note": "Sec. 8100 (software pilot program) and Sec. 8163 (platform supply vessel pilot program) are unrelated provisions sharing only a Title VIII slot.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2025-fy2026",
+   "old_heading": "GENERAL PROVISIONS — Section 8100",
+   "new_heading": "YEAR 2026 — Section 8163",
+   "old_text": "Section 8100 provides budget activity 8 for certain software pilot programs.",
+   "new_text": "Section 8163 establishes a platform supply vessel pilot program."
+  }
+ },
+ {
+  "id": "09c8331d2bf56b5b",
+  "label": "same",
+  "note": "Same BIA 'Operation of Indian Programs' account (heading differs only by 'Transfer' vs 'Transfers'), continuing appropriation with updated figures.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2024-fy2025",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS)",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS)",
+   "old_text": "The Committee recommends $2,010,574,000 for Operation of Indian Programs. These resources are in addition to those funds provided in the Infrastructure Investment and Jobs Act for fiscal year 2024: $17,000,000 for Tribal resilience and adaptation and $26,000,000 for community relocation. All subacti",
+   "new_text": "The Committee recommends $2,189,150,000 for Operation of Indian Programs, which is a $290,600,000 increase above the fiscal year 2024 enacted level and $19,764,000 above the President's budget request. The Committee acknowledges the significant funding needs across Indian country, and the level of f"
+  }
+ },
+ {
+  "id": "0a2148e7aa9cbf3b",
+  "label": "same",
+  "note": "DC National Guard Federal Payment account; heading expands 'D.C.' to 'District of Columbia'; both texts empty.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-financial-services-fy2020-fy2024",
+   "old_heading": "FEDERAL PAYMENT FOR THE D.C. NATIONAL GUARD",
+   "new_heading": "FEDERAL PAYMENT FOR THE DISTRICT OF COLUMBIA NATIONAL GUARD",
+   "old_text": "",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "0ab30ae5aaa4acd8",
+  "label": "same",
+  "note": "DOT Cyber Security Initiative(s) account, near-identical text.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-thud-fy2019-fy2020",
+   "old_heading": "CYBER SECURITY INITIATIVE",
+   "new_heading": "CYBER SECURITY INITIATIVES",
+   "old_text": "The Cyber Security Initiative is an effort to close performance gaps in the Department's cybersecurity. The initiative includes support for essential program enhancements, infrastructure improvements and contractual resources to enhance the security of the Department's computer network and reduce th",
+   "new_text": "The Cyber Security Initiatives account is an effort to close performance gaps in the Department's cyber security. The account includes support for essential program enhancements, infrastructure improvements, and contractual resources to enhance the security of the Department's computer network and r"
+  }
+ },
+ {
+  "id": "0ae1a55cf26f7bda",
+  "label": "same",
+  "note": "Recurring CISA Cybersecurity narrative section, different topical directive each year.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2022-fy2023",
+   "old_heading": "CYBER SECURITY",
+   "new_heading": "Cybersecurity",
+   "old_text": "Capabilities to Nullify Cyber Attacks.--Not later than 180 days after the date of enactment of this Act, CISA shall issue a Request for Information (RFI) from private sector providers, universities, and Department of Defense entities to identify existing software solutions for nullifying cybersecuri",
+   "new_text": "Accreditation of Third-Party Cybersecurity Service Providers.--The Committee recognizes that, while a robust market of private sector cybersecurity providers is necessary to meet demand from vulnerable entities and protect national critical functions from cybersecurity threats, critical infrastructu"
+  }
+ },
+ {
+  "id": "0bba7d9c6b1f41ed",
+  "label": "same",
+  "note": "FRA grant program renamed from State of Good Repair to Intercity Passenger Rail Grants.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-thud-fy2024-fy2025",
+   "old_heading": "FEDERAL-STATE PARTNERSHIP FOR STATE OF GOOD REPAIR GRANTS",
+   "new_heading": "FEDERAL-STATE PARTNERSHIP FOR INTERCITY PASSENGER RAIL GRANTS",
+   "old_text": "",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "0c288b94e2d259ab",
+  "label": "same",
+  "note": "Continuing DHS S&T budget line Acquisition and Operations Support/Analysis.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2016-fy2017",
+   "old_heading": "Acquisition and Operations Support",
+   "new_heading": "Acquisition and Operations Analysis",
+   "old_text": "The Committee recommends $47,102,000 for Acquisition and Operations Support, the same as the amount requested and $5,399,000 above the amount provided in fiscal year 2015. The recommendation includes the funds requested for S&T to provide capabilities and requirements analysis in support of the DHS ",
+   "new_text": "The Committee recommends $55,748,000 for Acquisition and Operations Analysis, the same as the amount requested and $1,022,000 above the amount provided in fiscal year 2016."
+  }
+ },
+ {
+  "id": "0cc4659341976f08",
+  "label": "same",
+  "note": "Same TOC entry for AZ reservoir operations scheduling, different page-number citation.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-energy-water-fy2020-fy2022",
+   "old_heading": "SCHEDULING RESERVOIR OPERATIONS, AZ .............. 117",
+   "new_heading": "SCHEDULING RESERVOIR OPERATIONS, AZ .............. 112",
+   "old_text": "",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "0cd558c2ed971bde",
+  "label": "same",
+  "note": "BIE Operation of Indian Education Programs account continuation.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-interior-environment-fy2020-fy2024",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS)",
+   "new_heading": "(INCLUDING TRANSFERS OF FUNDS)",
+   "old_text": "Education.--The bill includes $905,841,000 for education programs, and the Committee approves the separation of this funding from the Bureau of Indian Affairs Operation of Indian Programs. The Committee fully supports making the needed reforms to the Bureau of Indian Education [BIE] in order to impr",
+   "new_text": "The bill provides $1,136,725,000 for the Operation of Indian Education Programs, $3,173,000 above the enacted level and $57,664,000 below the budget request. The detailed allocation of funding by program and activity is included in the table accompanying this report. Internal transfers within the ac"
+  }
+ },
+ {
+  "id": "0d6ceb36c30c509c",
+  "label": "different",
+  "note": "VA sections 226-228 narrative vs sections 233-236 narrative - different specific provisions.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-milcon-va-fy2016-fy2017",
+   "old_heading": "(INCLUDING RESCISSIONS OF FUNDS)",
+   "new_heading": "(RESCISSIONS OF FUNDS)",
+   "old_text": "The bill includes section 226 rescinding and reappropriating fiscal year 2016 funding--$1,400,000,000 from ``Medical Services'', $100,000,000 from ``Medical Support and Compliance'', and $250,000,000 from ``Medical Facilities''. The bill includes section 227 requiring the Secretary to notify the Com",
+   "new_text": "The bill includes section 233 which rescinds Medical Care advance funding and section 234 which reduces funding in current year-funded accounts to incorporate assumed absorption of the proposed 1.6 percent payraise. The Department has authority to use whatever appropriated funds are available to sup"
+  }
+ },
+ {
+  "id": "0e289594fc10a96b",
+  "label": "different",
+  "note": "Cybersecurity/electric grid R&D vs border tunnel detection.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-homeland-security-fy2016-fy2017",
+   "old_heading": "CYBERSECURITY",
+   "new_heading": "BORDER SECURITY",
+   "old_text": "The Committee continues to recognize the cyber threats to the Nation's electric grid and the other control systems vital to our security and economy. In order to address this challenge, the Committee expects that S&T will continue to invest in control systems test beds and associated cyber education",
+   "new_text": "The Committee is concerned that money invested in tunnel detection efforts is not progressing appropriately, and that stakeholders--CBP and ICE--are not being engaged to the level that is expected. The Committee supports efforts to more thoroughly explore such solutions, but $11,969,000 has been inv"
+  }
+ },
+ {
+  "id": "0f7831bd986b43c6",
+  "label": "same",
+  "note": "Same TOC entry for NM reservoir operations scheduling, different page citation.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-energy-water-fy2024-fy2025",
+   "old_heading": "SCHEDULING RESERVOIR OPERATIONS, NM .............. 250",
+   "new_heading": "SCHEDULING RESERVOIR OPERATIONS, NM .............. 225",
+   "old_text": "",
+   "new_text": ""
+  }
+ },
+ {
+  "id": "104310f123ff588e",
+  "label": "same",
+  "note": "Same recurring EPA administrative provisions section with overlapping authorities.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2020-fy2021",
+   "old_heading": "(INCLUDING TRANSFERS OF FUNDS)",
+   "new_heading": "(INCLUDING TRANSFERS AND RESCISSION OF FUNDS)",
+   "old_text": "The Committee continues the language, carried in prior years, concerning Tribal Cooperative Authority, the collection and obligation of pesticides fees, and transfer authorities for the purposes of implementing the Great Lakes Restoration Initiative. The bill authorizes the collection and obligation",
+   "new_text": "The bill authorizes the Administrator to assist Tribes with their environmental program implementation and to enter into cooperative agreements. The bill authorizes the Administrator to collect and obligate certain pesticide fees in accordance with the Pesticide Registration Improvement Extension Ac"
+  }
+ },
+ {
+  "id": "114a4a10e54a00ac",
+  "label": "same",
+  "note": "Same institute (NIDCD), heading wording changed, funding updated.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-labor-hhs-education-fy2019-fy2024",
+   "old_heading": "NATIONAL INSTITUTE ON DEAFNESS AND OTHER COMMUNICATION DISORDERS",
+   "new_heading": "NATIONAL INSTITUTE OF DEAFNESS AND OTHER COMMUNICATION DISORDERS",
+   "old_text": "The Committee recommendation includes $474,653,000 for the National Institute on Deafness and Other Communication Disorders [NIDCD]. Spasmodic Dysphonia.--The Committee continues to encourage NIDCD to expand research on spasmodic dysphonia, a form of dystonia. The Committee also encourages NIDCD to ",
+   "new_text": "The Committee recommendation includes $534,333,000 for the National Institute of Deafness and Other Communication Disorders [NIDCD]."
+  }
+ },
+ {
+  "id": "11e8961699133b75",
+  "label": "different",
+  "note": "Urban Agriculture/Farmers' Markets vs Farmer Mentorship/watershed conservation.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-agriculture-fy2023-fy2024",
+   "old_heading": "COMMITTEE PROVISIONS",
+   "new_heading": "Farmer Mentorship Program for Watersheds.--The Committee is",
+   "old_text": "For the Urban Agriculture and Innovative Production program, the Committee provides $13,500,000. Farmers' Markets.--The Committee recognizes the importance of Farmers' Markets in urban and rural food deserts. Farmers' Markets are vehicles that allow local farmers to provide healthy foods to low-inco",
+   "new_text": "concerned about soil and water quality near watersheds such as the Great Lakes Basin, Salton Sea, Lake Okeechobee, and the Chesapeake Bay. The Committee recognizes that farmers may be unaware of possible or necessary conservation efforts that currently exist to improve soil and water quality. The Co"
+  }
+ },
+ {
+  "id": "16386460d640468a",
+  "label": "same",
+  "note": "Section 212 to 213, identical 287(g) program provision.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2022-fy2023",
+   "old_heading": "(INCLUDING TRANSFER OF FUNDS) — Section 212",
+   "new_heading": "Title II--Administrative Provisions — Section 213",
+   "old_text": "Section 212. The Committee continues and modifies a provision regarding the 287(g) program.",
+   "new_text": "Section 213. The Committee continues a provision regarding the 287(g) program."
+  }
+ },
+ {
+  "id": "1ac38ac536846a80",
+  "label": "same",
+  "note": "Rows of the recurring Forest Service deferred maintenance project table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2022-fy2023",
+   "old_heading": "Forest. Scenic Trail",
+   "new_heading": "National Forest. National Forest",
+   "old_text": "Maintenance. ID Sawtooth National Steer Basin Double 75,000",
+   "new_text": "Deferred Maintenance. MN Chippewa National Chippewa National 638,700"
+  }
+ },
+ {
+  "id": "28d3335b3d9b2f8e",
+  "label": "same",
+  "note": "Same recurring rescissions-of-funds section, renumbered 559->534.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-homeland-security-fy2017-fy2019",
+   "old_heading": "(INCLUDING RESCISSIONS OF FUNDS) — Section 559",
+   "new_heading": "(INCLUDING RESCISSIONS AND TRANSFERS OF FUNDS) — Section 534",
+   "old_text": "Section 559. The bill rescinds unobligated balances from prior year appropriations from accounts across the Department.",
+   "new_text": "Section 534. The bill rescinds unobligated balances from prior year appropriations."
+  }
+ },
+ {
+  "id": "2a880b9e28b72c9b",
+  "label": "different",
+  "note": "Forest Service Under Secretary narrative vs Federal Crop Insurance Corporation Fund.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-agriculture-fy2017-fy2018",
+   "old_heading": "COMMITTEE RECOMMENDATIONS",
+   "new_heading": "COMMITTEE RECOMMENDATIONS",
+   "old_text": "The Committee recommends an appropriation of $901,000 for the Office of the Under Secretary for Natural Resources and Environment. Innovative Financing for Restoration Projects.--The Committee recognizes the challenge of managing millions of acres of land that increasingly need forest health restora",
+   "new_text": "The Committee recommends an appropriation of such sums as may be necessary, estimated to be $8,245,000,000 in fiscal year 2018 for the Federal Crop Insurance Corporation Fund."
+  }
+ },
+ {
+  "id": "2a9812707d5df113",
+  "label": "different",
+  "note": "Broad Procurement Defense-Wide total vs narrower Defense Production Act Purchases sub-line.",
+  "source": "judged",
+  "evidence": {
+   "slug": "senate-defense-fy2025-fy2026",
+   "old_heading": "Procurement, Defense-Wide",
+   "new_heading": "Defense Production Act Purchases",
+   "old_text": "The Committee recommends an appropriation of $5,819,954,000, of which $527,245,000 is designated as being for an emergency requirement pursuant to section 251(b)(2)(A)(i) of the Balanced Budget and Emergency Deficit Control Act of 1985. This is $413,203,000 above the budget estimate.",
+   "new_text": "The Committee recommends an appropriation of $256,923,000. This is $20,000,000 above the budget estimate."
+  }
+ },
+ {
+  "id": "2fefcab9050b2ba5",
+  "label": "same",
+  "note": "Same Assisted Reproductive Services policy guidance provision, renumbered Sec. 8122 (FY2026) to Sec. 8117 (FY2027).",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2026-fy2027",
+   "old_heading": "YEAR 2026 — Section 8122",
+   "new_heading": "YEAR 2027 — Section 8117",
+   "old_text": "Section 8122 provides guidance on the implementation of the Policy for Assisted Reproductive Services for the Benefit of Seriously or Severely Ill/Injured Active Duty Service Members.",
+   "new_text": "Section 8117 provides guidance regarding implementation of ``Policy for Assisted Reproductive Services for Benefit of Seriously or Severely Ill/Injured (Category II or III) Active Duty Service Member.''"
+  }
+ },
+ {
+  "id": "3a75b9f031d486db",
+  "label": "different",
+  "note": "NPPD reorg split: Infrastructure Capacity Building vs Cybersecurity PPA; exclusive pairing would hide other successors.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-homeland-security-fy2017-fy2018",
+   "old_heading": "Infrastructure Capacity Building",
+   "new_heading": "Cybersecurity",
+   "old_text": "The Committee recommends $233,958,000 for Infrastructure Capacity Building, $6,342,000 below the amount requested and $12,794,000 below the amount provided in fiscal year 2016. The Committee recognizes that the country's highly integrated electrical grid is vulnerable to cyber-attacks and natural di",
+   "new_text": "The Committee recommends $702,699,000 for Cybersecurity, $17,858,000 below the amount requested and $33,285,000 above the amount provided in fiscal year 2017. The Cybersecurity PPA advances computer security preparedness and the response to cyberattacks and incidents. The program includes activities"
+  }
+ },
+ {
+  "id": "401be1a1e6578dfa",
+  "label": "same",
+  "note": "Fragments of the recurring BLM deferred-maintenance project table.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-interior-environment-fy2023-fy2024",
+   "old_heading": "District. Outstanding Natural",
+   "new_heading": "District, Central Recreation Repair",
+   "old_text": "Area Site Maintenance. OR Vale District......... Vale District 4,557,000 Building Renovation. UT West Desert District.. Little Sahara 6,057,000 Recreation Area Maintenance (Phases II and III). District. WY High Desert District, Wyoming Safety of 5,263,000",
+   "new_text": "California District, and Maintenance. and California Desert District. CO Northwest District.... Little Snake Fire 5,610,000 Operations Building Replacement and Upgrades. ID Boise District, Idaho Idaho Fire and 7,820,000"
+  }
+ },
+ {
+  "id": "679f3c6afb6d4d5b",
+  "label": "different",
+  "note": "Telehealth capacity-building grants vs maternal depression screening program.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-labor-hhs-education-fy2021-fy2022",
+   "old_heading": "Technology-Enabled Collaborative Learning Capacity Building",
+   "new_heading": "Screening and Treatment for Maternal Depression and Related Disorders",
+   "old_text": "Models Grants.--The Committee includes $10,000,000 within the total for Telehealth to support grants to connect specialists at academic medical centers with primary care providers in rural and underserved areas, providing evidence-based training and support to help them treat patients with complex c",
+   "new_text": "State Grants The Committee provides $10,000,000 for the Screening and Treatment of Maternal Depression and Related Behavioral Disorders Program (MDRBD), an increase of $5,000,000 above the fiscal year 2021 enacted level and the same as the fiscal year 2022 budget request. Maternal mental health (MMH"
+  }
+ },
+ {
+  "id": "d5ecc28f3703799d",
+  "label": "same",
+  "note": "Same supercomputer-manufacturing-location prohibition, renumbered 8032 to 8033.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2026-fy2027",
+   "old_heading": "GENERAL PROVISIONS — Section 8032",
+   "new_heading": "Intelligence of the House, the Select Committee on Intelligence — Section 8033",
+   "old_text": "Section 8032 prohibits the use of funds to purchase supercomputers which are not manufactured in the United States.",
+   "new_text": "Section 8033 prohibits funding from being used to purchase supercomputers which are not manufactured in the United States."
+  }
+ },
+ {
+  "id": "e15ac3adf593dca9",
+  "label": "same",
+  "note": "Section 8111 to 8110, Rosoboronexport contracting prohibition, near-identical.",
+  "source": "judged",
+  "evidence": {
+   "slug": "house-defense-fy2026-fy2027",
+   "old_heading": "GENERAL PROVISIONS — Section 8111",
+   "new_heading": "(RESCISSIONS) — Section 8110",
+   "old_text": "Section 8111 prohibits the use of funds to enter into a contract with Rosoboronexport.",
+   "new_text": "Section 8110 prohibits funds from being used to enter into a contract with Rosoboronexport."
+  }
+ }
+]
