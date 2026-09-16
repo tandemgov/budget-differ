@@ -78,7 +78,7 @@ class OutlineNode:
 
 
 def build_outline(ordered: list[SectionDiff]) -> list[OutlineNode]:
-    """Nest sections by path. A parent is reused only while it is still the latest sibling, so the outline keeps document order when a heading's children resume after an interruption."""
+    """Nest sections by path, reusing a parent only while it is the latest sibling so interrupted headings keep document order."""
     root = OutlineNode(key="", depth=-1)
     for sd in ordered:
         path = sd.display_path

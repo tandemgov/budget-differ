@@ -4,7 +4,7 @@
 
 ### Added
 
-- Full-document view for each comparison (`document.html`): the newer report as written, in document order, redlined against the prior year, with dropped sections in place and a right-hand notes column for change class, policy signals, moves, and renames; toggles for a clean read and a changed-paragraph stepper (`j`/`k`).
+- Full-document view for each comparison (`document.html`): the newer report as written, redlined against the prior year, with dropped sections in place and a right-hand notes column.
 - A floating outline in document order, marked by change class, and a breadcrumb row for the section in view, on both the ranked and full-document pages.
 
 ## [1.0.0] - 2026-09-16
