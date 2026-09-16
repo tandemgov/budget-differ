@@ -14,7 +14,7 @@ from budget_differ.blame import provenance, transition_maps
 from budget_differ.chain import Chain, ChainRow
 from budget_differ.models import ChangeClass
 from budget_differ.render.assets import CSS
-from budget_differ.render.html import _PAGE, _anchor, _esc, _render_section
+from budget_differ.render.html import _anchor, _esc, _render_section, page
 
 
 def thread_filename(row: ChainRow) -> str:
@@ -43,8 +43,7 @@ def render_thread_pages(
     for row in chain.rows:
         fname = thread_filename(row)
         hrefs[row.key] = fname
-        page = _render_thread(chain, row, maps, nav_html, pair_prefix)
-        (out_dir / fname).write_text(page)
+        (out_dir / fname).write_text(_render_thread(chain, row, maps, nav_html, pair_prefix))
     return hrefs
 
 
@@ -149,7 +148,12 @@ def _render_thread(
         for t, cell in cells:
             # Successor/move links inside the section reference anchors that live on the pairwise page, not here — give them that page as base.
             base = f"{pair_prefix}{cell.slug}/index.html"
-            history.append(_render_section(cell.sd, a, b, anchor_base=base))
+            history.append(
+                _render_section(
+                    cell.sd, a, b, anchor_base=base,
+                    document_href=f"{pair_prefix}{cell.slug}/document.html",
+                )
+            )
 
     # Numbering/name history: general provisions renumber and accounts rename — say so explicitly instead of letting mixed numbers look like mis-threading.
     label_by_fy = {
@@ -189,4 +193,4 @@ def _render_thread(
             "\n".join(history),
         ]
     )
-    return _PAGE.substitute(title=_esc(title), cssref="../style.css", js="", body=body, nav=nav_html)
+    return page(_esc(title), "../style.css", "", body, nav_html)

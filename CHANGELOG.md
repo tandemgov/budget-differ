@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Full-document view for each comparison (`document.html`): the newer report as written, in document order, redlined against the prior year, with dropped sections in place and a right-hand notes column for change class, policy signals, moves, and renames; toggles for a clean read and a changed-paragraph stepper (`j`/`k`).
+- A floating outline in document order, marked by change class, and a breadcrumb row for the section in view, on both the ranked and full-document pages.
+
 ## [1.0.0] - 2026-09-16
 
 First release: year-over-year diffs of House and Senate appropriations committee report language, with policy-significance flags, a reproducible demonstration, and a measured evaluation.

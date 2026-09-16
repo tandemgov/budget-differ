@@ -32,6 +32,14 @@ The published copy is at https://tandemgov.github.io/budget-differ/; locally, op
 3. **Details.** Inline word-level diffs, with each flag and its reason under the paragraph it applies to. Unchanged paragraphs are collapsed. Moves, renames, and possible successors are linked.
 
 Filters in the sticky bar hide unchanged or number-only sections, or restrict the page to directives or flagged sections.
+The left column holds an outline of the report in document order, each entry dotted by its change class; it follows your scroll, and a breadcrumb row in the sticky bar names the section in view.
+
+## The full-document view
+
+Each comparison also has a **Full document, annotated** tab (`document.html` next to the ranked page).
+It shows the newer report as written, in its printed order, with inline insertions and struck-through deletions; sections dropped since the prior year appear where they stood.
+A notes column on the right gives each paragraph's change class, its policy signals and reasons, and paragraph moves, and each heading links to the same section in the ranked view and its thread history.
+Toggles hide the prior-year deletions or the insertion highlights, to read the newer year clean, or hide the notes; the next/previous change buttons (or `j` and `k`) step through changed paragraphs.
 The timeline page for each subcommittee shows every account across the three years, and each account links to a history page that shows when each paragraph was added or last changed.
 
 ## Representative changes
