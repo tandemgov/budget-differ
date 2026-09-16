@@ -1,6 +1,6 @@
 name: Publish demo to GitHub Pages
 
-# Publishes the committed demo/ site as-is. Rebuilding it needs the sibling report corpus, so regenerate locally with `uv run budget-differ demo` and commit.
+# Publishes the committed demo/ as-is: rebuilding needs the sibling report corpus, so run `uv run budget-differ demo` locally and commit.
 on:
   push:
     branches: [main]
