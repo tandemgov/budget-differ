@@ -152,12 +152,14 @@ def apply_pdf_tiers(
     pdf_keys = [_match_key(t["text"]) for t in tiers]
     htm_keys = [_match_key(h.text) for h in headings]
     sm = difflib.SequenceMatcher(None, pdf_keys, htm_keys, autojunk=False)
+    tier_of: dict[int, str] = {}
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag != "equal":
             continue
         for k in range(i2 - i1):
             h = headings[j1 + k]
             tier = tiers[i1 + k]["tier"]
+            tier_of[j1 + k] = tier
             if tier not in ("bold", "caps"):
                 continue
             if h.is_general_provisions or h.text.upper() in TOPICAL:
@@ -167,3 +169,35 @@ def apply_pdf_tiers(
                 if kind in ("annotation", "gp"):
                     continue
                 h.level = 1 if kind == "agency" else 2
+    _fix_grouping_inversions(headings, tier_of, agencies, bureaus)
+
+
+def _fix_grouping_inversions(
+    headings: list[Heading], tier_of: dict[int, str], agencies: frozenset[str], bureaus: frozenset[str]
+) -> None:
+    """A caps grouping set above a small-caps pinned agency ("RELATED AGENCY" over "Broadcasting Board of Governors") owns it.
+
+    The grouping takes the agency tier and the agency moves under it; later caps groupings in the same title are its siblings ("RELATED PROGRAMS")."""
+    grouping_level: int | None = None
+    for idx, h in enumerate(headings):
+        if h.level == 0:
+            grouping_level = None
+            continue
+        if tier_of.get(idx) != "caps" or h.is_general_provisions or h.text.upper() in TOPICAL:
+            continue
+        kind = _kind(h.text, agencies, bureaus)
+        if kind != "structural":
+            continue
+        if grouping_level is not None and h.level > grouping_level:
+            h.level = grouping_level
+        nxt = idx + 1
+        if (
+            h.level <= 2
+            and nxt < len(headings)
+            and tier_of.get(nxt) == "sc"
+            and headings[nxt].level <= h.level
+            and _kind(headings[nxt].text, agencies, bureaus) == "agency"
+        ):
+            h.level = 1
+            headings[nxt].level = 2
+            grouping_level = 1

@@ -78,3 +78,15 @@ def test_lightly_edited_paragraph_moved_to_reorganized_account_is_a_move():
     pair = compare_documents(old, new)
     assert len(pair.moves) == 1
     assert pair.moves[0].diff.old.text == body
+
+
+def test_nested_heading_lowers_the_rename_bar():
+    from budget_differ.compare import RENAME_NESTED_HEADING_PROMOTE, RENAME_PROMOTE, _promote_bar
+    from budget_differ.models import Paragraph, Section
+
+    body = [Paragraph("The Committee provides funding for exploration systems, including Orion and the Space Launch System. " * 3)]
+    old = Section(heading="DEEP SPACE EXPLORATION SYSTEMS", level=3, path=("TITLE III", "NASA", "DEEP SPACE EXPLORATION SYSTEMS"), paragraphs=body)
+    new = Section(heading="EXPLORATION", level=3, path=("TITLE III", "NASA", "EXPLORATION"), paragraphs=body)
+    other = Section(heading="SPACE OPERATIONS", level=3, path=("TITLE III", "NASA", "SPACE OPERATIONS"), paragraphs=body)
+    assert _promote_bar(old, new) == RENAME_NESTED_HEADING_PROMOTE
+    assert _promote_bar(old, other) == RENAME_PROMOTE

@@ -39,6 +39,8 @@ RENAME_PROMOTE = 65.0
 # Short texts carry little evidence and shared scaffolding dominates the ratio ("Section N extends the authorization for ..." scored 67 against an unrelated provision in the labeled eval set); below this many characters on either side a promotion must be near-verbatim.
 RENAME_SHORT_TEXT = 200
 RENAME_SHORT_PROMOTE = 85.0
+# Nested headings ("EXPLORATION" in "DEEP SPACE EXPLORATION SYSTEMS") corroborate a rename, so the content bar drops.
+RENAME_NESTED_HEADING_PROMOTE = 55.0
 # Annotation thresholds for the remaining possible successor/predecessor hints:
 # a mutual link is trustworthy at 50+, a one-directional one (splits/merges) needs 60+.
 RELATED_MUTUAL_FLOOR = 50.0
@@ -237,7 +239,7 @@ def _promote_renames(
     promoted: list[tuple[Section, Section]] = []
     for old_sec in list(removed):
         entry = best.get(id(old_sec))
-        if entry is None or entry[1] < RENAME_PROMOTE:
+        if entry is None or entry[1] < min(RENAME_PROMOTE, RENAME_NESTED_HEADING_PROMOTE):
             continue
         new_sec, score = entry
         if score < _promote_bar(old_sec, new_sec):
@@ -264,7 +266,15 @@ def _promote_renames(
 def _promote_bar(old_sec: Section, new_sec: Section) -> float:
     if any(len(_body(sec)) < RENAME_SHORT_TEXT for sec in (old_sec, new_sec)):
         return RENAME_SHORT_PROMOTE
+    if _nested_headings(old_sec, new_sec) and old_sec.path[:-1] == new_sec.path[:-1]:
+        return RENAME_NESTED_HEADING_PROMOTE
     return RENAME_PROMOTE
+
+
+def _nested_headings(a: Section, b: Section) -> bool:
+    wa, wb = set(a.path[-1].split()), set(b.path[-1].split())
+    shorter = min(wa, wb, key=len)
+    return bool(shorter) and not a.path[-1].startswith("SEC ") and (wa <= wb or wb <= wa)
 
 
 def _link_related(pair: PairDiff) -> None:

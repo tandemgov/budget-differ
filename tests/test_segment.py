@@ -276,3 +276,165 @@ def test_wrapped_contents_entry_is_not_a_heading():
         fiscal_year=2027,
     )
     assert [s.path for s in doc.sections] == [("HIGHLIGHTS OF THE BILL",)]
+
+
+def _plain(lines: list[str], **kw):
+    kw.setdefault("package_id", "T")
+    kw.setdefault("chamber", "house")
+    kw.setdefault("fiscal_year", 2027)
+    return segment_report(_report(lines), **kw)
+
+
+def test_wrapped_cells_in_a_wide_project_table_are_not_headings():
+    row = "Department of Housing and    Economic           Operation We Care and Neighborhood          MI         520,000"
+    doc = _plain(
+        [
+            _center("COMMUNITY PROJECT FUNDING"),
+            "",
+            "    The Committee recommends the following projects.",
+            "",
+            "-" * 110,
+            row,
+            " Urban Development            Development        Revitalization",
+            "                              Initiatives",
+            row,
+            "                              Initiatives",
+            row,
+        ]
+    )
+    assert [s.path[-1] for s in doc.sections] == ["COMMUNITY PROJECT FUNDING"]
+
+
+def test_state_labels_inside_a_project_table_are_not_headings():
+    doc = _plain(
+        [
+            _center("OPERATION AND MAINTENANCE"),
+            "",
+            "    The Committee recommends the following amounts.",
+            "",
+            "FT PECK DAM AND LAKE, MT...........          10,371          10,371",
+            "LIBBY DAM, MT......................           2,035           2,035",
+            " ",
+            _center("NEBRASKA"),
+            " ",
+            "HARLAN COUNTY LAKE, NE.............           4,746           4,746",
+            "SALT CREEK AND TRIBUTARIES, NE.....           1,393           1,393\x1e",
+        ]
+    )
+    assert [s.path[-1] for s in doc.sections] == ["OPERATION AND MAINTENANCE"]
+
+
+def test_fiscal_year_column_header_is_not_a_heading():
+    from budget_differ.segment.classify_lines import is_heading_line
+
+    assert not is_heading_line(_center("FY 2019          FY 2020"))
+    assert is_heading_line(_center("National Institutes of Health (NIH)"))
+
+
+def test_trailing_acronym_does_not_change_the_alignment_key():
+    from budget_differ.segment.headings import normalize_heading
+
+    assert normalize_heading("Veterans Health Administration (VHA)") == normalize_heading("VETERANS HEALTH ADMINISTRATION")
+    assert normalize_heading("(RESCISSION)") == "RESCISSION"
+
+
+def test_sec_style_provisions_split_and_keep_their_continuations():
+    doc = _plain(
+        [
+            _center("TITLE VII--GENERAL PROVISIONS"),
+            "",
+            "    Sec. 7075 includes language carried in the prior year",
+            "regarding funds.",
+            "    Sec. 7076 includes language modified from the prior year",
+            "regarding spend plans.",
+            "    The regional security initiatives to be addressed in the",
+            "spend plans shall include the Trans-Sahara Counterterrorism",
+            "Partnership.",
+        ]
+    )
+    provisions = {s.path[-1]: s for s in doc.sections if s.path[-1].startswith("SEC ")}
+    assert set(provisions) == {"SEC 7075", "SEC 7076"}
+    assert len(provisions["SEC 7076"].paragraphs) == 2
+    assert provisions["SEC 7076"].printed_under == ("TITLE VII GENERAL PROVISIONS",)
+
+
+def test_component_over_recurring_account_owns_it():
+    doc = _plain(
+        [
+            _center("TITLE III--THE JUDICIARY"),
+            "",
+            _center("Supreme Court of the United States"),
+            "",
+            _center("SALARIES AND EXPENSES"),
+            "",
+            "    The Committee recommends funding for the Supreme Court.",
+            "",
+            _center("CARE OF THE BUILDING AND GROUNDS"),
+            "",
+            "    The Committee recommends funding for the building.",
+            "",
+            _center("United States Court of International Trade"),
+            "",
+            _center("SALARIES AND EXPENSES"),
+            "",
+            "    The Committee recommends funding for the Court of International Trade.",
+        ]
+    )
+    paths = [s.path for s in doc.sections if s.paragraphs]
+    assert paths[1] == ("TITLE III THE JUDICIARY", "SUPREME COURT OF THE UNITED STATES", "CARE OF THE BUILDING AND GROUNDS")
+    assert paths[2] == ("TITLE III THE JUDICIARY", "UNITED STATES COURT OF INTERNATIONAL TRADE", "SALARIES AND EXPENSES")
+
+
+def test_agency_named_topic_before_the_first_title_does_not_adopt_the_intro():
+    doc = _plain(
+        [
+            _center("Department of Veterans Affairs"),
+            "",
+            "    The Committee notes coordination with the Department.",
+            "",
+            _center("Joint Strike Fighter"),
+            "",
+            "    The Committee remains concerned about sustainment costs.",
+            "",
+            _center("TITLE I"),
+            "",
+            _center("MILITARY PERSONNEL"),
+            "",
+            "    The Committee recommends funding.",
+        ],
+        agencies=frozenset({"DEPARTMENT OF VETERANS AFFAIRS"}),
+    )
+    jsf = next(s for s in doc.sections if s.heading == "Joint Strike Fighter")
+    assert "DEPARTMENT OF VETERANS AFFAIRS" not in jsf.path
+
+
+def test_caps_grouping_owns_the_small_caps_agency_below_it():
+    lines = [
+        _center("TITLE I--DEPARTMENT OF STATE AND RELATED AGENCY"),
+        "",
+        _center("RELATED AGENCY"),
+        "",
+        _center("Broadcasting Board of Governors"),
+        "",
+        _center("INTERNATIONAL BROADCASTING OPERATIONS"),
+        "",
+        "    The Committee recommends funding for broadcasting.",
+        "",
+        _center("RELATED PROGRAMS"),
+        "",
+        _center("The Asia Foundation"),
+        "",
+        "    The Committee recommends funding for the Foundation.",
+    ]
+    tiers = [
+        {"tier": "caps", "text": "TITLE I—DEPARTMENT OF STATE AND RELATED AGENCY"},
+        {"tier": "caps", "text": "RELATED AGENCY"},
+        {"tier": "sc", "text": "BROADCASTING BOARD OF GOVERNORS"},
+        {"tier": "sc", "text": "INTERNATIONAL BROADCASTING OPERATIONS"},
+        {"tier": "caps", "text": "RELATED PROGRAMS"},
+        {"tier": "sc", "text": "THE ASIA FOUNDATION"},
+    ]
+    doc = _plain(lines, pdf_tiers=tiers)
+    paths = {s.heading: s.path for s in doc.sections}
+    assert paths["INTERNATIONAL BROADCASTING OPERATIONS"][1:] == ("RELATED AGENCY", "BROADCASTING BOARD OF GOVERNORS", "INTERNATIONAL BROADCASTING OPERATIONS")
+    assert paths["The Asia Foundation"][1:] == ("RELATED PROGRAMS", "THE ASIA FOUNDATION")

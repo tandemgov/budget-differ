@@ -45,6 +45,8 @@ class Section:
     paragraphs: list[Paragraph] = field(default_factory=list)
     table_spans: int = 0  # count of table regions dropped inside this section
     order: int = 0
+    # Split general provisions keep a (title, SEC n) path for alignment; this is the heading path they were printed under, for display.
+    printed_under: tuple[str, ...] | None = None
 
 
 @dataclass

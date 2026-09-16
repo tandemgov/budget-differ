@@ -82,3 +82,13 @@ def test_display_heading():
     assert display_heading("Salaries and Expenses") == "Salaries and Expenses"
     assert display_heading("TITLE II--GENERAL PROVISIONS") == "Title II--General Provisions"
     assert display_heading("ISOTOPE R&D AND PRODUCTION") == "Isotope R&D and Production"
+
+
+def test_split_provision_nests_under_the_heading_it_was_printed_beneath():
+    agency = _sec("T", "HOUSE OF REPRESENTATIVES")
+    provision = Section(heading="Administrative Provisions — Section 110", level=4, path=("T", "SEC 110"), paragraphs=[Paragraph("Section 110. Text.")], printed_under=("T", "HOUSE OF REPRESENTATIVES", "ADMINISTRATIVE PROVISIONS"))
+    nodes = build_outline([diff_section_pair(s, s) for s in (agency, provision)])
+    house = nodes[0].children[0]
+    assert house.key == "HOUSE OF REPRESENTATIVES"
+    assert house.children[0].key == "ADMINISTRATIVE PROVISIONS"
+    assert house.children[0].children[0].key == "SEC 110"

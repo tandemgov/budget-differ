@@ -23,7 +23,8 @@ from budget_differ.segment.toc import _TITLE_TEXT, TocEntry, parse_toc
 
 _PARA_START = re.compile(r"^\s{2,8}\S")
 _DIRECTIVE = re.compile(r"^([A-Z][^.]{2,80}?)\.--")
-_GP_SECTION = re.compile(r"^Section\s+(\d+[A-Za-z]?)\b")
+# House State-Foreign Ops describes provisions as "Sec. 7061 includes language ..."; other reports write "Section 101.".
+_GP_SECTION = re.compile(r"^(?:Section|Sec\.)\s+(\d+[A-Za-z]?)\b")
 # Rejoin words hyphen-split at the GPO wrap point, but leave suspended-hyphen constructions ("In- and Out-Bound", "Bio- and Agro-Defense") intact.
 _HYPHEN_WRAP = re.compile(r"(?<=[a-z])- (?!(?:and|or)\b)(?=[a-z])")
 
@@ -73,6 +74,8 @@ def segment_report(
     assign_levels(headings, agencies, bureaus, money_after)
     _apply_toc_levels(headings, toc_entries, agencies, bureaus)
     apply_pdf_tiers(headings, pdf_tiers, agencies, bureaus)
+    _demote_front_matter_agencies(headings, agencies, bureaus)
+    _align_parallel_parents(headings)
 
     doc = Document(
         package_id=package_id,
@@ -151,6 +154,38 @@ def segment_report(
     doc.sections = [s for s in doc.sections if s.paragraphs or s.table_spans]
     _split_general_provisions(doc)
     return doc
+
+
+# Lines between a parent heading and its first child for the pair to count as a stack.
+STACK_MAX_GAP = 4
+
+
+def _align_parallel_parents(headings: list[Heading]) -> None:
+    """Give a heading stacked over a recurring child the level of the earlier heading stacked over the same child.
+
+    "United States Commission on International Religious Freedom" over "SALARIES AND EXPENSES" is a sibling of the pinned commission before it, not its child."""
+    parent_level: dict[str, int] = {}
+    for idx in range(len(headings) - 1):
+        h, child = headings[idx], headings[idx + 1]
+        if h.level <= 1:
+            parent_level.clear()
+        if child.line_start - h.line_end > STACK_MAX_GAP or h.is_general_provisions or h.is_annotation:
+            continue
+        key = normalize_heading(child.text)
+        if child.level > h.level:
+            parent_level.setdefault(key, h.level)
+        elif key in parent_level and h.level > parent_level[key] and child.level >= h.level:
+            h.level = parent_level[key]
+
+
+def _demote_front_matter_agencies(headings: list[Heading], agencies: frozenset[str], bureaus: frozenset[str]) -> None:
+    """Above the first title, agency names head general-matters topics ("Department of Veterans Affairs" in a Defense report)."""
+    first_title = next((k for k, h in enumerate(headings) if h.level == 0), None)
+    if first_title is None:
+        return
+    for h in headings[:first_title]:
+        if h.level in (1, 2) and _kind(h.text, agencies, bureaus) in ("agency", "bureau"):
+            h.level = 3
 
 
 def _toc_levels(
@@ -376,7 +411,27 @@ def _split_general_provisions(doc: Document) -> None:
         if len(gp_paras) < min_split:
             out.append(sec)
             continue
-        rest = [p for p in sec.paragraphs if p.kind != "gp_section"]
+        rest: list[Paragraph] = []
+        split: list[Section] = []
+        for p in sec.paragraphs:
+            if p.kind == "gp_section":
+                assert p.topic
+                # Key on (title, SEC n): section numbers are title-scoped and stable across years, while intermediate heading levels drift (see align pass notes).
+                split.append(
+                    Section(
+                        heading=f"{sec.heading} — {p.topic}",
+                        level=4,
+                        path=(sec.path[0], p.topic.upper().replace("SECTION", "SEC")),
+                        paragraphs=[p],
+                        order=sec.order,
+                        printed_under=sec.path,
+                    )
+                )
+            elif split and p.kind == "narrative":
+                # An untitled paragraph after a provision continues it ("The regional security initiatives to be addressed ..." after Sec. 7076).
+                split[-1].paragraphs.append(p)
+            else:
+                rest.append(p)
         sec_copy = Section(
             heading=sec.heading,
             level=sec.level,
@@ -386,16 +441,5 @@ def _split_general_provisions(doc: Document) -> None:
             order=sec.order,
         )
         out.append(sec_copy)
-        for p in gp_paras:
-            assert p.topic
-            # Key on (title, SEC n): section numbers are title-scoped and stable across years, while intermediate heading levels drift (see align pass notes).
-            out.append(
-                Section(
-                    heading=f"{sec.heading} — {p.topic}",
-                    level=4,
-                    path=(sec.path[0], p.topic.upper().replace("SECTION", "SEC")),
-                    paragraphs=[p],
-                    order=sec.order,
-                )
-            )
+        out.extend(split)
     doc.sections = [s for s in out if s.paragraphs or s.table_spans]

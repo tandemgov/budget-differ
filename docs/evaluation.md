@@ -65,7 +65,7 @@ On the held-out set, policy signals cut small-edit misses from 57% to 21%.
 
 | Set | Paragraphs promoted by a flag | Of those, labeled substantive | Non-substantive edits promoted | Non-substantive edits called substantive by size alone |
 |---|---|---|---|---|
-| Demonstration | 108 | 85.2% | 13 of 182 | 29 |
+| Demonstration | 108 | 85.2% | 13 of 181 | 30 |
 | Held out | 61 | 82.0% | 8 of 78 | 15 |
 
 Three narrative dollar-only changes were promoted in each set (of 153 and 32).

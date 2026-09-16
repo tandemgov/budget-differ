@@ -39,6 +39,9 @@ TOPICAL = {
     "FUNDING HIGHLIGHTS",
     "EXPLANATION OF PROJECT LEVEL ADJUSTMENTS",
     "TRANSFER OF FUNDS",
+    # Senate Defense prints both under every appropriation account.
+    "COMMITTEE RECOMMENDED PROGRAM",
+    "COMMITTEE RECOMMENDED ADJUSTMENTS",
 }
 
 
@@ -53,9 +56,12 @@ class Heading:
     is_annotation: bool = False
 
 
+_TRAILING_ACRONYM = re.compile(r"\s*\([A-Z][A-Za-z0-9&-]{1,5}\)\s*$")
+
+
 def normalize_heading(text: str) -> str:
-    """Normalization used for alignment paths: case/punct/year-insensitive."""
-    t = text.upper()
+    """Alignment-path normalization: insensitive to case, punctuation, years, and a trailing acronym ("(VHA)")."""
+    t = _TRAILING_ACRONYM.sub("", text).upper()
     t = re.sub(r"\b(19|20)\d{2}\b", "FY", t)
     t = re.sub(r"[^A-Z0-9 ]+", " ", t)
     return re.sub(r"\s+", " ", t).strip()
@@ -171,6 +177,16 @@ def assign_levels(
                 and (idx in money_after or occurrences[normalize_heading(h.text)] == 1)
             ):
                 h.level = 3
+                nxt = headings[idx + 1] if idx + 1 < len(headings) else None
+                # Stacked directly over a recurring account ("Supreme Court of the United States" over SALARIES AND EXPENSES), it is that account's owner.
+                if (
+                    nxt is not None
+                    and nxt.line_start - h.line_end <= 3
+                    and kinds[idx + 1] == "structural"
+                    and occurrences[normalize_heading(nxt.text)] > 1
+                    and normalize_heading(nxt.text) != normalize_heading(h.text)
+                ):
+                    h.level = 2
             else:
                 h.level = 4
         else:
@@ -179,6 +195,8 @@ def assign_levels(
                 nxt is not None
                 and nxt.line_start - h.line_end <= 3
                 and kinds[idx + 1] == "structural"
+                # A caption printed twice in a row is one heading, not a parent over itself.
+                and normalize_heading(nxt.text) != normalize_heading(h.text)
             ):
                 h.level = 2
             else:
