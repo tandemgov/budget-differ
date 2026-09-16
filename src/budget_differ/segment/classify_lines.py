@@ -28,6 +28,7 @@ _NUMERIC_ROW = re.compile(r"[\d,.()+\-]+\s{2,}[+\-(]?[\d,.()][\d,.()+\-]*[\s*]*$
 _TOTALISH = re.compile(r"^\s*(TOTAL|SUBTOTAL)\b", re.IGNORECASE)
 _MULTI_NUMBER = re.compile(r"\d[\d,]*\s+\d[\d,]*")
 _TITLE_LINE = re.compile(r"^TITLE\s+[IVXLC]+\b")
+_ACRONYM = re.compile(r"\([A-Z0-9&./-]{2,}\)")
 
 
 def _indent(line: str) -> int:
@@ -57,7 +58,10 @@ def is_heading_line(line: str) -> bool:
     if _LEADER_LINE.search(line) or _TABLE_RULE.match(line):
         return False
     # Directive lead-ins can look like centered Title Case headings, but no heading contains ".--".
-    if ".--" in stripped:
+    if ".--" in stripped or "...." in stripped:
+        return False
+    # Fiscal-year column headers ("FY 2019 FY 2020") have no words once years are removed.
+    if len(re.sub(r"\b(FY|Fiscal Year|\d+)\b|[^A-Za-z]", "", stripped, flags=re.IGNORECASE)) < 3:
         return False
     if _TOTALISH.match(stripped) or _MULTI_NUMBER.search(stripped):
         return False
@@ -75,7 +79,8 @@ def is_heading_line(line: str) -> bool:
     # Title Case centered sub-heads ("Administrative Provision", "National Defense Programs") — capitalized words (short connectives exempt), centered, no period.
     if _is_centered(stripped, indent) and stripped[0].isupper():
         words = stripped.split()
-        if 1 <= len(words) <= 10 and all(w[0].isupper() or len(w) <= 3 for w in words):
+        # A trailing acronym in parentheses ("National Institutes of Health (NIH)") is part of a Title Case heading.
+        if 1 <= len(words) <= 10 and all(w[0].isupper() or len(w) <= 3 or _ACRONYM.fullmatch(w) for w in words):
             return True
     return False
 

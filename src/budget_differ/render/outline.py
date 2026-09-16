@@ -78,11 +78,20 @@ class OutlineNode:
         return None
 
 
+def outline_path(sd: SectionDiff) -> tuple[str, ...]:
+    """Where a section sits in the outline: under the heading it was printed beneath, which for a split provision is not its alignment path."""
+    sec = sd.new or sd.old
+    assert sec is not None
+    if sec.printed_under is not None:
+        return sec.printed_under + (sec.path[-1],)
+    return sec.path
+
+
 def build_outline(ordered: list[SectionDiff]) -> list[OutlineNode]:
     """Nest sections by path, reusing a parent only while it is the latest sibling so interrupted headings keep document order."""
     root = OutlineNode(key="", depth=-1)
     for sd in ordered:
-        path = sd.display_path
+        path = outline_path(sd)
         parent = root
         for depth, comp in enumerate(path):
             leaf = depth == len(path) - 1

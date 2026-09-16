@@ -165,3 +165,31 @@ def test_energy_water_hierarchy():
     assert gla[-2] == "TITLE IV INDEPENDENT AGENCIES"
     # A sentence listing DOE programs wraps into capitalized lines; none may become a section.
     assert not any(";" in s.heading for s in doc.sections)
+
+
+@requires_corpus
+def test_nih_institutes_file_under_nih():
+    repo = approps_repo_or_none()
+    cat = {e.package_id: e for e in load_catalog(repo)}
+    doc = load_document(repo, cat["CRPT-119hrpt696"])  # House Labor-HHS FY2027; the heading prints "National Institutes of Health (NIH)"
+    nci = next(s for s in doc.sections if s.path[-1] == "NATIONAL CANCER INSTITUTE")
+    assert nci.path[-2] == "NATIONAL INSTITUTES OF HEALTH"
+
+
+@requires_corpus
+def test_related_programs_are_not_under_the_broadcasting_board():
+    repo = approps_repo_or_none()
+    cat = {e.package_id: e for e in load_catalog(repo)}
+    doc = load_document(repo, cat["CRPT-115hrpt253"])  # House State-Foreign Ops FY2018
+    asia = next(s for s in doc.sections if s.path[-1] == "THE ASIA FOUNDATION")
+    assert "BROADCASTING BOARD OF GOVERNORS" not in asia.path
+    assert asia.path[-2] == "RELATED PROGRAMS"
+
+
+@requires_corpus
+def test_nasa_exploration_rename_is_promoted():
+    repo = approps_repo_or_none()
+    cat = {e.package_id: e for e in load_catalog(repo)}
+    pair = compare_documents(load_document(repo, cat["CRPT-115hrpt704"]), load_document(repo, cat["CRPT-116hrpt101"]))
+    exploration = next(sd for sd in pair.sections if sd.new is not None and sd.new.path[-1] == "EXPLORATION")
+    assert exploration.renamed_from is not None and "DEEP SPACE EXPLORATION" in exploration.renamed_from.upper()

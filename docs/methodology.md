@@ -39,27 +39,30 @@ The truth check compares each account whose title maps to exactly one USASpendin
 The structure checks need no labels: an agency nested under another agency; a parenthetical subtitle ("(INCLUDING TRANSFER OF FUNDS)") parsed as its own section; the same path twice in one report; a parent heading whose children are interrupted and later resume; and a heading unique in two adjacent reports of one subcommittee whose parent chain differs (title renumbering ignored).
 The audit keeps its own list of legislative agencies so it does not grade the parser against the parser's list.
 
-Corpus-wide (230 reports), before and after the hierarchy fixes of 2026-09-16:
+Corpus-wide (230 reports), before the hierarchy fixes of 2026-09-16, after the first round, and after the second:
 
-| Check | Before | After |
-|---|---|---|
-| Misparented against USASpending truth | 69 of 9,542 (0.7%) | 82 of 10,488 (0.8%) |
-| Agency nested under another agency | 131 | 0 |
-| Parenthetical subtitle as its own section | 1,895 | 2 |
-| Duplicate paths within a report | 4,020 | 3,843 |
-| Resumed parent headings | 225 | 214 |
-| Parent drift between adjacent years | 1,827 | 1,726 |
+| Check | Before | Round 1 | Round 2 |
+|---|---|---|---|
+| Misparented against USASpending truth | 69 of 9,542 (0.7%) | 82 of 10,488 (0.8%) | 59 of 10,627 (0.6%) |
+| Agency nested under another agency | 131 | 0 | 0 |
+| Parenthetical subtitle as its own section | 1,895 | 2 | 1 |
+| Duplicate paths within a report | 4,020 | 3,843 | 1,648 |
+| Resumed parent headings | 225 | 214 | 147 |
+| Parent drift between adjacent years | 1,827 | 1,726 | 1,501 |
+| Table-row paragraphs leaking into text (`scripts/sweep.py`) | 372 | 372 | 130 |
 
-The fixes: legislative agencies and Library of Congress service units that USASpending omits are pinned to their tiers in Legislative Branch reports only; parenthetical subtitles attach to the account above instead of opening a section; table-of-contents entries match the body heading they qualify, and index lines carrying a page number after a colon no longer swallow the next entry; directive lead-ins (`.--`) and capitalized prose lines are not headings; a wrapped heading split by blank lines is rejoined when the PDF or contents print it whole, or when it passes a narrow wrap test; and the first half of a wrapped contents entry is not a heading when the body bounds start inside the contents.
+Directive and general-provision lead-in recall held at 99.84% throughout; the one lead-in newly inside a table span is a cell of a community project table that happens to contain `.--`.
+
+Round 1: legislative agencies and Library of Congress service units that USASpending omits are pinned to their tiers in Legislative Branch reports only; parenthetical subtitles attach to the account above instead of opening a section; table-of-contents entries match the body heading they qualify, and index lines carrying a page number after a colon no longer swallow the next entry; directive lead-ins (`.--`) and capitalized prose lines are not headings; a wrapped heading split by blank lines is rejoined when the PDF or contents print it whole, or when it passes a narrow wrap test; and the first half of a wrapped contents entry is not a heading when the body bounds start inside the contents.
+Round 2: wide multi-column project tables (community project funding, forest deferred maintenance) are detected, including wrapped cells, state labels between blocks, and label rows ("BUDGET ACTIVITY 1: OPERATING FORCES") inside wide Defense tables; record-separator bytes that hid dotted leaders are stripped; fiscal-year column headers are not headings; a Title Case heading ending in an acronym ("National Institutes of Health (NIH)") is a heading, and the acronym does not change its alignment key; captions printed twice do not become their own parent; COMMITTEE RECOMMENDED PROGRAM and COMMITTEE RECOMMENDED ADJUSTMENTS are sub-heads; agency names above the first title head general-matters topics, not agencies; a caps grouping over a small-caps pinned agency ("RELATED AGENCY" over the Broadcasting Board of Governors) owns it; a component printed over a recurring account ("Supreme Court of the United States" over SALARIES AND EXPENSES) owns it, as does a later heading over the same child; "Sec. 7061 includes ..." provisions split like "Section 101.", with untitled continuation paragraphs kept with their provision; and split provisions sit under the heading they were printed beneath in the outline, while their alignment key stays (title, SEC n).
 The earlier published 0.6% (53) recognized a wrong parent only from the USASpending lexicon; this audit also recognizes the supplemented and legislative agencies, which gives 69 on the unfixed code. The truth count then rose after the fixes because accounts whose text had sat under a parenthetical child section became checkable, which exposed nine Trade Enforcement Trust Fund sections filed under the Marine Mammal Commission.
-The remaining volume is mostly elsewhere: duplicate paths come largely from table rows that leak as headings (community project tables) and repeated sub-heads, and much of the drift is real reorganization between years.
-Known open defects include a missing National Institutes of Health heading in CRPT-119hrpt696 (its institutes file under CDC) and State-Foreign Ops Related Programs nesting under the preceding agency.
+What remains is mostly legitimate or long-tail: an account named again in general-provisions narrative, sub-heads repeated under accounts that genuinely repeat, Senate Defense and Homeland Security tables with further label variants, and real reorganization between years.
 The truth check also reports that about 47% of checked accounts have no agency ancestor; most are in single-department bills (Defense, Agriculture, Homeland Security) whose reports never print the department heading, so that figure describes the bills more than the parser.
 
 ### 2. Alignment (`align.py`, `compare.py`)
 
 Sections are matched across years in passes that grow less literal: exact heading path; unique headings; fuzzy heading plus content similarity constrained to a shared parent; and content-only rescue for renames and general-provision renumbering.
-A dropped section and a new section that are each other's best content match (≥65% overlap, consistent parents) are promoted to a single diff labeled "renamed"; weaker kinships are shown as "possible successor/predecessor" links without asserting a match.
+A dropped section and a new section that are each other's best content match (≥65% overlap, consistent parents; ≥55% when one heading's words all appear in the other's, as EXPLORATION in DEEP SPACE EXPLORATION SYSTEMS) are promoted to a single diff labeled "renamed"; weaker kinships are shown as "possible successor/predecessor" links without asserting a match.
 Paragraphs that left one section and reappeared in another are shown as moves, verbatim or edited, rather than as a deletion plus an addition.
 
 Measured by `scripts/linkage_eval.py score` (2026-09-16, before the hierarchy fixes), with two views that should be read together.
@@ -68,6 +71,8 @@ Over only the 119 adjudicated borderline candidates, precision is 86.5% (32 of 3
 After the hierarchy fixes, only 53 of the 104 adjudicated labels still match a candidate (they match on heading and leading text, which merged sections change), so the adjudicated-only figures (88.0%, 22 of 25) are not comparable.
 A segmentation-independent check, whether the tool diffs each labeled old passage against its labeled new passage, agreed with 69 of 95 labels before and 66 of 95 after.
 Of the changes, three labels concern parenthetical sections that no longer exist on their own; the other two were pairs of mis-segmented prose fragments that happened to align: the NASA exploration narrative (FY2019→FY2020) now shows as a dropped section and a new section with a possible-successor link, and a State-Foreign Ops security-programs list (FY2017→FY2018) is no longer connected, because the FY2018 copy still sits under the wrong heading.
+After the second round (general provisions split on "Sec. N", project tables dropped, the nested-heading rename bar), 38 labels match a candidate; over those, adjudicated precision is 87.5% (21 of 24) and the rename pass is 4 of 6.
+In the segmentation-independent check, 78 of 95 labeled passages can still be located (the rest were table rows now dropped or excerpts spanning several provisions now split), and the tool agrees with 68 of those 78, including both regressions above.
 The fuzzy-heading pass is deliberately conservative (85.8% recall over labeled candidates at 100% precision).
 Earlier figures in this repository ("~99.8% precision over labeled candidates", "151 adjudicated") predate a segmentation change that orphaned the adjudicated labels and are historical; see [evaluation.md](evaluation.md#known-issues-with-the-measurement-itself).
 

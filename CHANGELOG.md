@@ -17,6 +17,12 @@
 - Parenthetical subtitles such as "(INCLUDING TRANSFER OF FUNDS)" no longer split an account into a separate section.
 - Table-of-contents entries now match body headings they qualify ("Architect of the Capitol (except Senate Office Buildings)"), and index lines that carry a page number after a colon no longer swallow the next entry.
 - Directive lead-ins and capitalized prose lines are no longer read as headings, and a wrapped heading split by blank lines is rejoined.
+- Community-project, forest-maintenance, and Defense line-item tables no longer leak rows, state names, or labels as sections.
+- "National Institutes of Health (NIH)" and similar acronym-suffixed headings are detected, and the acronym no longer changes a heading's alignment key.
+- House State-Foreign Ops provisions ("Sec. 7061 includes ...") split per provision, keeping their continuation paragraphs.
+- Components printed over a recurring account (courts over "Salaries and Expenses"), caps groupings over pinned agencies ("Related Agency"), and front-matter topics named for agencies now nest correctly.
+- A renamed section whose heading words nest in its predecessor's ("Exploration" for "Deep Space Exploration Systems") is promoted at a lower content bar.
+- Split general provisions appear under their printed heading in the outline.
 
 ## [1.0.0] - 2026-09-16
 

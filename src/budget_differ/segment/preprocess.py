@@ -23,11 +23,15 @@ _BACK_MATTER = re.compile(
 )
 
 
+_CONTROL = re.compile(r"[\x00-\x08\x0b-\x1f\x7f]")
+
+
 def extract_pre_text(raw: str) -> str:
     """Return the unescaped plain text between <pre> and </pre>."""
     m = re.search(r"<pre>(.*)</pre>", raw, re.DOTALL | re.IGNORECASE)
     text = m.group(1) if m else raw
-    return html.unescape(text)
+    # GPO table rows can end in a record-separator byte, which hides their dotted leaders from the line classifier.
+    return _CONTROL.sub("", html.unescape(text))
 
 
 def body_bounds(lines: list[str]) -> tuple[int, int]:

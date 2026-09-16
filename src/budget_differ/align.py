@@ -34,9 +34,9 @@ def _body(sec: Section, limit: int) -> str:
 
 # "Section 755. The Committee includes a new provision ..." — the scaffold is shared by every general provision and inflates similarity between unrelated ones; the predicate tail is the identity.
 _GP_SCAFFOLD = re.compile(
-    r"^Section\s+\d+[A-Za-z]?\.?\s*(The Committee\s+)?"
-    r"(includes|continues|adds|repeats|modifies|provides)?\s*(a|the)?\s*(new)?\s*"
-    r"provisions?\b[,.]?\s*",
+    r"^(?:Section|Sec\.)\s+\d+[A-Za-z]?\.?\s*(The Committee\s+)?"
+    r"(includes|continues|adds|repeats|modifies|provides|is)?\s*(a|the)?\s*(new|language)?\s*"
+    r"(provisions?\b|modified from the prior year|carried in the prior year)?[,.]?\s*",
     re.IGNORECASE,
 )
 
@@ -51,7 +51,7 @@ def _gp_tail(sec: Section) -> str:
 
 
 # A bare "Section 8136 prohibits ..." lead-in that the scaffold regex leaves alone: the number is a slot, not content, so the strict scorer drops it.
-_GP_NUMBER = re.compile(r"^Section\s+\d+[A-Za-z]?\s*[.:]?\s*(--)?\s*", re.IGNORECASE)
+_GP_NUMBER = re.compile(r"^(?:Section|Sec\.)\s+\d+[A-Za-z]?\s*[.:]?\s*(--)?\s*", re.IGNORECASE)
 
 
 def similarity_texts(a: Section, b: Section, limit: int = CONTENT_PREFIX) -> tuple[str, str]:

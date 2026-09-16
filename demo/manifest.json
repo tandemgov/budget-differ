@@ -4,11 +4,11 @@
       "page": "house-energy-water-fy2025-fy2026/index.html",
       "old": "CRPT-118hrpt580",
       "new": "CRPT-119hrpt213",
-      "policy_flags": 207,
+      "policy_flags": 205,
       "section_counts": {
-        "substantive": 100,
-        "dropped": 34,
-        "new": 10,
+        "substantive": 99,
+        "dropped": 35,
+        "new": 11,
         "numbers only": 16,
         "minor": 8,
         "unchanged": 36
@@ -35,9 +35,9 @@
       "policy_flags": 80,
       "section_counts": {
         "substantive": 34,
-        "dropped": 3,
+        "dropped": 2,
         "new": 5,
-        "minor": 7,
+        "minor": 8,
         "numbers only": 8,
         "unchanged": 11
       }
@@ -49,10 +49,10 @@
       "policy_flags": 63,
       "section_counts": {
         "substantive": 31,
-        "new": 6,
+        "new": 5,
         "dropped": 15,
+        "numbers only": 13,
         "minor": 2,
-        "numbers only": 12,
         "unchanged": 5
       }
     }
