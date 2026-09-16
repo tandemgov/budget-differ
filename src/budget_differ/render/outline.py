@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import re
 from dataclasses import dataclass, field
 
 from budget_differ.anchors import section_anchor
@@ -105,10 +106,9 @@ def display_heading(text: str) -> str:
     for i, w in enumerate(words):
         if i and w in _SMALL_WORDS:
             out.append(w)
-        elif w in _ROMAN:
-            out.append(w.upper())
         else:
-            out.append(w[:1].upper() + w[1:])
+            # Case each letter run, so "II--GENERAL" and "R&D" keep their inner capitals.
+            out.append(re.sub(r"[a-z]+", lambda m: m.group().upper() if m.group() in _ROMAN else m.group().capitalize(), w))
     return " ".join(out)
 
 

@@ -56,6 +56,9 @@ def is_heading_line(line: str) -> bool:
         return False
     if _LEADER_LINE.search(line) or _TABLE_RULE.match(line):
         return False
+    # Directive lead-ins can look like centered Title Case headings, but no heading contains ".--".
+    if ".--" in stripped:
+        return False
     if _TOTALISH.match(stripped) or _MULTI_NUMBER.search(stripped):
         return False
     # A long title wraps at full width and starts near column 0 ("TITLE II--EXECUTIVE OFFICE OF THE PRESIDENT AND FUNDS APPROPRIATED TO") — structural regardless of indentation, unlike everything else.

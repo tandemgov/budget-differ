@@ -49,6 +49,8 @@ class Heading:
     line_start: int
     line_end: int
     is_general_provisions: bool = False
+    # A parenthetical subtitle ("(INCLUDING TRANSFER OF FUNDS)") belongs to the heading above it and never opens a section.
+    is_annotation: bool = False
 
 
 def normalize_heading(text: str) -> str:
@@ -74,6 +76,43 @@ AGENCY_SUPPLEMENT = frozenset(
     }
 )
 
+# Legislative agencies absent from USASpending (all but GAO); unpinned, each nests under the agency before it.
+# Added only for Legislative Branch reports: others print SENATE and HOUSE OF REPRESENTATIVES over procedure sections.
+LEGISLATIVE_AGENCIES = frozenset(
+    {
+        "SENATE",
+        "HOUSE OF REPRESENTATIVES",
+        "JOINT ITEMS",
+        "UNITED STATES CAPITOL POLICE",
+        "CAPITOL POLICE",
+        "OFFICE OF COMPLIANCE",
+        "OFFICE OF CONGRESSIONAL WORKPLACE RIGHTS",
+        "CONGRESSIONAL BUDGET OFFICE",
+        "ARCHITECT OF THE CAPITOL",
+        "LIBRARY OF CONGRESS",
+        "GOVERNMENT PRINTING OFFICE",
+        "GOVERNMENT PUBLISHING OFFICE",
+        "GOVERNMENT ACCOUNTABILITY OFFICE",
+        "OPEN WORLD LEADERSHIP CENTER",
+        "OPEN WORLD LEADERSHIP CENTER TRUST FUND",
+        "CONGRESSIONAL OFFICE FOR INTERNATIONAL LEADERSHIP",
+        "CONGRESSIONAL OFFICE FOR INTERNATIONAL LEADERSHIP FUND",
+        "JOHN C STENNIS CENTER FOR PUBLIC SERVICE TRAINING AND DEVELOPMENT",
+    }
+)
+
+# Legislative branch sub-agencies that head their own "Salaries and Expenses" accounts; the lexicon's bureau list lacks them for the same reason.
+LEGISLATIVE_BUREAUS = frozenset(
+    {
+        "COPYRIGHT OFFICE",
+        "CONGRESSIONAL RESEARCH SERVICE",
+        "NATIONAL LIBRARY SERVICE FOR THE BLIND AND PRINT DISABLED",
+        "NATIONAL LIBRARY SERVICE FOR THE BLIND AND PHYSICALLY HANDICAPPED",
+        "BOOKS FOR THE BLIND AND PHYSICALLY HANDICAPPED",
+        "PUBLIC INFORMATION PROGRAMS OF THE SUPERINTENDENT OF DOCUMENTS",
+    }
+)
+
 
 def _kind(text: str, agencies: frozenset[str], bureaus: frozenset[str]) -> str:
     upper = text.upper()
@@ -89,8 +128,9 @@ def _kind(text: str, agencies: frozenset[str], bureaus: frozenset[str]) -> str:
         return "agency"
     if norm in bureaus:
         return "bureau"
-    # A known agency name plus trailing words is a sub-entity ("DEPARTMENT OF DEFENSE EDUCATION ACTIVITY"), not the agency itself.
-    if any(norm.startswith(a + " ") for a in agencies):
+    # A known agency name plus trailing words is a sub-entity ("DEPARTMENT OF DEFENSE EDUCATION ACTIVITY").
+    # Legislative accounts reuse agency names ("Capitol Police Buildings, Grounds, and Security" is an AOC account), so they are exempt.
+    if any(norm.startswith(a + " ") for a in agencies if a not in LEGISLATIVE_AGENCIES):
         return "bureau"
     if _DEPARTMENT.match(text):
         return "agency"
@@ -123,6 +163,7 @@ def assign_levels(
             h.level = 3
             h.is_general_provisions = True
         elif kind in ("annotation", "topical"):
+            h.is_annotation = kind == "annotation"
             # Case alone can't demote a structural heading: a Title Case heading that opens a money block, or that appears exactly once in the report ("District of Columbia Funds"), is an account — real topical sub-heads (PROGRAM DESCRIPTION) recur dozens of times.
             if (
                 kind == "topical"

@@ -7,6 +7,17 @@
 - Full-document view for each comparison (`document.html`): the newer report as written, redlined against the prior year, with dropped sections in place and a right-hand notes column.
 - A floating outline in document order, marked by change class, and a breadcrumb row for the section in view, on both the ranked and full-document pages.
 
+### Changed
+
+- `scripts/hierarchy_audit.py` now checks structure without labels (nested agencies, parenthetical sections, duplicate paths, resumed parents, year-over-year parent drift) alongside USASpending truth; see `docs/methodology.md`.
+
+### Fixed
+
+- Legislative Branch agencies (Architect of the Capitol, Library of Congress, CBO, and others USASpending omits) no longer nest under the agency printed before them.
+- Parenthetical subtitles such as "(INCLUDING TRANSFER OF FUNDS)" no longer split an account into a separate section.
+- Table-of-contents entries now match body headings they qualify ("Architect of the Capitol (except Senate Office Buildings)"), and index lines that carry a page number after a colon no longer swallow the next entry.
+- Directive lead-ins and capitalized prose lines are no longer read as headings, and a wrapped heading split by blank lines is rejoined.
+
 ## [1.0.0] - 2026-09-16
 
 First release: year-over-year diffs of House and Senate appropriations committee report language, with policy-significance flags, a reproducible demonstration, and a measured evaluation.

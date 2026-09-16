@@ -17,11 +17,11 @@ Pattern-based counts (questions 2–5) are approximate.
 
 | Decision | Substantive units | Missed | Flag precision | Paragraphs promoted |
 |---|---|---|---|---|
-| Not substantive (current) | 131 | 15 (11.5%) | 82.0% | 61 |
-| Substantive, tool unchanged | 163 | 40 (24.5%) | 86.9% | 61 |
-| Substantive, and promote dollar-amount flags (`policy.FUNDING_TIER = REVIEW`) | 163 | 14 (8.6%) | 87.5% | 96 |
+| Not substantive (current) | 131 | 14 (10.7%) | 82.0% | 61 |
+| Substantive, tool unchanged | 163 | 39 (23.9%) | 86.9% | 61 |
+| Substantive, and promote dollar-amount flags (`policy.FUNDING_TIER = REVIEW`) | 163 | 13 (8.0%) | 86.6% | 97 |
 
-  On the demonstration set the three rows are 18/396 (4.5%), 143/549 (26.0%), and 18/549 (3.3%) missed.
+  On the demonstration set the three rows are 14/396 (3.5%), 140/549 (25.5%), and 14/549 (2.6%) missed.
   Reproduce the middle row with `score --as funding_amount=substantive`.
 - **Consideration:** money tables are out of scope and belong to the sibling project; a narrative figure often restates a table line, but when it names a specific program it is how the committee directs funding within an account.
 

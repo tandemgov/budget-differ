@@ -7,7 +7,15 @@ import re
 
 from budget_differ.models import Document, Paragraph, Section
 from budget_differ.segment.classify_lines import LineKind, classify
-from budget_differ.segment.headings import Heading, _kind, assign_levels, normalize_heading
+from budget_differ.segment.headings import (
+    TOPICAL,
+    LEGISLATIVE_AGENCIES,
+    LEGISLATIVE_BUREAUS,
+    Heading,
+    _kind,
+    assign_levels,
+    normalize_heading,
+)
 from budget_differ.segment.pdfhier import apply_pdf_tiers
 from budget_differ.segment.preprocess import body_bounds, extract_pre_text
 from budget_differ.segment.tables import table_spans
@@ -30,6 +38,9 @@ def segment_report(
     bureaus: frozenset[str] = frozenset(),
     pdf_tiers: list[dict] | None = None,
 ) -> Document:
+    if "LEGISLATIVE" in subcommittee.upper():
+        agencies = agencies | LEGISLATIVE_AGENCIES
+        bureaus = bureaus | LEGISLATIVE_BUREAUS
     text = extract_pre_text(raw_html)
     lines = text.split("\n")
     toc_entries = parse_toc(lines)  # before front matter is blanked away
@@ -47,6 +58,7 @@ def segment_report(
     span_starts = {s for s, _ in spans}
 
     headings = _collect_headings(lines, kinds, in_table, start)
+    headings = _join_split_headings(headings, lines, toc_entries, pdf_tiers, agencies, bureaus)
     money_after = set()
     for hi, h in enumerate(headings):
         j = h.line_end + 1
@@ -89,6 +101,10 @@ def segment_report(
 
     i = 0
     while i < len(lines):
+        if i in heading_at and heading_at[i].is_annotation:
+            flush_para()
+            i = heading_at[i].line_end + 1
+            continue
         if i in heading_at:
             h = heading_at[i]
             flush_para()
@@ -182,8 +198,8 @@ def _apply_toc_levels(
     if not entries:
         return
     _toc_levels(entries, agencies, bureaus)
-    tnorm = [normalize_heading(e.text) for e in entries]
     hnorm = [normalize_heading(h.text) for h in headings]
+    tnorm = _toc_keys([e.text for e in entries], hnorm)
     sm = difflib.SequenceMatcher(None, tnorm, hnorm, autojunk=False)
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag != "equal":
@@ -196,6 +212,97 @@ def _apply_toc_levels(
             if level > h.level and _kind(h.text, agencies, bureaus) == "agency":
                 continue
             h.level = level
+
+
+_PARENTHETICAL = re.compile(r"\([^)]*\)")
+# A TOC entry may differ from its body heading by this many leading-aligned words ("... Leadership Fund" over "... LEADERSHIP").
+TOC_SNAP_MAX_EXTRA_WORDS = 2
+
+
+def _toc_keys(texts: list[str], heading_keys: list[str]) -> list[str]:
+    """Normalized TOC entries, each snapped to the body heading it names in qualified form ("Architect of the Capitol (except Senate Office Buildings)").
+
+    An unmatched TOC entry leaves its heading at the heuristic level, which nested agencies under their predecessor."""
+    counts: dict[str, int] = {}
+    for h in heading_keys:
+        counts[h] = counts.get(h, 0) + 1
+    out = []
+    for text in texts:
+        key = normalize_heading(_PARENTHETICAL.sub(" ", text))
+        if key not in counts:
+            # Only an unambiguous snap to a heading printed once: a loose prefix match moved whole agencies under the wrong department.
+            related = [
+                h
+                for h in counts
+                if counts[h] == 1
+                and (h.startswith(key + " ") or key.startswith(h + " "))
+                and abs(len(h.split()) - len(key.split())) <= TOC_SNAP_MAX_EXTRA_WORDS
+            ]
+            if len(related) == 1:
+                key = related[0]
+        out.append(key)
+    return out
+
+
+def _is_prose(line: str) -> bool:
+    """Running sentence text, as opposed to a table row whose cells also classify as body."""
+    # Semicolons count: a sentence listing capitalized program names ("Environmental Cleanup; Uranium Enrichment") has few lowercase words.
+    return "...." not in line and (";" in line or len(re.findall(r"\b[a-z]{2,}\b", line)) >= 3)
+
+
+# Blank lines that may separate the two halves of one wrapped heading in the fixed-width render.
+SPLIT_HEADING_MAX_GAP = 3
+
+
+def _join_split_headings(
+    headings: list[Heading],
+    lines: list[str],
+    toc_entries: list[TocEntry],
+    pdf_tiers: list[dict] | None,
+    agencies: frozenset[str],
+    bureaus: frozenset[str],
+) -> list[Heading]:
+    """Rejoin a wrapped heading the .htm render split across blank lines ("...Interns in House Leadership" / "Offices").
+
+    Stacked headings are also blank-separated, so a join needs evidence: the PDF or TOC prints the joined form, or the pair passes _wrapped_pair."""
+    known = {normalize_heading(t["text"]).replace(" ", "") for t in pdf_tiers or []}
+    known |= {normalize_heading(_PARENTHETICAL.sub(" ", e.text)).replace(" ", "") for e in toc_entries}
+    out: list[Heading] = []
+    for h in headings:
+        prev = out[-1] if out else None
+        if (
+            prev is not None
+            and 0 < h.line_start - prev.line_end - 1 <= SPLIT_HEADING_MAX_GAP
+            and not any(ln.strip() for ln in lines[prev.line_end + 1 : h.line_start])
+        ):
+            joined = f"{prev.text} {h.text}"
+            key = normalize_heading(joined).replace(" ", "")
+            # An agency or bureau over its account is a stack even when the PDF sets the two lines close enough to read as one.
+            parent_like = _kind(prev.text, agencies, bureaus) in ("title", "gp", "annotation", "agency", "bureau")
+            if not parent_like and (
+                (key in known and normalize_heading(prev.text).replace(" ", "") not in known) or _wrapped_pair(prev, h)
+            ):
+                out[-1] = Heading(text=joined, level=-1, line_start=prev.line_start, line_end=h.line_end)
+                continue
+        out.append(h)
+    return out
+
+
+# A first half this long has hit the centered-heading wrap width; a stacked parent heading rarely does.
+WRAPPED_HALF_MIN_CHARS = 50
+_TRAILING_CONNECTIVE = re.compile(r"\b(and|or|of|for|the|to|in|on)$", re.IGNORECASE)
+
+
+def _wrapped_pair(first: Heading, second: Heading) -> bool:
+    """A full-width first half and a one-word tail (or a tail after a dangling connective) in the same case style."""
+    tail = second.text.strip()
+    if len(first.text) < WRAPPED_HALF_MIN_CHARS or "...." in first.text:
+        return False
+    if tail.startswith("(") or tail.upper() in TOPICAL or first.text.isupper() != tail.isupper():
+        return False
+    if len(tail.split()) > 1 and not _TRAILING_CONNECTIVE.search(first.text.strip()):
+        return False
+    return True
 
 
 def _collect_headings(
@@ -212,7 +319,23 @@ def _collect_headings(
             and i > 0
             and lines[i - 1].strip()
             and kinds[i - 1] != LineKind.HEADING
-            and len(re.findall(r"\b[a-z]{2,}\b", lines[i])) >= 2
+            and (
+                len(re.findall(r"\b[a-z]{2,}\b", lines[i])) >= 2
+                # Or prose on both sides: a mid-paragraph line of capitalized list items ("Decommissioning Fund; Science; Nuclear Waste Disposal; Advanced").
+                or (
+                    i + 1 < n
+                    and kinds[i + 1] == LineKind.BODY
+                    and (_is_prose(lines[i - 1]) or _is_prose(lines[i + 1]) or _is_prose(lines[i]))
+                )
+            )
+        ):
+            kinds[i] = LineKind.BODY
+        # First half of a wrapped contents entry, seen when the body bounds start inside the contents.
+        if (
+            kinds[i] == LineKind.HEADING
+            and i + 1 < n
+            and kinds[i + 1] == LineKind.LEADER_LINE
+            and len(lines[i + 1]) - len(lines[i + 1].lstrip()) > len(lines[i]) - len(lines[i].lstrip())
         ):
             kinds[i] = LineKind.BODY
         if kinds[i] == LineKind.HEADING and i not in in_table:

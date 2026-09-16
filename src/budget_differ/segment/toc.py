@@ -12,7 +12,10 @@ from dataclasses import dataclass
 _TOC_START = re.compile(r"^\s*(CONTENTS|INDEX TO BILL AND REPORT)\s*$")
 _LEAF = re.compile(r"^(?P<text>.*?)\.{4,}\s*[\d ]*$")
 _PAGE_ONLY = re.compile(r"^[\s\d]+$")
-_TITLE_TEXT = re.compile(r"^TITLE\s+[IVXLC]+\b", re.IGNORECASE)
+# House INDEX blocks number titles "III. Department of Energy:" instead of "Title III--...".
+_TITLE_TEXT = re.compile(r"^(TITLE\s+[IVXLC]+\b|[IVXLC]+\.\s)", re.IGNORECASE)
+# A parent line carrying its page number ("Joint Items:        14"); without this it reads as half of a wrapped entry and swallows the next line.
+_PARENT_WITH_PAGE = re.compile(r"^(?P<text>.*:)\s+\d+$")
 _HEADERISH = re.compile(r"^\s*(Page( Number)?|Bill Report|-+)\s*$", re.IGNORECASE)
 
 
@@ -55,6 +58,9 @@ def parse_toc(lines: list[str]) -> list[TocEntry]:
                 indent = p_indent
             # Otherwise the pending line was not a TOC entry — drop it.
 
+        m_page = _PARENT_WITH_PAGE.match(text)
+        if m_page:
+            text = m_page.group("text")
         if text.endswith(":"):
             # Parent line; "A: B:" nests two parents on one line (Senate).
             last_anchor = i
