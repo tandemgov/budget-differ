@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import re
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 from rapidfuzz import fuzz
 
 from budget_differ.align import section_similarity, section_similarity_strict
 from budget_differ.compare import compare_documents, load_document
-from budget_differ.corpus import CatalogEntry, Pair, available_reports
+from budget_differ.corpus import CatalogEntry, Pair, available_reports, pdf_path
 from budget_differ.models import ChangeClass, Document, PairDiff, Section, SectionDiff
 
 # Stitching a dead thread to a later-born one: content-overlap floors, lower when the normalized heading and title already agree.
@@ -104,6 +104,12 @@ def build_chain(
         assert e.fiscal_year is not None
         entries[e.fiscal_year] = e
     fys = sorted(entries)
+    # A committee prerelease is text converted from a PDF; GovInfo's .htm of the earlier years is a different render with its own quirks (table titles read as headings, its own line breaks).
+    # So when a chain includes a prerelease, every earlier year with a PDF on disk goes through the same converter and the comparison is like for like.
+    if any(e.local_path for e in entries.values()):
+        for fy, e in entries.items():
+            if not e.local_path and pdf_path(repo, e).exists():
+                entries[fy] = replace(e, from_pdf=True)
     if len(fys) < 2:
         raise ValueError(
             f"need at least 2 fiscal years on disk for {chamber}/{subcommittee} "

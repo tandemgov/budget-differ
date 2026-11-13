@@ -105,6 +105,10 @@ def _pdf_url(entry: CatalogEntry) -> str:
 def _source_links(entry: CatalogEntry) -> str:
     """Package id followed by the source documents themselves — PDF and HTML — then the GovInfo landing page."""
     links = [f'<a href="{_esc(_pdf_url(entry))}">PDF</a>']
+    if entry.local_path:
+        return f'{_esc(entry.package_id)} ({links[0]} &middot; {_esc(entry.source or "committee prerelease, not yet on GovInfo")}; text from this PDF)'
+    if entry.from_pdf:
+        links.append("text from this PDF, matching the prerelease side")
     if entry.html_url:
         links.append(f'<a href="{_esc(entry.html_url)}">HTML</a>')
     links.append(

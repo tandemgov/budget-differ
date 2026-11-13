@@ -121,6 +121,27 @@ Static HTML with no server: a pair page per comparison (a "policy signals in sma
 Filters hide unchanged or number-only sections, or show directives or flagged sections only.
 Every page links to the source PDF and HTML on GovInfo.
 
+### Prerelease documents (`ingest.py`)
+
+Committees post reports, Senate explanatory statements, and bill committee prints as PDFs on their own sites before GovInfo carries the `.htm` render the pipeline reads.
+`budget-differ ingest` re-renders such a PDF as GovInfo-style fixed-width text from the composition itself (pymupdf): headings are the lines set in capitals that are centered or carry small caps; full-size caps stay CAPS and small-caps heads come out in Title Case, as GovInfo's report `.htm` prints them; paragraphs start at an indented line and are re-wrapped with line-end hyphenation removed; dot-leader funding summaries keep stub and amount on one line; ruled tables are set between dashed rules so the table detector drops them; running heads, folios, and bill line numbers are removed.
+The same converter reads bill prints (DeVinne type, numbered lines) and reports (New Century Schoolbook); bill text is compared as its own series (`Legislative-Branch-Bill`), with provision headlines as section names.
+
+Fidelity is measured against GovInfo with `scripts/ingest_check.py`, converting a document's GovInfo PDF and comparing with GovInfo's `.htm` of the same document (2026-11-13):
+
+| Document | GovInfo words reproduced in order |
+| --- | --- |
+| CRPT-119srpt38 (Senate Legislative Branch report, FY2026) | 96.4% of 22,071 |
+| CRPT-118srpt192 (same, FY2025) | 96.3% of 25,929 |
+| BILLS-119s2257rs (S. 2257 as reported, FY2026) | 99.3% of 6,226 |
+
+About half of the report misses are table figures, and most of the rest are table row labels, contents entries, and front matter, all outside the diffed text.
+The two renders still segment differently: GovInfo's `.htm` reads some ruled-table titles as headings and splits dash lists into one paragraph per line, which the converted text does not.
+So a comparison that includes a prerelease document reads every year of that chain through the converter (`CatalogEntry.from_pdf`, set in `chain.build_chain`), and the page header says so; without that, render differences would surface as false new and dropped sections.
+
+Prerelease documents are listed in `prerelease/catalog.json` (source URL, SHA-256) with the PDF beside them; the `.htm` written next to each is for inspection, and comparisons read the PDF through a cache keyed by its hash and `CONVERTER_VERSION`.
+When GovInfo publishes the document, run the sibling repo's `approps discover && approps download` and remove the prerelease entry; the catalog entry then takes precedence.
+
 ## Approaches considered
 
 | Approach | Strengths | Weaknesses for legislative review |
@@ -150,6 +171,7 @@ The evaluation harness in `scripts/policy_eval.py` measures such an addition the
 - **Segmentation losses.** Text inside dropped table regions is not diffed, and a thin tail of table rows (1–8 paragraphs in about 40 of 231 reports) leaks into diffs as noise.
 - **Alignment.** Renames below the promotion bar show as drop plus add with a "possible successor" hint; above it, a promoted rename can pair a split account with only one of its successors or a broad account with a narrow sub-heading (3 of 8 adjudicated promotions). Paragraphs re-paired inside a matched section can still pair two directives on related topics.
 - **Blocking misses** in alignment (true matches never generated as candidates) are not measured.
+- **Prerelease conversion.** Hyphenation at line ends is resolved by attestation elsewhere in the document, so a compound broken only once can come out closed ("zero-base" → "zerobase"); the hierarchy of a converted document can differ from GovInfo's for headings GovInfo itself misreads. Comparisons are like for like, so these affect both years alike.
 
 ## Reproducing and extending the evaluation
 

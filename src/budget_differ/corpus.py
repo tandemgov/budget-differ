@@ -57,6 +57,11 @@ class CatalogEntry:
     title: str
     html_url: str
     pdf_url: str = ""
+    # Prerelease documents (committee-website PDFs not yet on GovInfo) live in budget-differ's prerelease/ dir, not the approps raw corpus.
+    local_path: str = ""
+    # Read this GovInfo report from its PDF through the same converter as a prerelease document, so a prerelease comparison is like for like (see build_chain).
+    from_pdf: bool = False
+    source: str = ""
 
     def slug(self) -> str:
         assert self.subcommittee is not None
@@ -64,7 +69,12 @@ class CatalogEntry:
 
 
 def load_catalog(repo: Path) -> list[CatalogEntry]:
+    """The approps repo catalog plus prerelease entries (prerelease/catalog.json, written by `budget-differ ingest`)."""
+    from budget_differ.ingest import load_prerelease
+
     data = json.loads(catalog_path(repo).read_text())
+    known = {row["package_id"] for row in data}
+    data = data + [row for row in load_prerelease() if row["package_id"] not in known]
     entries = []
     for row in data:
         entries.append(
@@ -78,12 +88,18 @@ def load_catalog(repo: Path) -> list[CatalogEntry]:
                 title=row.get("title", ""),
                 html_url=row.get("html_url", ""),
                 pdf_url=row.get("pdf_url", ""),
+                local_path=row.get("local_path", ""),
+                source=row.get("source", ""),
             )
         )
     return entries
 
 
 def raw_path(repo: Path, entry: CatalogEntry) -> Path:
+    if entry.local_path:
+        from budget_differ.ingest import prerelease_dir
+
+        return prerelease_dir() / entry.local_path
     return raw_dir(repo) / str(entry.congress) / entry.chamber / f"{entry.package_id}.htm"
 
 

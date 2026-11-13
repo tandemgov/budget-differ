@@ -1,0 +1,47 @@
+[
+  {
+    "package_id": "BILLS-119s2257rs",
+    "congress": 119,
+    "chamber": "senate",
+    "title": "S. 2257, LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2026 (REPORTED IN SENATE)",
+    "subcommittee": "Legislative-Branch-Bill",
+    "fiscal_year": 2026,
+    "stage": "committee",
+    "kind": "bill",
+    "date_issued": "2025-07-10",
+    "source": "GovInfo (Senate-reported bill; bills are not in the approps catalog)",
+    "pdf_url": "https://www.govinfo.gov/content/pkg/BILLS-119s2257rs/pdf/BILLS-119s2257rs.pdf",
+    "pdf_sha256": "fdb809265402fe944af193a44e6dd93c5b24984376247e37d4a3da669c16c409",
+    "local_path": "BILLS-119s2257rs.htm"
+  },
+  {
+    "package_id": "SAPPR-FY2027-LEGBRANCH-BILL",
+    "congress": 119,
+    "chamber": "senate",
+    "title": "LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2027 (COMMITTEE PRINT)",
+    "subcommittee": "Legislative-Branch-Bill",
+    "fiscal_year": 2027,
+    "stage": "committee",
+    "kind": "bill",
+    "date_issued": "2026-11-12",
+    "source": "committee website (prerelease; not yet on GovInfo)",
+    "pdf_url": "https://www.appropriations.senate.gov/imo/media/doc/lbfy2027.pdf",
+    "pdf_sha256": "edfc87411dd2f045e71b653dc86c9cb656899fc7075d58385e9f0c204cc78c63",
+    "local_path": "SAPPR-FY2027-LEGBRANCH-BILL.htm"
+  },
+  {
+    "package_id": "SAPPR-FY2027-LEGBRANCH-ES",
+    "congress": 119,
+    "chamber": "senate",
+    "title": "EXPLANATORY STATEMENT FOR THE LEGISLATIVE BRANCH APPROPRIATIONS BILL, 2027",
+    "subcommittee": "Legislative-Branch",
+    "fiscal_year": 2027,
+    "stage": "committee",
+    "kind": "report",
+    "date_issued": "2026-11-12",
+    "source": "committee website (prerelease; not yet on GovInfo)",
+    "pdf_url": "https://www.appropriations.senate.gov/imo/media/doc/lb_explanatory_stmt.pdf",
+    "pdf_sha256": "39da6e2df24210e6683cc68f884ccb438aa236ab38d08eb1b112be027eb12f74",
+    "local_path": "SAPPR-FY2027-LEGBRANCH-ES.htm"
+  }
+]

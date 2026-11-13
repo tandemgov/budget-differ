@@ -56,6 +56,23 @@ Next to each ranked page, `document.html` shows the newer report as written, in 
 
 Each report is paired with the same chamber + subcommittee report from the latest earlier fiscal year on disk, so Senate gap years (FY2021, FY2023) fall back further and the page header says which years were compared.
 
+### Documents not yet on GovInfo
+
+Committees post their reports and bill prints as PDFs days or weeks before GovInfo. Add one with `ingest`, then build as usual:
+
+```bash
+uv run budget-differ ingest lb_explanatory_stmt.pdf --id SAPPR-FY2027-LEGBRANCH-ES \
+    --chamber senate --subcommittee Legislative-Branch --fy 2027 --congress 119 \
+    --title "EXPLANATORY STATEMENT FOR THE LEGISLATIVE BRANCH APPROPRIATIONS BILL, 2027" \
+    --url https://www.appropriations.senate.gov/imo/media/doc/lb_explanatory_stmt.pdf --date 2026-11-12
+uv run budget-differ ingest lbfy2027.pdf --id SAPPR-FY2027-LEGBRANCH-BILL --kind bill \
+    --chamber senate --subcommittee Legislative-Branch-Bill --fy 2027 --congress 119 \
+    --title "LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2027 (COMMITTEE PRINT)" --url https://www.appropriations.senate.gov/imo/media/doc/lbfy2027.pdf
+uv run budget-differ senate                   # report pages plus a separate bill-text series
+```
+
+The PDF is copied to `prerelease/` and listed in `prerelease/catalog.json` with its URL and SHA-256. Bill text is a series of its own (`--subcommittee Legislative-Branch-Bill`), so the prior year's bill needs ingesting too (its GovInfo PDF, e.g. `BILLS-119s2257rs`). A chain that includes a prerelease document reads every year through the same PDF converter, so format differences do not show up as changes. `scripts/ingest_check.py` measures the converter against GovInfo.
+
 Debug segmentation for one report:
 
 ```bash
@@ -98,7 +115,7 @@ uv run python scripts/linkage_eval.py score    # precision/recall + threshold sw
 - Policy-significance classification is measured against a reference set whose labels are still drafts pending human adjudication (`docs/evaluation.md`): on held-out FY2023→FY2024 comparisons it misses 10.7% of substantive changes (21% of small ones) versus 29.8% for size alone, and about 82% of promoted paragraphs were labeled substantive. Scope changes carried by ordinary words ("construction" → "study") are the main miss.
 - Section-linkage labels are now matched by content; 104 of the original 151 were restored (80 match a current decision) and 47 without saved text are kept unscored in `tests/linkage_labels_unrecoverable.json`.
 - Reports GPO published as text-free stubs (e.g. Senate Labor-HHS FY2026) are skipped with a warning; continuing-resolution conference reports miscataloged as subcommittee reports (e.g. CRPT-116hrpt9) are excluded by title.
-- Same-day ingestion of a report not yet in the sibling repo's catalog is v2; for now, run that repo's `approps discover && approps download` first.
+- Documents not yet on GovInfo (committee-website reports, Senate explanatory statements, bill prints) are ingested from their PDFs with `budget-differ ingest`; see below and `docs/methodology.md`. Conversion fidelity: 96% of GovInfo's words for reports (misses mostly in dropped tables), 99% for bills.
 
 ## License
 
