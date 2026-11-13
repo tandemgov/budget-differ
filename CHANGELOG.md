@@ -8,6 +8,7 @@
 - Bill-text comparisons as their own series (`--kind bill`), with provision headlines as section names.
 - `scripts/ingest_check.py`: converter fidelity against GovInfo (96% of report words, 99% of bill words reproduced in order).
 - Prerelease: Senate FY2027 Legislative Branch explanatory statement and bill committee print (2026-11-12), with S. 2257 (FY2026, as reported) as the bill baseline.
+- Demonstration site: Senate Legislative Branch report language (FY2025–FY2027, FY2027 from the committee's PDF) and bill text (FY2026–FY2027); the manifest records which file each comparison read.
 - Full-document view for each comparison (`document.html`): the newer report as written, redlined against the prior year, with dropped sections in place and a right-hand notes column.
 - A floating outline in document order, marked by change class, and a breadcrumb row for the section in view, on both the ranked and full-document pages.
 

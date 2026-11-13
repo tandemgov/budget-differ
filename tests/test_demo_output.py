@@ -33,10 +33,13 @@ def test_every_internal_link_resolves():
     assert not broken, broken[:10]
 
 
-def test_manifest_covers_two_subcommittees_three_years():
+def test_manifest_covers_demo_groups():
     manifest = json.loads((DEMO / "manifest.json").read_text())
-    assert len(manifest["comparisons"]) == 4
-    assert len(manifest["reports"]) == 6
-    assert {r["subcommittee"] for r in manifest["reports"].values()} == {"Energy-Water", "Legislative-Branch"}
+    # House Energy-Water and Legislative Branch FY2025-FY2027 (4), Senate Legislative Branch report FY2025-FY2027 (2), Senate bill FY2026-FY2027 (1).
+    assert len(manifest["comparisons"]) == 7
+    assert len(manifest["reports"]) == 11
+    assert {r["subcommittee"] for r in manifest["reports"].values()} == {
+        "Energy-Water", "Legislative-Branch", "Legislative-Branch-Bill"
+    }
     for c in manifest["comparisons"]:
         assert (DEMO / c["page"]).exists()

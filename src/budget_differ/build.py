@@ -23,7 +23,7 @@ from pathlib import Path
 
 from budget_differ.compare import compare_documents, load_document
 from budget_differ.config import approps_repo
-from budget_differ.corpus import available_reports, discover_pairs, load_catalog, raw_path
+from budget_differ.corpus import available_reports, discover_pairs, load_catalog, pdf_path, raw_path
 from budget_differ.render import render_pair, render_top_index
 
 
@@ -170,6 +170,9 @@ def _thread_links(
 DEMO_GROUPS = [
     ("house", "energy-water", 2025, 2027),
     ("house", "legislative-branch", 2025, 2027),
+    # Senate FY2027 was released as committee PDFs before GovInfo (prerelease/); every year in these chains is read from its PDF.
+    ("senate", "legislative-branch", 2025, 2027),
+    ("senate", "legislative-branch-bill", 2026, 2027),
 ]
 
 
@@ -217,7 +220,11 @@ def build_demo(repo: Path, out_root: Path) -> int:
                 "title": e.title,
                 "html_url": e.html_url,
                 "pdf_url": e.pdf_url,
-                "sha256": hashlib.sha256(raw_path(repo, e).read_bytes()).hexdigest(),
+                # The hash is of the file the comparison actually read: the PDF for prerelease chains, else GovInfo's .htm.
+                "read_from": "pdf" if (e.local_path or e.from_pdf) else "htm",
+                "sha256": hashlib.sha256(
+                    (pdf_path(repo, e) if (e.local_path or e.from_pdf) else raw_path(repo, e)).read_bytes()
+                ).hexdigest(),
             }
     (out_root / "style.css").write_text(CSS)
     render_top_index(index_rows, out_root, render_nav(nav_items, ".", ""))
