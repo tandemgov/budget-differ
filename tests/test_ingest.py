@@ -35,6 +35,12 @@ def test_wrapped_heading_lines_open_on_capitals():
     assert " ".join(lines) == "Public Information Programs of the Office of Superintendent of Documents"
 
 
+def test_wrap_heading_keeps_an_overlong_single_word():
+    word = "X" * 80
+    assert _wrap_heading(word, 59) == [word]
+    assert _wrap_heading(f"Title {word}", 59) == ["Title", word]
+
+
 def _prerelease(package_id: str) -> Path:
     pdf = prerelease_dir() / f"{package_id}.pdf"
     if not pdf.exists():

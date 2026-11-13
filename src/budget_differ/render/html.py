@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from string import Template
@@ -94,22 +95,28 @@ def _esc(s: str) -> str:
     return html.escape(s, quote=True)
 
 
+def _http(url: str) -> str:
+    """Only http(s) URLs become links; anything else (javascript:, data:, a bare path) is dropped."""
+    return url if re.match(r"https?://", url, re.IGNORECASE) else ""
+
+
 def _pdf_url(entry: CatalogEntry) -> str:
-    """Catalog rows predating pdf_url fall back to the canonical GovInfo content path."""
-    return entry.pdf_url or (
-        f"https://www.govinfo.gov/content/pkg/{entry.package_id}"
-        f"/pdf/{entry.package_id}.pdf"
-    )
+    """Catalog rows predating pdf_url fall back to the canonical GovInfo content path; a local document without a URL has no link."""
+    if entry.pdf_url or entry.local_path:
+        return _http(entry.pdf_url)
+    return f"https://www.govinfo.gov/content/pkg/{entry.package_id}/pdf/{entry.package_id}.pdf"
 
 
 def _source_links(entry: CatalogEntry) -> str:
     """Package id followed by the source documents themselves — PDF and HTML — then the GovInfo landing page."""
-    links = [f'<a href="{_esc(_pdf_url(entry))}">PDF</a>']
+    pdf = _pdf_url(entry)
+    links = [f'<a href="{_esc(pdf)}">PDF</a>'] if pdf else []
     if entry.local_path:
-        return f'{_esc(entry.package_id)} ({links[0]} &middot; {_esc(entry.source or "committee prerelease, not yet on GovInfo")}; text from this PDF)'
+        links.append(f'{_esc(entry.source or "committee prerelease, not yet on GovInfo")}; text from this PDF')
+        return f'{_esc(entry.package_id)} ({" &middot; ".join(links)})'
     if entry.from_pdf:
         links.append("text from this PDF, matching the prerelease side")
-    if entry.html_url:
+    if _http(entry.html_url):
         links.append(f'<a href="{_esc(entry.html_url)}">HTML</a>')
     links.append(
         f'<a href="https://www.govinfo.gov/app/details/{_esc(entry.package_id)}">GovInfo</a>'
@@ -119,7 +126,8 @@ def _source_links(entry: CatalogEntry) -> str:
 
 def _pdf_link(entry: CatalogEntry, label: str) -> str:
     """Compact form for the chain page, where a dozen years share one line: the label itself is the PDF link."""
-    return f'<a href="{_esc(_pdf_url(entry))}">{_esc(label)}</a>'
+    pdf = _pdf_url(entry)
+    return f'<a href="{_esc(pdf)}">{_esc(label)}</a>' if pdf else _esc(label)
 
 
 def _chip(change: ChangeClass) -> str:
@@ -583,8 +591,9 @@ def render_top_index(
     rows: list[tuple[Pair, dict[str, int], str]],
     out_dir: Path,
     nav_html: str = "<nav></nav>",
+    intro_html: str = "",
 ) -> Path:
-    """rows: (pair, counts, relative href)."""
+    """rows: (pair, counts, relative href); intro_html is trusted markup placed under the page heading."""
     table_rows = []
     for pair, counts, href in rows:
         changed = sum(v for k, v in counts.items() if k != "unchanged")
@@ -603,6 +612,7 @@ def render_top_index(
         [
             "<h1>Appropriations report language diffs</h1>",
             '<div class="meta">Year-over-year changes in committee report language.</div>',
+            *([intro_html] if intro_html else []),
             '<div class="overflow"><table>'
             "<tr><th>Report pair</th><th>Changed sections</th><th>New</th><th>Dropped</th></tr>"
             + "".join(table_rows)

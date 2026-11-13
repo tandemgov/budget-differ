@@ -1,0 +1,44 @@
+/* Drop page for in-browser comparisons; colors come from ../style.css. */
+body { padding: 0; }
+.cmp { max-width: 60rem; margin: 0 auto; padding: 2rem 1rem 1rem; display: grid; gap: .9rem; }
+.cmp h1 { margin: 0; }
+.cmp .meta { margin: 0; color: var(--muted); }
+.crumb { color: var(--muted); font-size: .9rem; }
+.drops { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .75rem; }
+.drop {
+  display: grid; gap: .2rem; padding: 1rem 1.1rem; cursor: pointer;
+  border: 2px dashed var(--border); border-radius: 8px;
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+.drop:focus-within { outline: 2px solid var(--dot-numbers); outline-offset: 2px; }
+.drop.over { border-color: var(--dot-numbers); background: var(--chip-numbers); }
+.drop.ready { border-style: solid; border-color: var(--dot-numbers); }
+.drop .slot { font-weight: 600; }
+.drop .file { color: var(--muted); font-size: .9rem; overflow-wrap: anywhere; }
+.drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.controls {
+  display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: .95rem;
+}
+.controls button {
+  font: inherit; padding: .45rem 1rem; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--dot-numbers); background: var(--dot-numbers); color: #fff;
+}
+.controls button:disabled { opacity: .45; cursor: default; }
+.controls button.tab { background: transparent; color: var(--fg); border-color: var(--border); }
+.controls button.tab[aria-pressed="true"] { background: var(--chip-numbers); border-color: var(--dot-numbers); }
+.controls button:focus-visible { outline: 2px solid var(--dot-numbers); outline-offset: 2px; }
+.views { display: inline-flex; gap: .4rem; }
+#status { color: var(--muted); }
+#status.err { color: var(--del-fg); }
+#status.busy::before {
+  content: ""; display: inline-block; width: .8em; height: .8em; margin-right: .45em; vertical-align: -.1em;
+  border: 2px solid var(--border); border-top-color: var(--dot-numbers); border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #status.busy::before { animation: none; } }
+.about { color: var(--muted); font-size: .9rem; }
+.about p { margin: .4rem 0; }
+#out { display: block; width: 100%; height: calc(100vh - 1rem); border: 0; border-top: 1px solid var(--border); background: var(--bg); }
+[hidden] { display: none !important; }

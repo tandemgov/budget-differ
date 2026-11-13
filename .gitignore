@@ -12,3 +12,7 @@ __pycache__/
 .pdfhier-cache/
 .linkage-eval/
 .policy-eval/
+
+# In-browser comparison runtime (Pyodide, PyMuPDF): fetched at deploy time, pinned by SHA-256
+demo/compare/runtime/
+node_modules/

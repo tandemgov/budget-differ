@@ -9,6 +9,8 @@
 - `scripts/ingest_check.py`: converter fidelity against GovInfo (96% of report words, 99% of bill words reproduced in order).
 - Prerelease: Senate FY2027 Legislative Branch explanatory statement and bill committee print (2026-11-12), with S. 2257 (FY2026, as reported) as the bill baseline.
 - Demonstration site: Senate Legislative Branch report language (FY2025–FY2027, FY2027 from the committee's PDF) and bill text (FY2026–FY2027); the manifest records which file each comparison read.
+- Compare page on the demo site (`demo/compare/`): drop two PDFs and get the comparison in the browser, running the same code in Pyodide, with a self-hosted, hash-pinned runtime, a Content-Security-Policy, and a sandboxed results frame; checked in Chromium before every Pages deploy (`scripts/check_compare_page.cjs`).
+- `scripts/ingest_check.py` reports agreement on the diffed prose, the measure that matters for comparisons.
 - Full-document view for each comparison (`document.html`): the newer report as written, redlined against the prior year, with dropped sections in place and a right-hand notes column.
 - A floating outline in document order, marked by change class, and a breadcrumb row for the section in view, on both the ranked and full-document pages.
 
@@ -21,6 +23,10 @@
 - `scripts/hierarchy_audit.py` now checks structure without labels (nested agencies, parenthetical sections, duplicate paths, resumed parents, year-over-year parent drift) alongside USASpending truth; see `docs/methodology.md`.
 
 ### Fixed
+
+- PDF conversion of table-heavy reports: the body face is chosen among fonts of 9.5pt and up, so a report such as Defense, whose 7pt tables outweigh its prose, is no longer read inside out.
+- A heading that is one word longer than the line no longer stops PDF conversion.
+- Rendered pages link only to http(s) URLs.
 
 - Legislative Branch agencies (Architect of the Capitol, Library of Congress, CBO, and others USASpending omits) no longer nest under the agency printed before them.
 - Parenthetical subtitles such as "(INCLUDING TRANSFER OF FUNDS)" no longer split an account into a separate section.

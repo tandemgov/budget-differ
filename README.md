@@ -73,6 +73,16 @@ uv run budget-differ senate                   # report pages plus a separate bil
 
 The PDF is copied to `prerelease/` and listed in `prerelease/catalog.json` with its URL and SHA-256. Bill text is a series of its own (`--subcommittee Legislative-Branch-Bill`), so the prior year's bill needs ingesting too (its GovInfo PDF, e.g. `BILLS-119s2257rs`). A chain that includes a prerelease document reads every year through the same PDF converter, so format differences do not show up as changes; a year whose PDF is missing is skipped with a note (run the sibling repo's `approps download`, which fetches PDFs too). `scripts/ingest_check.py` measures the converter against GovInfo.
 
+### Comparing in the browser
+
+The demo site has a [compare page](https://tandemgov.github.io/budget-differ/compare/) where anyone can drop two PDFs (last year's and this year's report, explanatory statement, or bill) and get the same comparison pages, computed in the browser; the files are not uploaded. It is built from `web/compare/` by `uv run budget-differ demo` (the page) and `uv run budget-differ compare-page --runtime` (the Python runtime, fetched and hash-checked, not committed). To try it locally:
+
+```bash
+uv run budget-differ compare-page --runtime
+cd demo && python3 -m http.server 8000 --bind 127.0.0.1    # then open http://localhost:8000/compare/
+node scripts/check_compare_page.cjs                         # the browser check CI runs (needs `npm install playwright`)
+```
+
 Debug segmentation for one report:
 
 ```bash
@@ -115,7 +125,7 @@ uv run python scripts/linkage_eval.py score    # precision/recall + threshold sw
 - Policy-significance classification is measured against a reference set whose labels are still drafts pending human adjudication (`docs/evaluation.md`): on held-out FY2023→FY2024 comparisons it misses 10.7% of substantive changes (21% of small ones) versus 29.8% for size alone, and about 82% of promoted paragraphs were labeled substantive. Scope changes carried by ordinary words ("construction" → "study") are the main miss.
 - Section-linkage labels are now matched by content; 104 of the original 151 were restored (80 match a current decision) and 47 without saved text are kept unscored in `tests/linkage_labels_unrecoverable.json`.
 - Reports GPO published as text-free stubs (e.g. Senate Labor-HHS FY2026) are skipped with a warning; continuing-resolution conference reports miscataloged as subcommittee reports (e.g. CRPT-116hrpt9) are excluded by title.
-- Documents not yet on GovInfo (committee-website reports, Senate explanatory statements, bill prints) are ingested from their PDFs with `budget-differ ingest`; see below and `docs/methodology.md`. Conversion fidelity: 96% of GovInfo's words for reports (misses mostly in dropped tables), 99% for bills.
+- Documents not yet on GovInfo (committee-website reports, Senate explanatory statements, bill prints) are ingested from their PDFs with `budget-differ ingest`; see below and `docs/methodology.md`. Conversion fidelity against GovInfo: 98–99.8% of the prose the pipeline diffs, including the table-heavy Defense report, and 99% of bill text.
 
 ## License
 
