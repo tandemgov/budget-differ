@@ -8,6 +8,8 @@ Usage:
     uv run budget-differ house energy-water 2024-2027   # year-over-year chain view
     uv run budget-differ --dump-sections CRPT-119hrpt667   # debug segmentation JSON
     uv run budget-differ demo [OUT_DIR]           # the acceptance demonstration (default: demo/)
+    uv run budget-differ ingest PDF --id ID --chamber senate --subcommittee Legislative-Branch --fy 2027 \
+        --congress 119 --title "..." [--url URL] [--date YYYY-MM-DD] [--kind bill]   # add a committee-website PDF not yet on GovInfo
 """
 
 from __future__ import annotations
@@ -27,6 +29,8 @@ from budget_differ.render import render_pair, render_top_index
 
 def main(argv: list[str] | None = None) -> int:
     args = list(sys.argv[1:] if argv is None else argv)
+    if args and args[0] == "ingest":
+        return _ingest(args[1:])
     repo = approps_repo()
 
     if args and args[0] == "demo":
@@ -265,6 +269,30 @@ def _dump_sections(repo: Path, package_id: str) -> int:
     ]
     json.dump(out, sys.stdout, indent=2)
     print()
+    return 0
+
+
+def _ingest(argv: list[str]) -> int:
+    import argparse
+
+    from budget_differ.ingest import ingest
+
+    ap = argparse.ArgumentParser(prog="budget-differ ingest", description="Add a committee-website PDF not yet on GovInfo to prerelease/.")
+    ap.add_argument("pdf", type=Path)
+    ap.add_argument("--id", required=True, help="package id for the prerelease document, e.g. SAPPR-FY2027-LEGBRANCH-ES")
+    ap.add_argument("--chamber", required=True, choices=["house", "senate"])
+    ap.add_argument("--subcommittee", required=True, help="catalog subcommittee name, e.g. Legislative-Branch")
+    ap.add_argument("--fy", type=int, required=True)
+    ap.add_argument("--congress", type=int, required=True)
+    ap.add_argument("--title", required=True)
+    ap.add_argument("--url", default="", help="where the PDF was published")
+    ap.add_argument("--date", default="", help="date issued (YYYY-MM-DD)")
+    ap.add_argument("--kind", default="report", choices=["report", "bill"],
+                    help="bill text is compared as its own series: give it a subcommittee name of its own, e.g. Legislative-Branch-Bill")
+    ap.add_argument("--source", default="committee website (prerelease; not yet on GovInfo)")
+    a = ap.parse_args(argv)
+    htm = ingest(a.pdf, a.id, a.chamber, a.subcommittee, a.fy, a.congress, a.title, a.url, a.date, a.kind, a.source)
+    print(f"wrote {htm}")
     return 0
 
 

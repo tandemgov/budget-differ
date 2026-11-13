@@ -48,7 +48,13 @@ RELATED_ONEWAY_FLOOR = 60.0
 
 
 def load_document(repo: Path, entry: CatalogEntry) -> Document:
-    raw = raw_path(repo, entry).read_text(errors="replace")
+    # Prerelease and like-for-like baselines are read through the PDF converter (cached per PDF and converter version), so a converter fix never leaves a stale .htm behind.
+    if entry.from_pdf or entry.local_path:
+        from budget_differ.ingest import converted_text
+
+        raw = converted_text(pdf_path(repo, entry))
+    else:
+        raw = raw_path(repo, entry).read_text(errors="replace")
     return segment_report(
         raw,
         package_id=entry.package_id,

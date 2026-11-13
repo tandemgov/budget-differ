@@ -9,7 +9,7 @@ The PDF twin of the same locator source keeps the composition font codes, and th
 
 Small-caps styling does not distinguish account from topical heads reliably, so only the caps/bold tier is used as an override signal: a heading the text heuristics left at account level but the PDF prints in full-size caps is a structural parent.
 
-Extraction needs pymupdf (dev dependency); results are cached as JSON per package so the normal pipeline never touches the PDFs again.
+Extraction uses pymupdf; results are cached as JSON per package so the normal pipeline never touches the PDFs again.
 """
 
 from __future__ import annotations

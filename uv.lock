@@ -7,23 +7,23 @@ name = "budget-differ"
 version = "1.0.0"
 source = { editable = "." }
 dependencies = [
+    { name = "pymupdf" },
     { name = "rapidfuzz" },
 ]
 
 [package.dev-dependencies]
 dev = [
-    { name = "pymupdf" },
     { name = "pytest" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "rapidfuzz", specifier = ">=3.0" }]
+requires-dist = [
+    { name = "pymupdf", specifier = ">=1.24" },
+    { name = "rapidfuzz", specifier = ">=3.0" },
+]
 
 [package.metadata.requires-dev]
-dev = [
-    { name = "pymupdf", specifier = ">=1.24" },
-    { name = "pytest", specifier = ">=8.0" },
-]
+dev = [{ name = "pytest", specifier = ">=8.0" }]
 
 [[package]]
 name = "colorama"

@@ -5,13 +5,13 @@ description = "Diff year-over-year appropriations committee report language"
 license = "CC0-1.0"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["rapidfuzz>=3.0"]
+dependencies = ["rapidfuzz>=3.0", "pymupdf>=1.24"]
 
 [project.scripts]
 budget-differ = "budget_differ.build:main"
 
 [dependency-groups]
-dev = ["pytest>=8.0", "pymupdf>=1.24"]
+dev = ["pytest>=8.0"]
 
 [build-system]
 requires = ["uv_build>=0.6.0"]
