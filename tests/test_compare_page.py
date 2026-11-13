@@ -81,3 +81,41 @@ def test_local_document_without_url_has_no_pdf_link():
     assert _pdf_url(entry) == ""
     assert "href" not in _source_links(entry)
     assert _pdf_url(_entry()).startswith("https://www.govinfo.gov/")
+
+
+def _web():
+    import sys
+
+    sys.path.insert(0, str(WEB))
+    try:
+        import web  # type: ignore[import-not-found]
+    finally:
+        sys.path.pop(0)
+    return web
+
+
+@pytest.mark.parametrize(
+    ("head", "chamber"),
+    [
+        # First-page text as PyMuPDF extracts it; the masthead braces come out as stray punctuation.
+        ('60-900 PDF CALENDAR NO. 113 119TH CONGRESS REPORT " ! SENATE 1ST SESSION 119-38 LEGISLATIVE BRANCH', "senate"),
+        ('63-806 119TH CONGRESS REPORT " ! HOUSE OF REPRESENTATIVES 2D SESSION 119-666 LEGISLATIVE BRANCH', "house"),
+        ("II CALENDAR NO. 113 119TH CONGRESS 1ST SESSION S. 2257 IN THE SENATE OF THE UNITED STATES", "senate"),
+        ("U:\\2027REPT\\08REPT\\BILL\\LBFY2027-6.XML SEN. APPRO. II [COMMITTEE PRINT]", "senate"),
+        ("(1) EXPLANATORY STATEMENT FOR THE LEGISLATIVE BRANCH APPROPRIATIONS BILL, 2027 GENERAL STATEMENT", "senate"),
+        ("QUARTERLY NEWSLETTER", ""),
+    ],
+)
+def test_chamber_from_masthead(head, chamber):
+    assert _web().chamber_of(head) == chamber
+
+
+def test_comparisons_leave_no_files_behind():
+    """Pyodide's filesystem lives in memory for the life of the tab, so rendered pages must not pile up there."""
+    import tempfile
+
+    web = _web()
+    tmp = Path(tempfile.gettempdir())
+    before = set(tmp.iterdir())
+    web.compare_texts(_SAMPLE_OLD, _SAMPLE_NEW, str(WEB / "lexicon.json"))
+    assert set(tmp.iterdir()) == before

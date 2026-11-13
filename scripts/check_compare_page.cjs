@@ -89,9 +89,40 @@ const check = (ok, what) => { console.log(`${ok ? "ok  " : "FAIL"} ${what}`); if
   });
   check(frameIsolated, "host page cannot reach into the results frame (opaque origin)");
 
-  await page.frameLocator("#out").locator("a.viewtab", { hasText: "Full" }).click();
+  const resultFrame = () => page.frames().find((f) => f !== page.mainFrame());
+  const inView = (id) => resultFrame().evaluate((id) => {
+    const el = document.getElementById(id);
+    if (!el || el.offsetParent === null) return false;
+    const r = el.getBoundingClientRect();
+    return r.top > -5 && r.top < innerHeight;
+  }, id);
+
+  // In a srcdoc frame "#id" resolves against the host page's URL; the bridge must keep these links inside the comparison.
+  const outlineLink = resultFrame().locator(".outline a.oll:visible").last();
+  const target = (await outlineLink.getAttribute("href")).slice(1);
+  await outlineLink.click();
+  await page.waitForTimeout(500);
+  check(resultFrame().url() === "about:srcdoc" && (await resultFrame().locator(".outline").count()) === 1,
+    "outline links stay inside the comparison");
+  check(await inView(target), "outline links scroll to their section");
+
+  // Unchanged sections are hidden on the ranked page by default; a "ranked view" link to one must reveal it.
+  const unchanged = await resultFrame().evaluate(() => [...document.querySelectorAll('section[data-change="unchanged"]')].map((s) => s.id));
+  await resultFrame().locator("a.viewtab", { hasText: "Full" }).click();
   await page.waitForFunction(() => document.getElementById("view-document").getAttribute("aria-pressed") === "true", null, { timeout: 10000 });
   check(true, "view links inside the frame switch views through the message bridge");
+  await page.waitForTimeout(500);
+  const back = await resultFrame().evaluate((ids) => {
+    const a = [...document.querySelectorAll('a[data-bd-view="index"][data-bd-anchor]')].find((x) => ids.includes(x.getAttribute("data-bd-anchor")));
+    return a ? a.getAttribute("data-bd-anchor") : null;
+  }, unchanged);
+  check(back !== null, "the annotated document links back to an unchanged section");
+  if (back) {
+    await resultFrame().locator(`a[data-bd-view="index"][data-bd-anchor="${back}"]`).first().click();
+    await page.waitForFunction(() => document.getElementById("view-index").getAttribute("aria-pressed") === "true", null, { timeout: 10000 });
+    await page.waitForTimeout(800);
+    check(await inView(back), "a link to a section hidden by 'hide unchanged' reveals it and scrolls to it");
+  }
 
   const mixed = await compare(path.join(PRE, "BILLS-119s2257rs.pdf"), path.join(PRE, "SAPPR-FY2027-LEGBRANCH-ES.pdf"));
   check(/bill and the other a report/.test(mixed), "a bill paired with a report is refused");

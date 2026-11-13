@@ -24,13 +24,36 @@ from budget_differ.segment.pdfhier import extract_pdf_headings
 
 GPO_FACES = ("NewCenturySchlbk", "DeVinne")
 
-# Runs inside the results frame: forwards view-switch clicks to the host page and scrolls on request.
+# Runs inside the results frame. A srcdoc frame resolves "#id" links against the host page's URL, so every in-page link is handled here:
+# view links go to the host as messages; fragment links reveal their section (it may be hidden by "hide unchanged") and scroll to it,
+# and the host's scroll requests after a view switch do the same.
 BRIDGE_JS = (
-    "document.addEventListener('click',function(e){var a=e.target.closest('a[data-bd-view]');if(!a)return;"
-    "e.preventDefault();parent.postMessage({bd:'view',view:a.getAttribute('data-bd-view'),anchor:a.getAttribute('data-bd-anchor')||''},'*');});"
-    "window.addEventListener('message',function(e){if(e.source!==parent||!e.data||e.data.bd!=='scroll')return;"
-    "var el=document.getElementById(e.data.anchor);if(el)el.scrollIntoView();});"
+    "(function(){"
+    "function go(id){var el=id&&document.getElementById(id);if(!el)return;"
+    "for(var n=el;n&&n.classList;n=n.parentElement){n.classList.remove('hidden');}el.scrollIntoView();}"
+    "document.addEventListener('click',function(e){var a=e.target.closest('a[href^=\"#\"]');if(!a)return;e.preventDefault();"
+    "var view=a.getAttribute('data-bd-view');"
+    "if(view){parent.postMessage({bd:'view',view:view,anchor:a.getAttribute('data-bd-anchor')||''},'*');return;}"
+    "go(decodeURIComponent(a.getAttribute('href').slice(1)));});"
+    "window.addEventListener('message',function(e){if(e.source!==parent||!e.data||e.data.bd!=='scroll')return;go(String(e.data.anchor));});"
+    "})();"
 )
+
+# Chamber from the masthead: Senate reports print 'REPORT { SENATE' (the brace glyphs extract as stray punctuation), bills 'IN THE SENATE',
+# committee drafts 'SEN. APPRO.'; House documents name the House the same ways.
+_SENATE = re.compile(r"\bREPORT\W{0,12}SENATE\b|IN THE SENATE|SEN\. APPRO|SENATE REPORT")
+_HOUSE = re.compile(r"\bREPORT\W{0,12}HOUSE OF REPRESENTATIVES\b|IN THE HOUSE OF REPRESENTATIVES|HOUSE REPORT")
+
+
+def chamber_of(head: str) -> str:
+    """'senate', 'house', or '' from a document's first pages (uppercased, whitespace collapsed)."""
+    if _SENATE.search(head):
+        return "senate"
+    if _HOUSE.search(head):
+        return "house"
+    # A Senate explanatory statement carries no masthead; the House's accompany a conference agreement and say so.
+    return "senate" if head.startswith("EXPLANATORY STATEMENT") or " EXPLANATORY STATEMENT FOR THE " in head else ""
+
 
 _LINK = re.compile(r'href="(index|document)\.html(?:#([\w-]*))?"')
 
@@ -62,14 +85,13 @@ def describe(pdf: Path) -> dict:
     (font, size), _ = body.most_common(1)[0]
     head = " ".join(" ".join(doc[i].get_text() for i in range(min(3, len(doc)))).upper().split())
     year = re.search(r"SEPTEMBER 30, (\d{4})|BILL, (\d{4})|APPROPRIATIONS(?: ACT)?, (\d{4})", head)
-    senate = any(k in head for k in ("IN THE SENATE", "SENATE REPORT", "SEN. APPRO", "EXPLANATORY STATEMENT"))
     return {
         "font": font,
         "gpo": font.startswith(GPO_FACES),
         "bill": size >= 12,
         "legislative": "LEGISLATIVE BRANCH" in head,
         "fy": int(next(g for g in year.groups() if g)) if year else 0,
-        "chamber": "senate" if senate else ("house" if "HOUSE OF REPRESENTATIVES" in head else ""),
+        "chamber": chamber_of(head),
     }
 
 
@@ -97,11 +119,13 @@ def _pages(old: dict, new: dict, old_text: str, new_text: str, pdfs: dict, lexic
             info["fy"] or None, "committee", "", "", local_path=info["name"], source="dropped in",
         )
 
-    out = Path(tempfile.mkdtemp())
-    render_pair(Pair(new=entry(new), old=entry(old)), diff, out)
     pages = {}
-    for name in ("index", "document"):
-        html = (out / f"{name}.html").read_text()
+    # Rendered files are read and discarded: Pyodide keeps its filesystem in memory for the life of the tab.
+    with tempfile.TemporaryDirectory() as tmp:
+        out = Path(tmp)
+        render_pair(Pair(new=entry(new), old=entry(old)), diff, out)
+        raw = {name: (out / f"{name}.html").read_text() for name in ("index", "document")}
+    for name, html in raw.items():
         html = html.replace('<link rel="stylesheet" href="../style.css">', f"<style>{CSS}</style>")
         html = _LINK.sub(lambda m: f'href="#{m.group(2) or ""}" data-bd-view="{m.group(1)}" data-bd-anchor="{m.group(2) or ""}"', html)
         html = html.replace("</body>", f"<script>{BRIDGE_JS}</script>\n</body>")
