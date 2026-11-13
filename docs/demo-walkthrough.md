@@ -12,6 +12,17 @@ Every example below links to the generated page, and every claim can be checked 
 
 GovInfo URLs and SHA-256 hashes of the exact files compared are in [`demo/manifest.json`](../demo/manifest.json).
 
+### Senate Legislative Branch, FY2027 prerelease
+
+The Senate released its FY2027 Legislative Branch bill print and explanatory statement as PDFs on its own site (2026-11-12), before GovInfo. The demo also carries those, ingested with `budget-differ ingest` (see `prerelease/catalog.json`):
+
+| Series | FY2025 | FY2026 | FY2027 |
+|---|---|---|---|
+| Report language | CRPT-118srpt192 | CRPT-119srpt38 | SAPPR-FY2027-LEGBRANCH-ES |
+| Bill text | | BILLS-119s2257rs | SAPPR-FY2027-LEGBRANCH-BILL |
+
+Every year in these chains is read from its PDF through the same converter, so the manifest hashes the PDFs (`"read_from": "pdf"`).
+
 ## Reproduce it
 
 ```bash
@@ -67,6 +78,13 @@ The timeline page for each subcommittee shows every account across the three yea
 ### Legislative Branch, FY2026 → FY2027 ([page](https://tandemgov.github.io/budget-differ/house-legislative-branch-fy2026-fy2027/))
 
 - **Staffing floor, 15 → 18 FTE.** The Capitol Police Inspector General is supported with "no fewer than 18 FTE", up from 15. The dollar floor is unchanged, so size-based ranking filed this as number-only; it is now flagged as a floor. [Salaries](https://tandemgov.github.io/budget-differ/house-legislative-branch-fy2026-fy2027/#s-title_i_legislative_branch_appropriations-united_states_capi-a18c4c)
+
+### Senate Legislative Branch, FY2026 → FY2027 ([report](https://tandemgov.github.io/budget-differ/senate-legislative-branch-fy2026-fy2027/), [bill](https://tandemgov.github.io/budget-differ/senate-legislative-branch-bill-fy2026-fy2027/))
+
+- **Emergency security funding dropped.** FY2026's Sec. 213 (Senate protection: $18.5M Sergeant at Arms, $25M Capitol Police mutual aid, $1M residential security) has no FY2027 counterpart; the explanatory statement's general summary drops its emergency-funding sentence too.
+- **New bill provisions.** Sec. 102 bars Senate protective-services funds from deputizing individuals as federal agents; Sec. 103 moves unused office security-enhancement balances to Miscellaneous Items.
+- **Procurement ban widened.** Sec. 208 now covers video surveillance equipment and Hytera, Hikvision, Dahua, and entities tied to a foreign adversary.
+- **Office accounts.** Senators' Official Personnel and Office Expense Account rises from $645,431,000 to $722,773,000, including $75,000,000 for security allocated equally per office.
 
 ## What the tool does not catch (examples)
 
