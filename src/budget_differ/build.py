@@ -8,6 +8,7 @@ Usage:
     uv run budget-differ house energy-water 2024-2027   # year-over-year chain view
     uv run budget-differ --dump-sections CRPT-119hrpt667   # debug segmentation JSON
     uv run budget-differ demo [OUT_DIR]           # the acceptance demonstration (default: demo/)
+    uv run budget-differ compare-page [--runtime] [OUT_DIR]   # the in-browser comparison page (default: demo/compare/); --runtime fetches Pyodide and PyMuPDF
     uv run budget-differ ingest PDF --id ID --chamber senate --subcommittee Legislative-Branch --fy 2027 \
         --congress 119 --title "..." [--url URL] [--date YYYY-MM-DD] [--kind bill]   # add a committee-website PDF not yet on GovInfo
 """
@@ -31,6 +32,10 @@ def main(argv: list[str] | None = None) -> int:
     args = list(sys.argv[1:] if argv is None else argv)
     if args and args[0] == "ingest":
         return _ingest(args[1:])
+    if args and args[0] == "compare-page":
+        from budget_differ.compare_page import main as compare_page_main
+
+        return compare_page_main(args[1:])
     repo = approps_repo()
 
     if args and args[0] == "demo":
@@ -227,7 +232,15 @@ def build_demo(repo: Path, out_root: Path) -> int:
                 ).hexdigest(),
             }
     (out_root / "style.css").write_text(CSS)
-    render_top_index(index_rows, out_root, render_nav(nav_items, ".", ""))
+    from budget_differ.compare_page import build as build_compare_page
+
+    build_compare_page(out_root / "compare")
+    render_top_index(
+        index_rows,
+        out_root,
+        render_nav(nav_items, ".", ""),
+        intro_html='<p class="meta"><a href="compare/index.html">Compare two PDFs of your own</a>: drop in last year\'s and this year\'s report or bill; it runs in your browser.</p>',
+    )
     (out_root / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(f"built demo: {len(index_rows)} comparison(s) across {len(manifest['reports'])} reports → {out_root / 'index.html'}")
     return 0

@@ -1,7 +1,8 @@
 """Check `budget-differ ingest` against GovInfo: convert a document's GovInfo PDF and compare the result with GovInfo's own .htm of the same document.
 
-Two measures:
+Three measures:
 
+- prose (catalog reports only): the share of the words the pipeline actually diffs (paragraph text after segmentation, tables and front and back matter dropped) that the converted render reproduces, in order. This is the number that matters for comparisons.
 - words: the share of GovInfo's words that the converted text reproduces, in order (difflib over word sequences; dot leaders ignored). This is the conversion's fidelity, independent of segmentation.
 - sections (catalog reports only): both renders segmented and diffed. GovInfo's .htm has its own quirks (table titles read as headings, dash lists split per line), so this measures how differently the two renders segment, not which is right; prerelease comparisons convert both years for that reason (see chain.build_chain).
 
@@ -49,6 +50,11 @@ def section_agreement(package_id: str) -> None:
     entry = next(e for e in load_catalog(repo) if e.package_id == package_id)
     gov = load_document(repo, entry)
     conv = load_document(repo, replace(entry, from_pdf=True))
+    g = [w for s in gov.sections for p in s.paragraphs for w in _words(p.text)]
+    c = [w for s in conv.sections for p in s.paragraphs for w in _words(p.text)]
+    sm = difflib.SequenceMatcher(None, g, c, autojunk=False)
+    share = sum(b.size for b in sm.get_matching_blocks()) / max(1, len(g))
+    print(f"{package_id}: prose {share:.2%} of {len(g)} diffed GovInfo words reproduced in order ({len(c)} converted)")
     counts = compare_documents(gov, conv).counts()
     total = sum(counts.values())
     print(f"{package_id}: sections {counts.get('unchanged', 0)}/{total} unchanged between renders; "

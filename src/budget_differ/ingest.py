@@ -29,10 +29,12 @@ _PAGE_NUMBER = re.compile(r"^\(?\d+\)?$")
 _ENUMERATOR = re.compile(r"^(\([a-zA-Z0-9]{1,5}\)|S(ec|EC)\.\s)")
 _LEADER = re.compile(r"\.{4,}")
 _WIDTH = 65
+# Smallest point size that can be body type.
+_MIN_BODY_SIZE = 9.5
 # Running heads and feet sit in the outer 45pt of the page.
 _MARGIN = 45.0
 # Bump when the conversion changes, so cached conversions are rebuilt.
-CONVERTER_VERSION = 15
+CONVERTER_VERSION = 16
 _RULE = 72
 
 _CHAR_MAP = {
@@ -140,7 +142,8 @@ def _wrap_heading(text: str, width: int) -> list[str]:
     words = text.split()
     lines: list[str] = []
     while words:
-        if len(" ".join(words)) <= width:
+        # The rest fits, or is one word too long for any line (a table title set without spaces): emit it as is.
+        if len(" ".join(words)) <= width or len(words) == 1:
             lines.append(" ".join(words))
             break
         fit = 1
@@ -204,7 +207,9 @@ def pdf_to_gpo_text(pdf_path: Path) -> str:
             for line in block.get("lines", []):
                 for s in line["spans"]:
                     fonts[(s["font"], round(s["size"], 1))] += len(s["text"])
-    body_font, body_size = fonts.most_common(1)[0][0]
+    # Body type is never under 9.5pt (10pt reports, 14pt bills); table type is 5-9pt and outweighs the prose in table-heavy reports such as Defense, so it is left out of the vote.
+    text_fonts = Counter({k: n for k, n in fonts.items() if k[1] >= _MIN_BODY_SIZE}) or fonts
+    body_font, body_size = text_fonts.most_common(1)[0][0]
     family = body_font.split("-")[0]
     census = Counter({sz: n for (f, sz), n in fonts.items() if f == body_font})
     # Small caps are the body-face size just under body (7.8 against 10pt in reports, 10.9 against 14pt in bills); 8pt is report table type.

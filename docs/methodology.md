@@ -127,20 +127,35 @@ Committees post reports, Senate explanatory statements, and bill committee print
 `budget-differ ingest` re-renders such a PDF as GovInfo-style fixed-width text from the composition itself (pymupdf): headings are the lines set in capitals that are centered or carry small caps; full-size caps stay CAPS and small-caps heads come out in Title Case, as GovInfo's report `.htm` prints them; paragraphs start at an indented line and are re-wrapped with line-end hyphenation removed; dot-leader funding summaries keep stub and amount on one line; ruled tables are set between dashed rules so the table detector drops them; running heads, folios, and bill line numbers are removed.
 The same converter reads bill prints (DeVinne type, numbered lines) and reports (New Century Schoolbook); bill text is compared as its own series (`Legislative-Branch-Bill`), with provision headlines as section names.
 
-Fidelity is measured against GovInfo with `scripts/ingest_check.py`, converting a document's GovInfo PDF and comparing with GovInfo's `.htm` of the same document (2026-11-13):
+Fidelity is measured against GovInfo with `scripts/ingest_check.py`, converting a document's GovInfo PDF and comparing with GovInfo's `.htm` of the same document (2026-11-13).
+"Diffed prose" is the measure that matters: the paragraph text the pipeline compares, after tables and front and back matter are dropped. "All words" includes table cells, which the converter lays out by column position and GovInfo by row, so it understates fidelity on table-heavy reports.
 
-| Document | GovInfo words reproduced in order |
-| --- | --- |
-| CRPT-119srpt38 (Senate Legislative Branch report, FY2026) | 96.4% of 22,071 |
-| CRPT-118srpt192 (same, FY2025) | 96.3% of 25,929 |
-| BILLS-119s2257rs (S. 2257 as reported, FY2026) | 99.3% of 6,226 |
+| Document | Diffed prose reproduced in order | All words |
+| --- | --- | --- |
+| CRPT-119srpt38 (Senate Legislative Branch report, FY2026) | 99.7% of 18,116 | 96.4% |
+| CRPT-118srpt192 (same, FY2025) | 99.8% of 21,523 | 96.3% |
+| CRPT-119srpt52 (Senate Defense report, FY2026; 240 pages, mostly line-item tables) | 99.3% of 34,035 | 85.2% |
+| CRPT-118srpt204 (same, FY2025) | 98.4% of 45,188 | 85.5% |
+| BILLS-119s2257rs (S. 2257 as reported, FY2026) | n/a | 99.3% of 6,226 |
 
-About half of the report misses are table figures, and most of the rest are table row labels, contents entries, and front matter, all outside the diffed text.
+The body face is chosen among fonts of 9.5pt and up: in a table-heavy report the 7pt table type outweighs the prose, and choosing by volume alone read the Defense report inside out (1,558 sections against GovInfo's 368; now 344, 284 of them identical between the two renders).
 The two renders still segment differently: GovInfo's `.htm` reads some ruled-table titles as headings and splits dash lists into one paragraph per line, which the converted text does not.
 So a comparison that includes a prerelease document reads every year of that chain through the converter (`CatalogEntry.from_pdf`, set by `chain.like_for_like`), and the page header says so; a year whose PDF is not on disk is left out of that chain with a note rather than compared across renders; without that, render differences would surface as false new and dropped sections.
 
 Prerelease documents are listed in `prerelease/catalog.json` (source URL, SHA-256) with the PDF beside them; the `.htm` written next to each is for inspection, and comparisons read the PDF through a cache keyed by its hash and `CONVERTER_VERSION`.
 When GovInfo publishes the document, run the sibling repo's `approps discover && approps download` and remove the prerelease entry; the catalog entry then takes precedence.
+
+### In-browser comparison (`web/compare/`, `compare_page.py`)
+
+The demo site's compare page runs the same code in the browser: Pyodide (CPython compiled to WebAssembly) in a Web Worker, PyMuPDF's WebAssembly build for the PDFs, and rapidfuzz's pure-Python modules, since rapidfuzz has no WebAssembly build.
+Results are identical to the command line (both FY2027 Senate Legislative Branch comparisons, and Senate Defense FY2025 → FY2026); the pure-Python fuzzy matching makes alignment slower, so Defense takes about a minute in Chromium against about 12 seconds natively.
+Dropped files never leave the tab. Security measures, each checked by `scripts/check_compare_page.cjs` before every Pages deploy:
+
+- the runtime is served from the site itself, each file pinned by SHA-256 in `compare_page.py`, so the page loads no third-party code;
+- a Content-Security-Policy allows only the site's own scripts and, by hash, the result pages' fixed inline scripts;
+- results render in an iframe sandboxed without same-origin access, which talks to the page only through checked `postMessage` calls;
+- document text is HTML-escaped (hostile markup is pushed through the renderer in the check), and the renderer emits only http(s) links;
+- non-GPO PDFs and bill/report mismatches are refused with a message.
 
 ## Approaches considered
 

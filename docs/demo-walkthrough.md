@@ -23,6 +23,10 @@ The Senate released its FY2027 Legislative Branch bill print and explanatory sta
 
 Every year in these chains is read from its PDF through the same converter, so the manifest hashes the PDFs (`"read_from": "pdf"`).
 
+## Compare your own PDFs
+
+The [compare page](https://tandemgov.github.io/budget-differ/compare/) takes two PDFs, prior year and this year, and produces the same ranked and full-document pages in the browser. Try it with the Senate bills in [`prerelease/`](../prerelease/): `BILLS-119s2257rs.pdf` then `SAPPR-FY2027-LEGBRANCH-BILL.pdf`.
+
 ## Reproduce it
 
 ```bash

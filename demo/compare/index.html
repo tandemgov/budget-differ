@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-FU/C7DZNJZHEYwAnpV4kyXpGDYkgMrsYGG85J4Q4oF4=' 'sha256-ODPKkWnocOMeKQNj+GCr7a4qJ7tgNQCKcbiN0Dy2jtg=' 'sha256-znFaC+/SONCWgHsSishdvobFYtHTRGRYq1hqP5P7bLQ='; worker-src 'self'; connect-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Compare two appropriations PDFs</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="compare.css">
+</head>
+<body>
+<main class="cmp">
+  <a class="crumb" href="../index.html">&larr; All comparisons</a>
+  <h1>Compare two appropriations PDFs</h1>
+  <p class="meta">Drop last year's and this year's committee report, explanatory statement, or bill, as published on GovInfo or a committee website. The comparison runs in this browser tab: the files are not uploaded anywhere.</p>
+  <div class="drops">
+    <label class="drop" id="drop-old" for="file-old">
+      <span class="slot">Prior year</span>
+      <span class="file" id="name-old">Drop a PDF here, or click to choose</span>
+      <input type="file" id="file-old" accept="application/pdf,.pdf">
+    </label>
+    <label class="drop" id="drop-new" for="file-new">
+      <span class="slot">This year</span>
+      <span class="file" id="name-new">Drop a PDF here, or click to choose</span>
+      <input type="file" id="file-new" accept="application/pdf,.pdf">
+    </label>
+  </div>
+  <div class="controls">
+    <button type="button" id="go" disabled>Compare</button>
+    <span class="views" id="views" hidden>
+      <button type="button" class="tab" id="view-index" aria-pressed="true">Ranked changes</button>
+      <button type="button" class="tab" id="view-document" aria-pressed="false">Full document, annotated</button>
+    </span>
+    <span id="status" role="status" aria-live="polite">Loading Python in your browser. The first visit downloads about 30 MB.</span>
+  </div>
+  <details class="about">
+    <summary>What works, and how this runs</summary>
+    <p>Only PDFs typeset by the Government Publishing Office are supported: committee reports, Senate explanatory statements, and bills (introduced, reported, or committee prints). Compare a report with a report, or a bill with a bill. Scans and other PDFs are refused.</p>
+    <p>The page runs the same <code>budget-differ</code> code as the comparisons on this site, compiled for the browser with Pyodide. A large report such as Defense takes about a minute.</p>
+  </details>
+</main>
+<iframe id="out" title="Comparison result" sandbox="allow-scripts" hidden></iframe>
+<script src="compare.js"></script>
+</body>
+</html>
