@@ -137,7 +137,7 @@ Fidelity is measured against GovInfo with `scripts/ingest_check.py`, converting 
 
 About half of the report misses are table figures, and most of the rest are table row labels, contents entries, and front matter, all outside the diffed text.
 The two renders still segment differently: GovInfo's `.htm` reads some ruled-table titles as headings and splits dash lists into one paragraph per line, which the converted text does not.
-So a comparison that includes a prerelease document reads every year of that chain through the converter (`CatalogEntry.from_pdf`, set in `chain.build_chain`), and the page header says so; without that, render differences would surface as false new and dropped sections.
+So a comparison that includes a prerelease document reads every year of that chain through the converter (`CatalogEntry.from_pdf`, set by `chain.like_for_like`), and the page header says so; a year whose PDF is not on disk is left out of that chain with a note rather than compared across renders; without that, render differences would surface as false new and dropped sections.
 
 Prerelease documents are listed in `prerelease/catalog.json` (source URL, SHA-256) with the PDF beside them; the `.htm` written next to each is for inspection, and comparisons read the PDF through a cache keyed by its hash and `CONVERTER_VERSION`.
 When GovInfo publishes the document, run the sibling repo's `approps discover && approps download` and remove the prerelease entry; the catalog entry then takes precedence.

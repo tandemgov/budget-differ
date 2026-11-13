@@ -13,7 +13,9 @@
 
 ### Changed
 
-- A comparison chain that includes a prerelease document reads every year from its PDF through the same converter, so render differences are not reported as changes.
+- PyMuPDF is now a runtime dependency (it was dev-only), since PDF ingestion needs it.
+
+- A comparison chain that includes a prerelease document reads every year from its PDF through the same converter, so render differences are not reported as changes; a year without a PDF on disk is skipped with a note.
 
 - `scripts/hierarchy_audit.py` now checks structure without labels (nested agencies, parenthetical sections, duplicate paths, resumed parents, year-over-year parent drift) alongside USASpending truth; see `docs/methodology.md`.
 

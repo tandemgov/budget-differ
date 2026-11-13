@@ -83,3 +83,35 @@ def test_prerelease_entries_join_the_catalog():
         entry = by_id[row["package_id"]]
         assert entry.local_path
         assert raw_path(repo, entry) == prerelease_dir() / row["local_path"]
+
+
+def _entry(package_id: str, fy: int, local_path: str = ""):
+    from budget_differ.corpus import CatalogEntry
+
+    return CatalogEntry(package_id, 119, "senate", "Legislative-Branch", fy, "committee", "", "", local_path=local_path)
+
+
+def test_prerelease_chain_reads_every_year_from_pdf():
+    from budget_differ.chain import like_for_like
+
+    entries = {2025: _entry("A", 2025), 2026: _entry("B", 2026), 2027: _entry("P", 2027, "P.htm")}
+    kept, skipped = like_for_like(entries, lambda e: True)
+    assert skipped == []
+    assert kept[2025].from_pdf and kept[2026].from_pdf and not kept[2027].from_pdf
+
+
+def test_prerelease_chain_skips_years_without_a_pdf():
+    from budget_differ.chain import like_for_like
+
+    entries = {2025: _entry("A", 2025), 2026: _entry("B", 2026), 2027: _entry("P", 2027, "P.htm")}
+    kept, skipped = like_for_like(entries, lambda e: e.package_id != "B")
+    assert sorted(kept) == [2025, 2027]
+    assert [fy for fy, _ in skipped] == [2026]
+
+
+def test_chain_without_prerelease_is_untouched():
+    from budget_differ.chain import like_for_like
+
+    entries = {2025: _entry("A", 2025), 2026: _entry("B", 2026)}
+    kept, skipped = like_for_like(entries, lambda e: False)
+    assert skipped == [] and not any(e.from_pdf for e in kept.values())

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 
+from collections.abc import Callable
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
@@ -89,6 +90,29 @@ class Chain:
         return out
 
 
+def like_for_like(
+    entries: dict[int, CatalogEntry], has_pdf: Callable[[CatalogEntry], bool]
+) -> tuple[dict[int, CatalogEntry], list[tuple[int, CatalogEntry]]]:
+    """Read every year of a chain that includes a prerelease document through the same PDF converter.
+
+    A committee prerelease is text converted from a PDF; GovInfo's .htm of the other years is a different render with its own quirks (table titles read as headings, its own line breaks), and mixing the two reports those differences as new and dropped sections.
+    So every GovInfo year is switched to its PDF, and a year whose PDF is not on disk is left out of the chain rather than compared across renders.
+    Returns the entries to use and the (fiscal year, entry) pairs left out.
+    """
+    if not any(e.local_path for e in entries.values()):
+        return dict(entries), []
+    kept: dict[int, CatalogEntry] = {}
+    skipped: list[tuple[int, CatalogEntry]] = []
+    for fy, e in sorted(entries.items()):
+        if e.local_path:
+            kept[fy] = e
+        elif has_pdf(e):
+            kept[fy] = replace(e, from_pdf=True)
+        else:
+            skipped.append((fy, e))
+    return kept, skipped
+
+
 def build_chain(
     repo: Path, chamber: str, subcommittee: str, fy_from: int, fy_to: int
 ) -> Chain:
@@ -103,13 +127,10 @@ def build_chain(
     for e in sorted(group, key=lambda e: e.package_id):
         assert e.fiscal_year is not None
         entries[e.fiscal_year] = e
+    entries, skipped = like_for_like(entries, lambda e: pdf_path(repo, e).exists())
+    for fy, e in skipped:
+        print(f"  note: skipping FY{fy} ({e.package_id}) — no PDF to read like for like with the prerelease document")
     fys = sorted(entries)
-    # A committee prerelease is text converted from a PDF; GovInfo's .htm of the earlier years is a different render with its own quirks (table titles read as headings, its own line breaks).
-    # So when a chain includes a prerelease, every earlier year with a PDF on disk goes through the same converter and the comparison is like for like.
-    if any(e.local_path for e in entries.values()):
-        for fy, e in entries.items():
-            if not e.local_path and pdf_path(repo, e).exists():
-                entries[fy] = replace(e, from_pdf=True)
     if len(fys) < 2:
         raise ValueError(
             f"need at least 2 fiscal years on disk for {chamber}/{subcommittee} "
